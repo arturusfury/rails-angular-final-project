@@ -7,7 +7,14 @@
   Add a Recipe
   Edit a Recipe
 
-## Must contain nested views ??
+## Must contain nested views
+  /
+  /recipes
+  /recipes/:id
+  /recipes/add
+  /recipes/edit
+  /recipes/tag/:tag
+  /settings
 
 ## Filtering / Searching
   Site Search for Recipes by Name
