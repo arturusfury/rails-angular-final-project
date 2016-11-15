@@ -71,3 +71,7 @@ footer .page-footer {
 .input-field input[type=search] ~ .material-icons {
   color: #eeeeee;
 }
+
+div > .divider {
+  margin: 0 15px;
+}
