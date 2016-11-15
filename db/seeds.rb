@@ -18,7 +18,9 @@ User.create(
   title: 'Grilled Prime Rib',
   user_id: 1,
   total_rating: 3.5,
-  total_servings: 8,
+  total_servings: 14,
+  prep_time: 20,
+  cook_time: 180,
   description: 'This is a classic prime rib recipe cooked on the grill. The secret is to keep the temperature low enough during cooking and to remove it immediately from the grill once done. Be sure to grill indirectly and also use a drip pan to catch those delicious drippings.',
   image_url: 'http://f.tqn.com/y/bbq/1/W/k/H/1/GettyImages-183369518.jpg',
   dish_type: 'Main Course'
@@ -103,4 +105,28 @@ Item.create(
   measure: '',
   recipe_id: @prime_rib.id,
   ingredient_id: @drip_pan.id
+)
+
+Direction.create(
+  recipe_id: @prime_rib.id,
+  step: 1,
+  text: 'Prepare grill for indirect grilling with a large dripping pan under where the roast will be. Aim for a grill temperature around 375 degrees F. Periodically add water to the pan to keep the drippings from burning away if you want to make gravy. Make sure you know the weight of your prime rib. Plan on grilling indirectly for 12 to 14 minutes per pound. If you are using a smaller roast, adjust the ingredients and cooking times accordingly.'
+)
+
+Direction.create(
+  recipe_id: @prime_rib.id,
+  step: 2,
+  text: 'With a sharp paring knife make a series of 1/2 inch deep holes every 2 inches all over the roast. Insert the garlic slivers in every other hole and a leaf from the rosemary in the rest. Combine black pepper, dried rosemary, salt and paprika and rub over the surface of the meat. When the grill is ready, place the roast on the well oiled grate directly over the dripping pan. Cook for about 12 to 14 minutes per pound. An 18 pound roast will take about 3 1/2 to 4 hours. It is very important to use an accurate meat thermometer to check for doneness. You do not want to over cook this roast.'
+)
+
+Direction.create(
+  recipe_id: @prime_rib.id,
+  step: 3,
+  text: 'When the meat reaches an internal temperature of 115 to 125 degrees remove it from the grill. Place it on a platter and cover loosely with foil. The meat will continue cooking and the internal temperature will continue to rise. Tent loosely wit aluminum foil and let rest for at least 15 minutes, but no more than 30. If you want the roast rare to medium rare, remove from the grill when the temperature is 115 degrees and let it rest for 15 minutes.'
+)
+
+Direction.create(
+  recipe_id: @prime_rib.id,
+  step: 4,
+  text: 'If you want it more well done, remove from the grill at 125 degrees and let it rest for 30 minutes.'
 )

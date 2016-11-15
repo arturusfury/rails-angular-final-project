@@ -8,6 +8,8 @@ class CreateRecipes < ActiveRecord::Migration[5.0]
       t.string :description
       t.string :image_url
       t.string :dish_type
+      t.integer :prep_time
+      t.integer :cook_time
 
       t.timestamps
     end
