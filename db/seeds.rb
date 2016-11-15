@@ -65,42 +65,42 @@ Item.create(
 Item.create(
   amount: 8,
   measure: 'cloves',
-  recipe_id: @garlic.id,
-  ingredient_id: @rib_roast.id
+  recipe_id: @prime_rib.id,
+  ingredient_id: @garlic.id
 )
 Item.create(
   amount: 3,
   measure: 'sprigs',
-  recipe_id: @rosemary.id,
-  ingredient_id: @rib_roast.id
+  recipe_id: @prime_rib.id,
+  ingredient_id: @rosemary.id
 )
 Item.create(
   amount: 2,
   measure: 'tbsp',
-  recipe_id: @course_black_pepper.id,
-  ingredient_id: @rib_roast.id
+  recipe_id: @prime_rib.id,
+  ingredient_id: @course_black_pepper.id
 )
 Item.create(
   amount: 2,
   measure: 'tbsp',
-  recipe_id: @dried_rosemary.id,
-  ingredient_id: @rib_roast.id
+  recipe_id: @prime_rib.id,
+  ingredient_id: @dried_rosemary.id
 )
 Item.create(
   amount: 2,
   measure: 'tbsp',
-  recipe_id: @sea_salt.id,
-  ingredient_id: @rib_roast.id
+  recipe_id: @prime_rib.id,
+  ingredient_id: @sea_salt.id
 )
 Item.create(
   amount: 2,
   measure: 'tbsp',
-  recipe_id: @paprika.id,
-  ingredient_id: @rib_roast.id
+  recipe_id: @prime_rib.id,
+  ingredient_id: @paprika.id
 )
 Item.create(
   amount: 1,
   measure: '',
-  recipe_id: @drip_pan.id,
-  ingredient_id: @rib_roast.id
+  recipe_id: @prime_rib.id,
+  ingredient_id: @drip_pan.id
 )
