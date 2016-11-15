@@ -130,3 +130,46 @@ Direction.create(
   step: 4,
   text: 'If you want it more well done, remove from the grill at 125 degrees and let it rest for 30 minutes.'
 )
+
+Review.create(
+  user_id: 1,
+  recipe_id: 1,
+  rating: 4,
+  content: 'Pie sugar plum macaroon halvah chupa chups jujubes. Cake cupcake cookie soufflé powder wafer gummi bears. Marshmallow soufflé fruitcake muffin. Jujubes wafer cookie jelly pastry. Sweet roll gummies icing. Lollipop lemon drops topping dessert tiramisu. Sweet jujubes topping. Oat cake gummi bears oat cake jujubes caramels toffee chocolate bar. Ice cream toffee tiramisu candy. Marzipan jelly beans danish halvah. Chocolate bar tart cookie soufflé. Gingerbread jelly beans jelly beans candy canes chocolate cake. Cake tart tart. Gummi bears jelly gummies.'
+)
+
+Tag.create(
+  name: 'Beef'
+)
+
+Tag.create(
+  name: 'Prime Rib'
+)
+
+Tag.create(
+  name: 'Grilled'
+)
+
+Tag.create(
+  name: 'Rosemary'
+)
+
+RecipeTag.create(
+  tag_id: 1,
+  recipe_id: 1
+)
+
+RecipeTag.create(
+  tag_id: 2,
+  recipe_id: 1
+)
+
+RecipeTag.create(
+  tag_id: 3,
+  recipe_id: 1
+)
+
+RecipeTag.create(
+  tag_id: 4,
+  recipe_id: 1
+)

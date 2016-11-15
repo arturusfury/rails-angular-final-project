@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20161115022457) do
     t.integer "ingredient_id"
   end
 
-  create_table "joins_recipe_tags", force: :cascade do |t|
+  create_table "recipe_tags", force: :cascade do |t|
     t.integer "recipe_id"
     t.integer "tag_id"
   end
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20161115022457) do
     t.integer "user_id"
     t.integer "recipe_id"
     t.integer "rating"
+    t.string  "content"
   end
 
   create_table "tags", force: :cascade do |t|
