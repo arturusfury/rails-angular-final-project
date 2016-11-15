@@ -9,6 +9,7 @@
 nav ul a,
 nav .brand-logo {
   color: #444;
+  text-transform: uppercase;
 }
 
 p {
@@ -17,6 +18,13 @@ p {
 
 .button-collapse {
   color: #26a69a;
+}
+
+.parallax-banner {
+  min-height: 200px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
 }
 
 .parallax-container {
@@ -28,7 +36,7 @@ p {
   .parallax-container .section {
     width: 100%;
   }
-
+  
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
     position: absolute;
