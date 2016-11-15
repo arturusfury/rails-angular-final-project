@@ -11,6 +11,8 @@ gem 'devise_token_auth'
 gem 'omniauth'
 gem 'omniauth-github'
 gem 'omniauth-google-oauth2'
+gem 'responders'
+gem 'awesome_print'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -18,8 +20,6 @@ end
 
 group :development do
   gem 'listen', '~> 3.0.5'
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
