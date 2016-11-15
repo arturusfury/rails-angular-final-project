@@ -61,3 +61,13 @@ p {
 footer .page-footer {
   margin: 0;
 }
+
+.footer-links {
+  margin-left: 15px;
+}
+
+.input-field input[type=search] + label i,
+.input-field input[type=search] ~ .mdi-navigation-close,
+.input-field input[type=search] ~ .material-icons {
+  color: #eeeeee;
+}
