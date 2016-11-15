@@ -4,6 +4,13 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'sqlite3'
 gem 'puma', '~> 3.0'
 gem 'active_model_serializers', '~> 0.10.0'
+gem 'rack-cors'
+gem 'dotenv-rails', :groups => [:development, :test]
+gem 'devise'
+gem 'devise_token_auth'
+gem 'omniauth'
+gem 'omniauth-github'
+gem 'omniauth-google-oauth2'
 
 group :development, :test do
   gem 'byebug', platform: :mri
