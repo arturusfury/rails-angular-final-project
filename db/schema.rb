@@ -13,8 +13,9 @@
 ActiveRecord::Schema.define(version: 20161115022457) do
 
   create_table "directions", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "recipe_id"
+    t.integer "step"
+    t.string  "text"
   end
 
   create_table "ingredients", force: :cascade do |t|
@@ -41,6 +42,8 @@ ActiveRecord::Schema.define(version: 20161115022457) do
     t.string   "description"
     t.string   "image_url"
     t.string   "dish_type"
+    t.integer  "prep_time"
+    t.integer  "cook_time"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end

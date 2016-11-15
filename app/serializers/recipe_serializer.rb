@@ -1,6 +1,7 @@
 class RecipeSerializer < ActiveModel::Serializer
   attributes :id, :title, :description, :image_url, :dish_type, :total_servings,
-             :total_rating, :user_id, :ingredient_list
+             :prep_time, :cook_time, :total_rating, :user_id, :ingredient_list,
+             :directions
 
   def ingredient_list
     items = object.items
