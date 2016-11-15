@@ -1,0 +1,2 @@
+class JoinsRecipeTag < ApplicationRecord
+end
