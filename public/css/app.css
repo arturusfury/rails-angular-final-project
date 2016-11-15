@@ -75,3 +75,11 @@ footer .page-footer {
 div > .divider {
   margin: 0 15px;
 }
+
+.fluid-ratio-resize {
+	max-width: 100%;
+	height: 200px;
+	width: auto\9; /* IE8 */
+	overflow: hidden;
+	border: 1px gray solid;
+}
