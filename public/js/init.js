@@ -4,7 +4,7 @@
     $('.button-collapse').sideNav();
     $('.parallax').parallax();
     $('.recipe-card').matchHeight({
-      byRow: true,
+      byRow: false,
       property: 'height'
     });
     
