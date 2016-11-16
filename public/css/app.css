@@ -76,9 +76,19 @@ div > .divider {
   margin: 0 15px;
 }
 
+.recipe-card {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 .recipe-card-img {
   height: 200px;
   width: 300px;
+}
+
+.latest-recipes-card {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 .fluid-ratio-resize {
