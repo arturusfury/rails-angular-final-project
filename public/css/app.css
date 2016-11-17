@@ -51,20 +51,20 @@ p {
   }
 }
 
-.icon-block {
-  padding: 0 15px;
-}
-.icon-block .material-icons {
-  font-size: inherit;
-}
+/*.icon-block {*/
+/*  padding: 0 15px;*/
+/*}*/
+/*.icon-block .material-icons {*/
+/*  font-size: inherit;*/
+/*}*/
 
-footer .page-footer {
-  margin: 0;
-}
+/*footer .page-footer {*/
+/*  margin: 0;*/
+/*}*/
 
-.footer-links {
-  margin-left: 15px;
-}
+/*.footer-links {*/
+/*  margin-left: 15px;*/
+/*}*/
 
 .input-field input[type=search] + label i,
 .input-field input[type=search] ~ .mdi-navigation-close,
@@ -72,28 +72,52 @@ footer .page-footer {
   color: #eeeeee;
 }
 
-div > .divider {
-  margin: 0 15px;
-}
+/*div > .divider {*/
+/*  margin: 0 15px;*/
+/*}*/
 
-.recipe-card {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
+/*.recipe-card {*/
+/*  padding-left: 0 !important;*/
+/*  padding-right: 0 !important;*/
+/*}*/
 
-.recipe-card-img {
+/*.latest-recipes-card {*/
+/*  padding-left: 0 !important;*/
+/*  padding-right: 0 !important;*/
+/*}*/
+
+/* Three bits of CSS magic to get our images looking responsive and working in*/
+/* the MaterializeCSS responsive divs                                         */
+.center-and-cropped {
+  width: 100%;
+  min-width: 100%;
   height: 200px;
-  width: 300px;
+  max-height: 200px;
+  overflow: hidden;
+  border: 1px #666666 solid;
 }
 
-.latest-recipes-card {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+/*.fluid-ratio-resize {*/
+/*	object-fit: cover;*/
+/*	width: auto\9;*/
+/*	overflow: hidden;*/
+/*	border: 1px gray solid;*/
+/*}*/
+
+img.responsive-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative; /* allows repositioning */
+  left: 100%; /* move the whole width of the image to the right */
+  margin-left: -200%; /* magic! */
+  top: 100%;
+  margin-top: -200%;
 }
 
-.fluid-ratio-resize {
-	object-fit: cover;
-	width: auto\9; /* IE8 */
-	overflow: hidden;
-	border: 1px gray solid;
+.center-and-cropped-bg {
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+  border: 1px #666666 solid;
 }
