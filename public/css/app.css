@@ -62,7 +62,7 @@ p {
 }
 
 .card {
-  /*border: 1px #666666 solid;*/
+  border: 1px #666 solid;
   border-radius: 25px;
 }
 
@@ -90,7 +90,7 @@ p {
 
 .divider {
   margin: 0 25px 15px;
-  background-color: #689f38 ;
+  background-color: #b71c1c;
 }
 
 .section-header {
