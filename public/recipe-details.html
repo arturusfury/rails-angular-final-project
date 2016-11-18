@@ -24,10 +24,10 @@
     </ul>
     
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">Recipe Box</a>
+      <a id="logo-container" href="/rails-angular-final-project/public/index.html" class="brand-logo">Recipe<span class="red-text">Box</span></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Add a Recipe</a></li>
-        <li><a href="#">All Recipes</a></li>
+        <li><a href="/rails-angular-final-project/public/recipe-add.html">Add a Recipe</a></li>
+        <li><a href="/rails-angular-final-project/public/recipe-list.html">All Recipes</a></li>
         <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons right">supervisor_account arrow_drop_down</i></a></li>
       </ul>
       <form class="right hide-on-med-and-down">
@@ -38,8 +38,8 @@
         </div>
       </form>
       <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">All Recipes</a></li>
-        <li><a href="#">Add a Recipes</a></li>
+        <li><a href="/rails-angular-final-project/public/recipe-list.html">All Recipes</a></li>
+        <li><a href="/rails-angular-final-project/public/recipe-add.html">Add a Recipes</a></li>
         <li class="divider"></li>  
         <li><a href="#!">Profile</a></li>
         <li><a href="#!">Settings</a></li>
@@ -51,7 +51,7 @@
   </nav><!-- end navigation -->
 
   <div id="index-banner" class="parallax-container">
-    <div class="parallax"><img src="img/background1.jpg"></div>
+    <div class="parallax"><img src="img/steak.jpg"></div>
   </div> <!-- end parallax-container -->
 
   <div class="container">
@@ -60,319 +60,119 @@
       <div class="row no-bot-margin">
         <div class="col s12">
           <div class="row section-header">
-            <h3 class="light center section-header">Top Recipes</h3>
-          </div>
-          <div class="row">
-            <div class="divider"></div>
+            <h3 class="light center section-header">New York Strip Steaks</h3>
           </div>
           <div class="row no-bot-margin">
-            
-            <a href="#" class="black-text">
-              <div class="col s12 m6 l4 recipe-card">
-                <div class="latest-recipes-card center">
-                  <div class="center-and-cropped-bg-no-border" style="background-image: url('img/latin_turkey.png')"></div>
-                  <h5>Latin Style Turkey</h5>
-                  <p class="light low-line-height">
+            <div class="divider no-bot-margin"></div>
+          </div>
+          <div class="row">
+            <div class="latest-recipes-card center no-top-margin">
+              <div class="row">
+                <div class="col s12 m6 right-align">
+                  <h6 class="light no-top-margin low-line-height">
                     Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
-                    Dish Type: <strong>Main Course</strong></p>
-                  <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                  <ul class="light">
-                    <li>Total Cooking Time: <strong>120 minutes</strong></li>
+                    Dish Type: <strong>Main Course</strong>
+                  </h6>                
+                </div>
+  
+                <div class="col s12 m6 left-align">
+                  <ul class="light no-top-margin low-line-height">
+                    <li>Total Cooking Time: <strong>15 minutes</strong></li>
                     <li>Servings: <strong>8</strong></li>
                   </ul>
-                  
-                  <div class="chip brown darken-4"><a href="#" class="white-text">Turkey</a></div>
-                  <div class="chip brown darken-4"><a href="#" class="white-text">Oven</a></div>
-                  <div class="chip brown darken-4"><a href="#" class="white-text">Latin</a></div>
                 </div>
               </div>
-            </a>
-            
-            <a href="#" class="black-text">
-              <div class="col s12 m6 l4 recipe-card">
-                <div class="latest-recipes-card center">
-                  <div class="center-and-cropped-bg-no-border" style="background-image: url('img/roasted_salmon.jpg')"></div>
-                  <h5>Roasted Salmon</h5>
-                  <p class="light low-line-height">
-                    Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
-                    Dish Type: <strong>Main Course</strong></p>
-                  <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                  <ul class="light">
-                    <li>Total Cooking Time: <strong>120 minutes</strong></li>
-                    <li>Servings: <strong>8</strong></li>
-                  </ul>
+              
+              <div class="row">
+                <div class="col s12 offset-m1 m10">
+                    
+                  <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, minus, earum, facilis soluta asperiores ducimus aliquam esse perferendis voluptatibus at magnam illum totam voluptatem odio cum iusto rem impedit distinctio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, minus, earum, facilis soluta asperiores ducimus aliquam esse perferendis voluptatibus at magnam illum totam voluptatem odio cum iusto rem impedit distinctio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, minus, earum, facilis soluta asperiores ducimus aliquam esse perferendis voluptatibus at magnam illum totam voluptatem odio cum iusto rem impedit distinctio.</p>
                   
-                  <div class="chip brown darken-4"><a href="#" class="white-text">Turkey</a></div>
-                  <div class="chip brown darken-4"><a href="#" class="white-text">Oven</a></div>
-                  <div class="chip brown darken-4"><a href="#" class="white-text">Latin</a></div>
                 </div>
-              </div>
-            </a>
+              </div> <!-- end recipe description -->
+              
+              <div class="row">
+                <div class="col s12 offset-m1 m5 left-align">
+                  <table class="bordered">
+                    <tr>
+                      <td class="low-table-padding red-text text-darken-1">1/3 cup</td>
+                      <td class="low-table-padding">soy sauce</td>
+                    </tr>
+                    <tr>
+                      <td class="low-table-padding red-text text-darken-1">1/2 cup</td>
+                      <td class="low-table-padding">olive oil</td>
+                    </tr>
+                    <tr>
+                      <td class="low-table-padding red-text text-darken-1">1/3 cup</td>
+                      <td class="low-table-padding">fresh lemon juice</td>
+                    </tr>
+                    <tr>
+                      <td class="low-table-padding red-text text-darken-1">1/4 cup</td>
+                      <td class="low-table-padding">Worcestershire sauce</td>
+                    </tr>
+                    <tr>
+                      <td class="low-table-padding red-text text-darken-1">1 1/2 tablespoons</td>
+                      <td class="low-table-padding">garlic powder</td>
+                    </tr>
+                    <tr>
+                      <td class="low-table-padding red-text text-darken-1">3 tablespoons</td>
+                      <td class="low-table-padding">dried basil</td>
+                    </tr>
+                    <tr>
+                      <td class="low-table-padding red-text text-darken-1">1 1/2 tablespoons</td>
+                      <td class="low-table-padding">dried parsley flakes</td>
+                    </tr>
+                    <tr>
+                      <td class="low-table-padding red-text text-darken-1">1 teaspoon</td>
+                      <td class="low-table-padding">ground white pepper</td>
+                    </tr>
+                    <tr>
+                      <td class="low-table-padding red-text text-darken-1">1/4 teaspoon</td>
+                      <td class="low-table-padding">hot pepper sauce (optional)</td>
+                    </tr>
+                    <tr>
+                      <td class="low-table-padding red-text text-darken-1">1 teaspoon</td>
+                      <td class="low-table-padding">dried minced garlic (optional)</td>
+                    </tr>
+                  </table>
+                </div>
 
-            <a href="#" class="black-text">
-              <div class="col s12 m6 l4 recipe-card">
-                <div class="latest-recipes-card center">
-                  <div class="center-and-cropped-bg-no-border" style="background-image: url('img/steak.jpg')"></div>
-                  <h5>New York Strip</h5>
-                  <p class="light low-line-height">
-                    Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
-                    Dish Type: <strong>Main Course</strong></p>
-                  <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                  <ul class="light">
-                    <li>Total Cooking Time: <strong>120 minutes</strong></li>
-                    <li>Servings: <strong>8</strong></li>
-                  </ul>
-                  
-                  <div class="chip brown darken-4"><a href="#" class="white-text">Turkey</a></div>
-                  <div class="chip brown darken-4"><a href="#" class="white-text">Oven</a></div>
-                  <div class="chip brown darken-4"><a href="#" class="white-text">Latin</a></div>
-                </div>
-              </div>
-            </a>
-            
-            <a href="#" class="black-text">
-              <div class="col s12 m6 l4 recipe-card">
-                <div class="latest-recipes-card center">
-                  <div class="center-and-cropped-bg-no-border" style="background-image: url('img/braised_chicken_pancetta.jpg')"></div>
-                  <h5>Braised Chicken Pancetta</h5>
-                  <p class="light low-line-height">
-                    Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
-                    Dish Type: <strong>Main Course</strong></p>
-                  <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                  <ul class="light">
-                    <li>Total Cooking Time: <strong>120 minutes</strong></li>
-                    <li>Servings: <strong>8</strong></li>
-                  </ul>
-                  
-                  <div class="chip brown darken-4"><a href="#" class="white-text">Turkey</a></div>
-                  <div class="chip brown darken-4"><a href="#" class="white-text">Oven</a></div>
-                  <div class="chip brown darken-4"><a href="#" class="white-text">Latin</a></div>
-                </div>
-              </div>
-            </a>
-            
-            <a href="#" class="black-text">
-              <div class="col s12 m6 l4 recipe-card">
-                <div class="latest-recipes-card center">
-                  <div class="center-and-cropped-bg-no-border" style="background-image: url('img/steak.jpg')"></div>
-                  <h5>Perfect Coyboy Ribeyes</h5>
-                  <p class="light low-line-height">
-                    Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
-                    Dish Type: <strong>Main Course</strong></p>
-                  <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                  <ul class="light">
-                    <li>Total Cooking Time: <strong>120 minutes</strong></li>
-                    <li>Servings: <strong>8</strong></li>
-                  </ul>
-                  
-                <div class="chip brown darken-4"><a href="#" class="white-text">Turkey</a></div>
-                <div class="chip brown darken-4"><a href="#" class="white-text">Oven</a></div>
-                <div class="chip brown darken-4"><a href="#" class="white-text">Latin</a></div>
-                </div>
-              </div>
-            </a>
-            
-            <div class="col s12 m6 l4 recipe-card">
-              <div class="latest-recipes-card center">
-                <a href="#" class="black-text">
-                  <div class="center-and-cropped-bg-no-border" style="background-image: url('img/roasted_salmon.jpg')"></div>
-                  <h5>Roasted Salmon</h5>
-                </a>
-                <p class="light low-line-height">
-                  Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
-                  Dish Type: <strong>Main Course</strong></p>
-                <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                <ul class="light">
-                  <li>Total Cooking Time: <strong>120 minutes</strong></li>
-                  <li>Servings: <strong>8</strong></li>
-                </ul>
+                    
                 
-                <div class="chip brown darken-4"><a href="#" class="white-text">Turkey</a></div>
-                <div class="chip brown darken-4"><a href="#" class="white-text">Oven</a></div>
-                <div class="chip brown darken-4"><a href="#" class="white-text">Latin</a></div>
+                <div class="col s12 m5 left-align">
+                  <ol class="light recipe-directions">
+                    <li>Place the soy sauce, olive oil, lemon juice, Worcestershire sauce, garlic powder, basil, parsley, and pepper in a blender. Add hot pepper sauce and garlic, if desired. Blend on high speed for 30 seconds until thoroughly mixed.</li>
+                    <li>Pour marinade over desired type of meat. Cover, and refrigerate for up to 8 hours. Cook meat as desired.</li>
+                  </ol>                  
+                </div>
               </div>
+              
+              <div class="chip brown darken-4"><a href="#" class="white-text">Turkey</a></div>
+              <div class="chip brown darken-4"><a href="#" class="white-text">Oven</a></div>
+              <div class="chip brown darken-4"><a href="#" class="white-text">Latin</a></div>
             </div>
-
+            
           </div>        
         </div>
-      </div> <!-- end top recipes -->
-      
-     <div class="row">
-        <div class="col s12">
-         <div class="row section-header">
-            <!--<div class="col offset-m1 m10">-->
-              <h3 class="light center section-header">Latest Recipes</h3>
-            <!--</div>-->
-          </div>
-          <div class="row">
-            <div class="divider"></div>
-          </div>
-          <div class="row no-bot-margin">
-            <div class="col s12 m6 l4">
-              <div class="card hoverable grey lighten-3 no-top-margin">
-                <div class="card-image">
-                  <div class="center-and-cropped-bg" style="background-image: url('img/latin_turkey.png')"></div>
-                </div> <!-- end card-image -->
-                <div class="card-content no-top-bot-padding center">
-                  <h5>Latin Style Turkey</h5>
-                  <p class="light low-line-height">
-                    Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
-                    Dish Type: <strong>Main Course</strong></p>
-                  <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                  <ul class="light">
-                    <li>Total Cooking Time: <strong>120 minutes</strong></li>
-                    <li>Servings: <strong>8</strong></li>
-                  </ul>
-                </div> <!-- end card-content -->
-                <div class="card-action center">
-                  <div class="chip grey">Turkey<span class="badge">4</span></div>
-                  <div class="chip grey">Latin<span class="badge">3</span></div>
-                  <div class="chip grey">Oven<span class="badge">2</span></div>
-                </div> <!-- end card-action -->
-              </div> <!--- end card -->
-            </div> <!-- end col -->
-    
-            <div class="col s12 m6 l4">
-              <div class="card hoverable grey lighten-3 no-top-margin">
-                <div class="card-image">
-                  <div class="center-and-cropped-bg" style="background-image: url('img/roasted_salmon.jpg')"></div>
-                </div> <!-- end card-image -->
-                <div class="card-content no-top-bot-padding center">
-                  <h5>Roasted Salmon</h5>
-                  <p class="light low-line-height">
-                    Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
-                    Dish Type: <strong>Main Course</strong></p>
-                  <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                  <ul class="light">
-                    <li>Total Cooking Time: <strong>120 minutes</strong></li>
-                    <li>Servings: <strong>8</strong></li>
-                  </ul>
-                </div> <!-- end card-content -->
-                <div class="card-action center">
-                  <div class="chip grey">Turkey<span class="badge">4</span></div>
-                  <div class="chip grey">Latin<span class="badge">3</span></div>
-                  <div class="chip grey">Oven<span class="badge">2</span></div>
-                </div> <!-- end card-action -->
-              </div> <!--- end card -->
-            </div> <!-- end col -->
-            
-            <div class="col s12 m6 l4">
-              <div class="card hoverable grey lighten-3 no-top-margin">
-                <div class="card-image">
-                  <div class="center-and-cropped-bg" style="background-image: url('img/braised_chicken_pancetta.jpg')"></div>
-                </div> <!-- end card-image -->
-                <div class="card-content no-top-bot-padding center">
-                  <h5>Braised Chicken Pancetta</h5>
-                  <p class="light low-line-height">
-                    Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
-                    Dish Type: <strong>Main Course</strong></p>
-                  <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                  <ul class="light">
-                    <li>Total Cooking Time: <strong>120 minutes</strong></li>
-                    <li>Servings: <strong>8</strong></li>
-                  </ul>
-                </div> <!-- end card-content -->
-                <div class="card-action center">
-                  <div class="chip grey">Turkey<span class="badge">4</span></div>
-                  <div class="chip grey">Latin<span class="badge">3</span></div>
-                  <div class="chip grey">Oven<span class="badge">2</span></div>
-                </div> <!-- end card-action -->
-              </div> <!--- end card -->
-            </div> <!-- end col -->
-            
-            <div class="col s12 m6 l4">
-              <div class="card hoverable grey lighten-3 no-top-margin">
-                <div class="card-image">
-                  <div class="center-and-cropped-bg" style="background-image: url('img/steak.jpg')"></div>
-                </div> <!-- end card-image -->
-                <div class="card-content no-top-bot-padding center">
-                  <h5>Cowboy Ribeyes</h5>
-                  <p class="light low-line-height">
-                    Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
-                    Dish Type: <strong>Main Course</strong></p>
-                  <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                  <ul class="light">
-                    <li>Total Cooking Time: <strong>120 minutes</strong></li>
-                    <li>Servings: <strong>8</strong></li>
-                  </ul>
-                </div> <!-- end card-content -->
-                <div class="card-action center">
-                  <div class="chip grey">Turkey<span class="badge">4</span></div>
-                  <div class="chip grey">Latin<span class="badge">3</span></div>
-                  <div class="chip grey">Oven<span class="badge">2</span></div>
-                </div> <!-- end card-action -->
-              </div> <!--- end card -->
-            </div> <!-- end col -->
-            
-            <div class="col s12 m6 l4">
-              <div class="card hoverable grey lighten-3 no-top-margin">
-                <div class="card-image">
-                  <div class="center-and-cropped-bg" style="background-image: url('img/roasted_salmon.jpg')"></div>
-                </div> <!-- end card-image -->
-                <div class="card-content no-top-bot-padding center">
-                  <h5>Roasted Salmon</h5>
-                  <p class="light low-line-height">
-                    Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
-                    Dish Type: <strong>Main Course</strong></p>
-                  <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                  <ul class="light">
-                    <li>Total Cooking Time: <strong>120 minutes</strong></li>
-                    <li>Servings: <strong>8</strong></li>
-                  </ul>
-                </div> <!-- end card-content -->
-                <div class="card-action center">
-                  <div class="chip grey">Turkey<span class="badge">4</span></div>
-                  <div class="chip grey">Latin<span class="badge">3</span></div>
-                  <div class="chip grey">Oven<span class="badge">2</span></div>
-                </div> <!-- end card-action -->
-              </div> <!--- end card -->
-            </div> <!-- end col -->
-            
-            <div class="col s12 m6 l4">
-              <div class="card hoverable grey lighten-3 no-top-margin">
-                <div class="card-image">
-                  <div class="center-and-cropped-bg" style="background-image: url('img/latin_turkey.png')"></div>
-                </div> <!-- end card-image -->
-                <div class="card-content no-top-bot-padding center">
-                  <h5>Latin Style Turkey</h5>
-                  <p class="light low-line-height">
-                    Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
-                    Dish Type: <strong>Main Course</strong></p>
-                  <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                  <ul class="light">
-                    <li>Total Cooking Time: <strong>120 minutes</strong></li>
-                    <li>Servings: <strong>8</strong></li>
-                  </ul>
-                </div> <!-- end card-content -->
-                <div class="card-action center">
-                  <div class="chip grey">Turkey<span class="badge">4</span></div>
-                  <div class="chip grey">Latin<span class="badge">3</span></div>
-                  <div class="chip grey">Oven<span class="badge">2</span></div>
-                </div> <!-- end card-action -->
-              </div> <!--- end card -->
-            </div> <!-- end col -->
-
-          </div>        
-        </div>
-      </div> <!-- end latest recipes -->
+      </div> <!-- end recipe details -->
       
     </div>
   </div>
 
   <div class="parallax-container valign-wrapper">
-    <div class="parallax"><img src="img/background2.jpg" alt="Unsplashed background img 2"></div>
+    <div class="parallax"><img src="img/background3.jpg" alt=""></div>
   </div> <!-- end parallax-container -->
 
   <footer class="page-footer blue-brown darken-4">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="grey-text text-darken-3">More Information:</h5>
+          <h5 class="grey-text text-darken-1">More Information:</h5>
           <p class="grey-text text-lighten-4 light">I am a student at the Flatiron Scool, a coding Bootcamp that teaches full stack web development.  This project is a culimation of all of my learning through the program bringing together a Rails API backend with a sleek AngularJS front end.</p>
         </div>
         
         <div class="col l3 s12">
-          <h5 class="grey-text text-darken-3">Extras</h5>
+          <h5 class="grey-text text-darken-1">Extras</h5>
           <ul class="footer-links">
             <li><a class="white-text" href="#!">Profile</a></li>
             <li><a class="white-text" href="#!">Add a Recipe</a></li>
@@ -382,7 +182,7 @@
         </div>
         
         <div class="col l3 s12">
-          <h5 class="grey-text text-darken-3">Connect</h5>
+          <h5 class="grey-text text-darken-1">Connect</h5>
           <ul class="footer-links">
             <li><a class="grey-text text-lighten-4" href="#!">Facebook</a></li>
             <li><a class="white-text" href="#!">Twitter</a></li>
