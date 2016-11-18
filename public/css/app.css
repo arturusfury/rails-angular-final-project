@@ -27,6 +27,23 @@ p {
   color: #26a69a;
 }
 
+.center-and-cropped-bg-no-border {
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+  border: 1px #666666 solid;
+  border-radius: 5px;
+}
+
+.center-and-cropped-bg {
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+  border-bottom: 1px #666666 solid;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
 .parallax-container {
   min-height: 450px;
   line-height: 0;
@@ -40,6 +57,12 @@ p {
 }
 
 @media only screen and (max-width : 992px) {
+  .parallax-container {
+    min-height: 400px;
+  }
+  .parallax-container img {
+    height: 50%;
+  }
   .parallax-container .section {
     position: absolute;
     top: 40%;
@@ -50,8 +73,17 @@ p {
 }
 
 @media only screen and (max-width : 600px) {
+  .parallax-container {
+    min-height: 300px;
+  }
+  .parallax-container img {
+    height: 50%;
+  }
   #index-banner .section {
     top: 0;
+  }
+  .center-and-cropped-bg {
+    height: 150px;
   }
 }
 
@@ -73,23 +105,6 @@ p {
 .card-action {
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
-}
-
-.center-and-cropped-bg-no-border {
-  height: 200px;
-  background-position: center;
-  background-size: cover;
-  border: 1px #666666 solid;
-  border-radius: 5px;
-}
-
-.center-and-cropped-bg {
-  height: 200px;
-  background-position: center;
-  background-size: cover;
-  border-bottom: 1px #666666 solid;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
 }
 
 div.divider {
