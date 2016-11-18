@@ -1,25 +1,14 @@
 (function($){
   $(function(){
 
-    $('.button-collapse').sideNav();
-    $('.parallax').parallax();
-    
-    $('.card-content').matchHeight({
-      byRow: false,
-      property: 'height'
-    });
- 
-    $('.card-action').matchHeight({
-      byRow: false,
-      property: 'height'
-    });
-    
   }); // end of document ready
 })(jQuery); // end of jQuery name space
 
 $(document).ready(function() {
+  $('.button-collapse').sideNav();
+  $('.parallax').parallax();
   $('select').material_select();
-  
+
   $('#ingredient.autocomplete').autocomplete({
     data: {
       "New York Strip": null,
@@ -29,7 +18,7 @@ $(document).ready(function() {
       "Basil": null,
     }
   });
-  
+
   $('#measure.autocomplete').autocomplete({
     data: {
       "Clove(s)": null,
@@ -43,5 +32,15 @@ $(document).ready(function() {
       "Oz": null,
       "Pound(s)": null
     }
+  });
+
+  $('.card-content').matchHeight({
+    byRow: false,
+    property: 'height'
+  });
+
+  $('.card-action').matchHeight({
+    byRow: false,
+    property: 'height'
   });
 });
