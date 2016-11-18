@@ -1,0 +1,153 @@
+<div id="index-banner" class="parallax-container">
+  <div class="parallax"><img src="img/background3.jpg"></div>
+</div> <!-- end parallax-container -->
+
+<div class="container">
+  <div class="section">
+
+    <div class="row no-bot-margin">
+      <div class="col s12">
+        <div class="row section-header">
+          <h3 class="light center section-header">Edit Recipe</h3>
+        </div>
+
+        <div class="row no-bot-margin">
+          <div class="divider no-bot-margin"></div>
+        </div>
+
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="recipe_title" type="text" class="validate">
+                <label for="recipe_title">Recipe Title</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12 m4">
+                <i class="material-icons prefix top-margin-5">query_builder</i>
+                <input id="prep_time" type="number" class="validate">
+                <label for="prep_time">Prep Time (Minutes)</label>
+              </div>
+              <div class="input-field col s12 m4">
+                <i class="material-icons prefix top-margin-5">query_builder</i>
+                <input id="cooking_time" type="number" class="validate">
+                <label for="cooking_time">Cooking Time (Minutes)</label>
+              </div>
+              <div class="input-field col s12 m4">
+                <i class="material-icons prefix top-margin-5">supervisor_account</i>
+                <input id="total_servings" type="number" class="validate">
+                <label for="total_servings">Total Servings</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <select id="dish_type">
+                  <option value="" disabled selected>Select a type of dish</option>
+                  <option value="1">Main Course</option>
+                  <option value="2">Side Dish</option>
+                  <option value="3">Desert</option>
+                </select>
+                <label>Dish Type</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea id="description" class="materialize-textarea"></textarea>
+                <label for="description">Description</label>
+              </div>
+            </div>
+
+            <div class="file-field input-field">
+              <div class="btn red">
+                <span>Select Image</span>
+                <input type="file" id="image_url">
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+              </div>
+            </div>
+
+            <br><br>
+            <div class="row section-header">
+              <h4 class="light center section-header">Ingredients</h4>
+            </div>
+
+            <div class="row">
+              <div class="divider"></div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s4 m2 l1">
+                <input id="quantity" type="text" class="validate">
+                <label for="quantity">Qty</label>
+              </div>
+
+              <div class="input-field col s8 m4 l3">
+                <input id="measure" type="text" class="validate autocomplete">
+                <label for="measure">Measure</label>
+              </div>
+
+              <div class="input-field col s12 m6 l8">
+                <input id="ingredient" type="text" class="validate autocomplete">
+                <label for="ingredient">Ingredient</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col s12 center">
+                <button class="btn waves-effect waves-light red" type="submit" name="action">Add More
+                  <i class="material-icons right">add</i>
+                </button>
+              </div>
+            </div>
+
+            <br><br>
+            <div class="row section-header">
+              <h4 class="light center section-header">Directions</h4>
+            </div>
+
+            <div class="row">
+              <div class="divider"></div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea id="direction" class="materialize-textarea"></textarea>
+                <label for="direction">Direction</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col s12 center">
+                <button class="btn waves-effect waves-light red" type="submit" name="action">Add More
+                  <i class="material-icons right">add</i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="row">
+          <div class="col s12 center">
+            <button class="btn waves-effect waves-light red" type="submit" name="action">Add!
+              <i class="material-icons right">done</i>
+            </button>
+            <button class="btn waves-effect waves-light red" type="submit" name="action">Cancel
+              <i class="material-icons right">not_interested</i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div> <!-- end recipe information -->
+
+  </div>
+</div>
+
+<div class="parallax-container valign-wrapper">
+  <div class="parallax"><img src="img/background5.jpg" alt=""></div>
+</div> <!-- end parallax-container -->
