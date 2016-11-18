@@ -15,7 +15,17 @@ angular
     .state('recipes', {
       url: '/recipes',
       templateUrl: 'views/recipes/Recipes.List.controller.html',
-      controller: 'RecipesController',
+      controller: 'RecipesListController',
+      resolve: {
+        recipes: function ($http) {
+          // return $http.get('http://localhost:3000/api/v1/recipes/')
+        }
+      }
+    })
+    .state('recipe_add', {
+      url: '/recipes/add',
+      templateUrl: 'views/recipes/Recipe.Add.controller.html',
+      controller: 'RecipeAddController',
       resolve: {
         recipes: function ($http) {
           // return $http.get('http://localhost:3000/api/v1/recipes/')
