@@ -33,14 +33,4 @@ $(document).ready(function() {
       "Pound(s)": null
     }
   });
-
-  $('.card-content').matchHeight({
-    byRow: false,
-    property: 'height'
-  });
-
-  $('.card-action').matchHeight({
-    byRow: false,
-    property: 'height'
-  });
 });
