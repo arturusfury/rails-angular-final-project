@@ -57,12 +57,12 @@ p {
 }
 
 @media only screen and (max-width : 992px) {
-  .parallax-container {
+  /*.parallax-container {
     min-height: 400px;
-  }
-  .parallax-container img {
+  }*/
+  /*.parallax-container img {
     height: 50%;
-  }
+  }*/
   .parallax-container .section {
     position: absolute;
     top: 40%;
@@ -73,12 +73,12 @@ p {
 }
 
 @media only screen and (max-width : 600px) {
-  .parallax-container {
+  /*.parallax-container {
     min-height: 300px;
-  }
-  .parallax-container img {
+  }*/
+  /*.parallax-container img {
     height: 50%;
-  }
+  }*/
   #index-banner .section {
     top: 0;
   }

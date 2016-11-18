@@ -1,16 +1,19 @@
 angular
   .module('recipeBox', ['ui.router', 'ui.materialize'])
-  .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+  .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
+
+  $urlRouterProvider.when('/', '/recipeBox').otherwise('/main');
+
+  // // use the HTML5 History API
+  // $locationProvider.html5Mode(true)
+  //     // Use ! for spiders and old browsers, looks like /#!/path
+  //     .hashPrefix('!');
+
   $stateProvider
     .state('main', {
       url: '/',
-      templateUrl: 'views/Main.controller.html',
-      controller: 'MainController',
-      resolve: {
-        recipes: function ($http) {
-          // return $http.get('http://localhost:3000/api/v1/recipes/')
-        }
-      }
+      templateUrl: 'views/Main.controller.html'
+      // controller: 'MainController',
     })
     .state('main.list', {
       url: 'main',
@@ -62,6 +65,4 @@ angular
         }
       }
     });
-
-    $urlRouterProvider.otherwise('/');
 }]);
