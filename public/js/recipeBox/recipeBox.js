@@ -14,7 +14,7 @@ angular
     })
     .state('recipes', {
       url: '/recipes',
-      templateUrl: 'views/Recipes.controller.html',
+      templateUrl: 'views/recipes/Recipes.List.controller.html',
       controller: 'RecipesController',
       resolve: {
         recipes: function ($http) {
@@ -24,7 +24,7 @@ angular
     })
     .state('recipe', {
       url: '/recipes/:id',
-      templateUrl: 'views/RecipeDetails.controller.html',
+      templateUrl: 'views/recipes/Recipe.Details.controller.html',
       controller: 'RecipeDetailsController',
       resolve: {
         recipe: function ($http, $stateParams) {
