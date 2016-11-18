@@ -9,6 +9,9 @@
 nav ul a,
 nav .brand-logo {
   color: #444;
+}
+
+.uppercase {
   text-transform: uppercase;
 }
 
