@@ -1,25 +1,23 @@
-var app = angular.module('recipeBox', [
-  'ui.router'
-]);
-
-app.config(['$stateProvider', function($stateProvider) {
+angular
+  .module('recipeBox', ['ui.router'])
+  .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
   $stateProvider
-    .state('/', {
+    .state('main', {
       url: '/',
-      templateUrl: 'views/RecipesMain.controller.html',
-      controller: 'RecipeMainController',
-      controllerAs: 'MainCtrl',
+      templateUrl: 'views/Main.controller.html',
+      controller: 'MainController',
       resolve: {
-
+        recipes: function ($http) {
+          return $http.get('http://localhost:3000/api/v1/recipes/')
+        }
       }
     })
     .state('recipes', {
       url: '/recipes',
       templateUrl: 'views/Recipes.controller.html',
       controller: 'RecipesController',
-      controllerAs: 'RecipesCtrl',
       resolve: {
-        recipe: function ($http, $stateParams) {
+        recipes: function ($http) {
           return $http.get('http://localhost:3000/api/v1/recipes/')
         }
       }
@@ -28,14 +26,12 @@ app.config(['$stateProvider', function($stateProvider) {
       url: '/recipes/:id',
       templateUrl: 'views/RecipeDetails.controller.html',
       controller: 'RecipeDetailsController',
-      controllerAs: 'RecipeCtrl',
       resolve: {
         recipe: function ($http, $stateParams) {
           return $http.get('http://localhost:3000/api/v1/recipes/' + $stateParams.id)
         }
       }
-    })
-    .otherwise({
-      redirectTo: '/';
     });
+
+    $urlRouterProvider.otherwise('/');
 }]);
