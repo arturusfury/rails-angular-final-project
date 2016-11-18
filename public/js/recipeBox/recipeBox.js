@@ -4,11 +4,6 @@ angular
 
   $urlRouterProvider.when('/', '/recipeBox').otherwise('/main');
 
-  // // use the HTML5 History API
-  // $locationProvider.html5Mode(true)
-  //     // Use ! for spiders and old browsers, looks like /#!/path
-  //     .hashPrefix('!');
-
   $stateProvider
     .state('main', {
       url: '/',
