@@ -162,3 +162,7 @@ div.divider {
   padding-bottom: 5px;
   margin-top: 15px !important;
 }
+
+.top-margin-5 {
+  margin-top: 5px !important;
+}
