@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app='recipeBox'>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
     <title>Recipe Box</title>
-  
+
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -14,13 +14,13 @@
 
 <body>
   <nav class="white" role="navigation">
-    
+
     <!-- Dropdown Structure -->
     <ul id="dropdown1" class="dropdown-content">
       <li><a href="#!" class="black-text">Settings</a></li>
       <li><a href="#!" class="black-text">Logout</a></li>
     </ul>
-    
+
     <div class="nav-wrapper container">
       <a id="logo-container" href="/rails-angular-final-project/public/index.html" class="brand-logo">Recipe<span class="red-text">Box</span></a>
       <ul class="right hide-on-med-and-down">
@@ -38,7 +38,7 @@
       <ul id="nav-mobile" class="side-nav">
         <li><a href="/rails-angular-final-project/public/recipe-list.html">All Recipes</a></li>
         <li><a href="/rails-angular-final-project/public/recipe-add.html">Add a Recipes</a></li>
-        <li class="divider"></li>  
+        <li class="divider"></li>
         <li><a href="#!">Profile</a></li>
         <li><a href="#!">Settings</a></li>
         <li class="divider"></li>
@@ -48,370 +48,7 @@
     </div> <!-- end nav-wrapper -->
   </nav><!-- end navigation -->
 
-  <div id="index-banner" class="parallax-container">
-    <div class="parallax"><img src="img/background1.jpg"></div>
-  </div> <!-- end parallax-container -->
-
-  <div class="container">
-    <div class="section">
-      
-      <div class="row no-bot-margin">
-        <div class="col s12">
-          <div class="row section-header">
-            <h3 class="light center section-header">Top Recipes</h3>
-          </div>
-          <div class="row">
-            <div class="divider"></div>
-          </div>
-          <div class="row no-bot-margin">
-            
-            <div class="col s12 m6 l4">
-              <a href="recipe-details.html" class="black-text">
-                <div class="card hoverable no-top-margin recipe-card">
-                  <div class="card-image">
-                    <div class="center-and-cropped-bg" style="background-image: url('img/latin_turkey.png')"></div>
-                  </div> <!-- end card-image -->
-                  <div class="card-content no-top-bot-padding center">
-                    <h5>Latin Style Turkey</h5>
-                    <p class="light low-line-height">
-                      Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
-                      Dish Type: <strong>Main Course</strong></p>
-                    <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                  </div>
-                  <div class="card-action center grey lighten-4">
-                    <ul class="light no-top-bot-margin">
-                      <li>Total Cooking Time: <strong>120 minutes</strong></li>
-                      <li>Servings: <strong>8</strong></li>
-                    </ul>
-                  </div> <!-- end card-content -->
-                </div> <!--- end card -->
-              </a>
-            </div> <!-- end col -->
-    
-            <div class="col s12 m6 l4">
-              <a href="recipe-details.html" class="black-text">
-                <div class="card hoverable no-top-margin recipe-card">
-                  <div class="card-image">
-                    <div class="center-and-cropped-bg" style="background-image: url('img/roasted_salmon.jpg')"></div>
-                  </div> <!-- end card-image -->
-                  <div class="card-content no-top-bot-padding center">
-                    <h5>Roasted Salmon</h5>
-                    <p class="light low-line-height">
-                      Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
-                      Dish Type: <strong>Main Course</strong></p>
-                    <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                  </div>
-                  <div class="card-action center grey lighten-4">
-                    <ul class="light no-top-bot-margin">
-                      <li>Total Cooking Time: <strong>120 minutes</strong></li>
-                      <li>Servings: <strong>8</strong></li>
-                    </ul>
-                  </div> <!-- end card-content -->
-                </div> <!--- end card -->
-              </a>
-            </div> <!-- end col -->
-            
-            <div class="col s12 m6 l4">
-              <a href="recipe-details.html" class="black-text">
-                <div class="card hoverable no-top-margin recipe-card">
-                  <div class="card-image">
-                    <div class="center-and-cropped-bg" style="background-image: url('img/braised_chicken_pancetta.jpg')"></div>
-                  </div> <!-- end card-image -->
-                  <div class="card-content no-top-bot-padding center">
-                    <h5>Braised Chicken Pancetta</h5>
-                    <p class="light low-line-height">
-                      Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
-                      Dish Type: <strong>Main Course</strong></p>
-                    <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                  </div>
-                  <div class="card-action center grey lighten-4">
-                    <ul class="light no-top-bot-margin">
-                      <li>Total Cooking Time: <strong>120 minutes</strong></li>
-                      <li>Servings: <strong>8</strong></li>
-                    </ul>
-                  </div> <!-- end card-content -->
-                </div> <!--- end card -->
-              </a>
-            </div> <!-- end col -->
-            
-            <div class="col s12 m6 l4">
-              <a href="recipe-details.html" class="black-text">
-                <div class="card hoverable no-top-margin recipe-card">
-                  <div class="card-image">
-                    <div class="center-and-cropped-bg" style="background-image: url('img/steak.jpg')"></div>
-                  </div> <!-- end card-image -->
-                  <div class="card-content no-top-bot-padding center">
-                    <h5>Cowboy Ribeyes</h5>
-                    <p class="light low-line-height">
-                      Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
-                      Dish Type: <strong>Main Course</strong></p>
-                    <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                  </div>
-                  <div class="card-action center grey lighten-4">
-                    <ul class="light no-top-bot-margin">
-                      <li>Total Cooking Time: <strong>120 minutes</strong></li>
-                      <li>Servings: <strong>8</strong></li>
-                    </ul>
-                  </div> <!-- end card-content -->
-                </div> <!--- end card -->
-              </a>
-            </div> <!-- end col -->
-            
-            <div class="col s12 m6 l4">
-              <a href="recipe-details.html" class="black-text">
-                <div class="card hoverable no-top-margin recipe-card">
-                  <div class="card-image">
-                    <div class="center-and-cropped-bg" style="background-image: url('img/cheese_tomatoes.jpg')"></div>
-                  </div> <!-- end card-image -->
-                  <div class="card-content no-top-bot-padding center">
-                    <h5>Mozzarella & Cherry Tomatoes</h5>
-                    <p class="light low-line-height">
-                      Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
-                      Dish Type: <strong>Side Dish</strong></p>
-                    <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                  </div>
-                  <div class="card-action center grey lighten-4">
-                    <ul class="light no-top-bot-margin">
-                      <li>Total Cooking Time: <strong>5 minutes</strong></li>
-                      <li>Servings: <strong>8</strong></li>
-                    </ul>
-                  </div> <!-- end card-content -->
-                </div> <!--- end card -->
-              </a>
-            </div> <!-- end col -->
-            
-            <div class="col s12 m6 l4">
-              <a href="recipe-details.html" class="black-text">
-                <div class="card hoverable no-top-margin recipe-card">
-                  <div class="card-image">
-                    <div class="center-and-cropped-bg" style="background-image: url('img/burgers.jpeg')"></div>
-                  </div> <!-- end card-image -->
-                  <div class="card-content no-top-bot-padding center">
-                    <h5>Grilled Juicy Burgers</h5>
-                    <p class="light low-line-height">
-                      Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
-                      Dish Type: <strong>Main Course</strong></p>
-                    <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                  </div>
-                  <div class="card-action center grey lighten-4">
-                    <ul class="light no-top-bot-margin">
-                      <li>Total Cooking Time: <strong>25 minutes</strong></li>
-                      <li>Servings: <strong>4</strong></li>
-                    </ul>
-                  </div> <!-- end card-content -->
-                </div> <!--- end card -->
-              </a>
-            </div> <!-- end col -->
-
-          </div>        
-        </div>
-      </div> <!-- end top recipes -->
-      
-     <div class="row">
-        <div class="col s12">
-         <div class="row section-header">
-            <!--<div class="col offset-m1 m10">-->
-              <h3 class="light center section-header">Latest Recipes</h3>
-            <!--</div>-->
-          </div>
-          <div class="row">
-            <div class="divider"></div>
-          </div>
-          <div class="row no-bot-margin">
-            <div class="col s12 m4 l3">
-              <a href="recipe-details.html" class="black-text">
-                <div class="card hoverable no-top-margin recipe-card">
-                  <div class="card-image">
-                    <div class="center-and-cropped-bg" style="background-image: url('img/latin_turkey.png')"></div>
-                  </div> <!-- end card-image -->
-                  <div class="card-content no-top-bot-padding center">
-                    <h5>Latin Style Turkey</h5>
-                    <p class="light low-line-height">
-                      Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
-                      Dish Type: <strong>Main Course</strong></p>
-                    <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                  </div>
-                  <div class="card-action center grey lighten-4">
-                    <ul class="light no-top-bot-margin">
-                      <li>Total Cooking Time: <strong>120 minutes</strong></li>
-                      <li>Servings: <strong>8</strong></li>
-                    </ul>
-                  </div> <!-- end card-content -->
-                </div> <!--- end card -->
-              </a>
-            </div> <!-- end col -->
-    
-            <div class="col s12 m4 l3">
-              <a href="recipe-details.html" class="black-text">
-                <div class="card hoverable no-top-margin recipe-card">
-                  <div class="card-image">
-                    <div class="center-and-cropped-bg" style="background-image: url('img/roasted_salmon.jpg')"></div>
-                  </div> <!-- end card-image -->
-                  <div class="card-content no-top-bot-padding center">
-                    <h5>Roasted Salmon</h5>
-                    <p class="light low-line-height">
-                      Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
-                      Dish Type: <strong>Main Course</strong></p>
-                    <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                  </div>
-                  <div class="card-action center grey lighten-4">
-                    <ul class="light no-top-bot-margin">
-                      <li>Total Cooking Time: <strong>120 minutes</strong></li>
-                      <li>Servings: <strong>8</strong></li>
-                    </ul>
-                  </div> <!-- end card-content -->
-                </div> <!--- end card -->
-              </a>
-            </div> <!-- end col -->
-            
-            <div class="col s12 m4 l3">
-              <a href="recipe-details.html" class="black-text">
-                <div class="card hoverable no-top-margin recipe-card">
-                  <div class="card-image">
-                    <div class="center-and-cropped-bg" style="background-image: url('img/braised_chicken_pancetta.jpg')"></div>
-                  </div> <!-- end card-image -->
-                  <div class="card-content no-top-bot-padding center">
-                    <h5>Braised Chicken Pancetta</h5>
-                    <p class="light low-line-height">
-                      Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
-                      Dish Type: <strong>Main Course</strong></p>
-                    <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                  </div>
-                  <div class="card-action center grey lighten-4">
-                    <ul class="light no-top-bot-margin">
-                      <li>Total Cooking Time: <strong>120 minutes</strong></li>
-                      <li>Servings: <strong>8</strong></li>
-                    </ul>
-                  </div> <!-- end card-content -->
-                </div> <!--- end card -->
-              </a>
-            </div> <!-- end col -->
-            
-            <div class="col s12 m4 l3">
-              <a href="recipe-details.html" class="black-text">
-                <div class="card hoverable no-top-margin recipe-card">
-                  <div class="card-image">
-                    <div class="center-and-cropped-bg" style="background-image: url('img/steak.jpg')"></div>
-                  </div> <!-- end card-image -->
-                  <div class="card-content no-top-bot-padding center">
-                    <h5>Cowboy Ribeyes</h5>
-                    <p class="light low-line-height">
-                      Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
-                      Dish Type: <strong>Main Course</strong></p>
-                    <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                  </div>
-                  <div class="card-action center grey lighten-4">
-                    <ul class="light no-top-bot-margin">
-                      <li>Total Cooking Time: <strong>120 minutes</strong></li>
-                      <li>Servings: <strong>8</strong></li>
-                    </ul>
-                  </div> <!-- end card-content -->
-                </div> <!--- end card -->
-              </a>
-            </div> <!-- end col -->
-            
-            <div class="col s12 m4 l3">
-              <a href="recipe-details.html" class="black-text">
-                <div class="card hoverable no-top-margin recipe-card">
-                  <div class="card-image">
-                    <div class="center-and-cropped-bg" style="background-image: url('img/cheese_tomatoes.jpg')"></div>
-                  </div> <!-- end card-image -->
-                  <div class="card-content no-top-bot-padding center">
-                    <h5>Mozzarella & Cherry Tomatoes</h5>
-                    <p class="light low-line-height">
-                      Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
-                      Dish Type: <strong>Side Dish</strong></p>
-                    <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                  </div>
-                  <div class="card-action center grey lighten-4">
-                    <ul class="light no-top-bot-margin">
-                      <li>Total Cooking Time: <strong>5 minutes</strong></li>
-                      <li>Servings: <strong>8</strong></li>
-                    </ul>
-                  </div> <!-- end card-content -->
-                </div> <!--- end card -->
-              </a>
-            </div> <!-- end col -->
-            
-            <div class="col s12 m4 l3">
-              <a href="recipe-details.html" class="black-text">
-                <div class="card hoverable no-top-margin recipe-card">
-                  <div class="card-image">
-                    <div class="center-and-cropped-bg" style="background-image: url('img/burgers.jpeg')"></div>
-                  </div> <!-- end card-image -->
-                  <div class="card-content no-top-bot-padding center">
-                    <h5>Grilled Juicy Burgers</h5>
-                    <p class="light low-line-height">
-                      Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
-                      Dish Type: <strong>Main Course</strong></p>
-                    <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                  </div>
-                  <div class="card-action center grey lighten-4">
-                    <ul class="light no-top-bot-margin">
-                      <li>Total Cooking Time: <strong>25 minutes</strong></li>
-                      <li>Servings: <strong>4</strong></li>
-                    </ul>
-                  </div> <!-- end card-content -->
-                </div> <!--- end card -->
-              </a>
-            </div> <!-- end col -->
-            
-            <div class="col s12 m4 l3">
-              <a href="recipe-details.html" class="black-text">
-                <div class="card hoverable no-top-margin recipe-card">
-                  <div class="card-image">
-                    <div class="center-and-cropped-bg" style="background-image: url('img/roasted_salmon.jpg')"></div>
-                  </div> <!-- end card-image -->
-                  <div class="card-content no-top-bot-padding center">
-                    <h5>Roasted Salmon</h5>
-                    <p class="light low-line-height">
-                      Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
-                      Dish Type: <strong>Main Course</strong></p>
-                    <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                  </div>
-                  <div class="card-action center grey lighten-4">
-                    <ul class="light no-top-bot-margin">
-                      <li>Total Cooking Time: <strong>120 minutes</strong></li>
-                      <li>Servings: <strong>8</strong></li>
-                    </ul>
-                  </div> <!-- end card-content -->
-                </div> <!--- end card -->
-              </a>
-            </div> <!-- end col -->
-            
-            <div class="col s12 m4 l3">
-              <a href="recipe-details.html" class="black-text">
-                <div class="card hoverable no-top-margin recipe-card">
-                  <div class="card-image">
-                    <div class="center-and-cropped-bg" style="background-image: url('img/latin_turkey.png')"></div>
-                  </div> <!-- end card-image -->
-                  <div class="card-content no-top-bot-padding center">
-                    <h5>Latin Style Turkey</h5>
-                    <p class="light low-line-height">
-                      Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
-                      Dish Type: <strong>Main Course</strong></p>
-                    <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                  </div>
-                  <div class="card-action center grey lighten-4">
-                    <ul class="light no-top-bot-margin">
-                      <li>Total Cooking Time: <strong>120 minutes</strong></li>
-                      <li>Servings: <strong>8</strong></li>
-                    </ul>
-                  </div> <!-- end card-content -->
-                </div> <!--- end card -->
-              </a>
-            </div> <!-- end col -->
-
-          </div>        
-        </div>
-      </div> <!-- end latest recipes -->
-      
-    </div>
-  </div>
-
-  <div class="parallax-container valign-wrapper">
-    <div class="parallax"><img src="img/background2.jpg" alt="Unsplashed background img 2"></div>
-  </div> <!-- end parallax-container -->
+  <div ui-view></div>
 
   <footer class="page-footer blue-brown darken-4">
     <div class="container">
@@ -420,7 +57,7 @@
           <h5 class="grey-text text-darken-3">More Information:</h5>
           <p class="grey-text text-lighten-4 light">I am a student at the Flatiron Scool, a coding Bootcamp that teaches full stack web development.  This project is a culimation of all of my learning through the program bringing together a Rails API backend with a sleek AngularJS front end.</p>
         </div>
-        
+
         <div class="col l3 s12">
           <h5 class="grey-text text-darken-3">Extras</h5>
           <ul class="footer-links">
@@ -430,7 +67,7 @@
             <li><a class="white-text" href="#!">Contact Us</a></li>
           </ul>
         </div>
-        
+
         <div class="col l3 s12">
           <h5 class="grey-text text-darken-3">Connect</h5>
           <ul class="footer-links">
@@ -455,6 +92,12 @@
   <script src="js/jquery.matchHeight.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
+
+  <!-- AngularJS Files -->
+  <script src="js/app/angular.js"></script>
+  <script src="js/app/angular-ui-router.js"></script>
+  <script src="js/app/app.js"></script>
+  <script src="js/app/controllers/RecipesMain.controller.js"></script>
 
   </body>
 </html>

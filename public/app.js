@@ -6,7 +6,7 @@ app.config(['$stateProvider', function($stateProvider) {
   $stateProvider
     .state('/', {
       url: '/',
-      templateUrl: 'index.html',
+      templateUrl: 'views/RecipesMain.controller.html',
       controller: 'RecipeMainController',
       controllerAs: 'MainCtrl',
       resolve: {
