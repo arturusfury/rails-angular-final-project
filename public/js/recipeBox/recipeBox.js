@@ -1,5 +1,5 @@
 angular
-  .module('recipeBox', ['ui.router'])
+  .module('recipeBox', ['ui.router', 'ui.materialize'])
   .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('main', {
