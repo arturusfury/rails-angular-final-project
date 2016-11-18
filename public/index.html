@@ -1,162 +1,458 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-  <title>Recipe Box</title>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <title>Recipe Box</title>
+  
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/app.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link rel='shortcut icon' href='favicon.ico' type='image/x-icon' />
+  </head>
 
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/app.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-</head>
 <body>
   <nav class="white" role="navigation">
+    
+    <!-- Dropdown Structure -->
+    <ul id="dropdown1" class="dropdown-content">
+      <li><a href="#!" class="black-text">Settings</a></li>
+      <li><a href="#!" class="black-text">Logout</a></li>
+    </ul>
+    
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">RecipeBox</a>
+      <a id="logo-container" href="/rails-angular-final-project/public/index.html" class="brand-logo">Recipe<span class="red-text">Box</span></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
+        <li><a href="/rails-angular-final-project/public/recipe-add.html">Add a Recipe</a></li>
+        <li><a href="/rails-angular-final-project/public/recipe-list.html">All Recipes</a></li>
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons right">supervisor_account arrow_drop_down</i></a></li>
       </ul>
-
+      <form class="right hide-on-med-and-down">
+        <div class="input-field">
+          <input id="search" type="search" required>
+          <label for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+      </form>
       <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
+        <li><a href="/rails-angular-final-project/public/recipe-list.html">All Recipes</a></li>
+        <li><a href="/rails-angular-final-project/public/recipe-add.html">Add a Recipes</a></li>
+        <li class="divider"></li>  
+        <li><a href="#!">Profile</a></li>
+        <li><a href="#!">Settings</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">Logout</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
+    </div> <!-- end nav-wrapper -->
+  </nav><!-- end navigation -->
 
   <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-        <h1 class="header center teal-text text-lighten-2">Parallax Template</h1>
-        <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-        </div>
-        <div class="row center">
-          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
-        </div>
-        <br><br>
-
-      </div>
-    </div>
-    <div class="parallax"><img src="img/background1.jpg" alt="Unsplashed background img 1"></div>
-  </div>
-
+    <div class="parallax"><img src="img/background1.jpg"></div>
+  </div> <!-- end parallax-container -->
 
   <div class="container">
     <div class="section">
-
-      <!--   Icon Section   -->
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Speeds up development</h5>
-
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+      
+      <div class="row no-bot-margin">
+        <div class="col s12">
+          <div class="row section-header">
+            <h3 class="light center section-header">Top Recipes</h3>
           </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">User Experience Focused</h5>
-
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+          <div class="row">
+            <div class="divider"></div>
           </div>
+          <div class="row no-bot-margin">
+            
+            <div class="col s12 m6 l4">
+              <a href="recipe-details.html" class="black-text">
+                <div class="card hoverable no-top-margin recipe-card">
+                  <div class="card-image">
+                    <div class="center-and-cropped-bg" style="background-image: url('img/latin_turkey.png')"></div>
+                  </div> <!-- end card-image -->
+                  <div class="card-content no-top-bot-padding center">
+                    <h5>Latin Style Turkey</h5>
+                    <p class="light low-line-height">
+                      Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
+                      Dish Type: <strong>Main Course</strong></p>
+                    <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                  </div>
+                  <div class="card-action center grey lighten-4">
+                    <ul class="light no-top-bot-margin">
+                      <li>Total Cooking Time: <strong>120 minutes</strong></li>
+                      <li>Servings: <strong>8</strong></li>
+                    </ul>
+                  </div> <!-- end card-content -->
+                </div> <!--- end card -->
+              </a>
+            </div> <!-- end col -->
+    
+            <div class="col s12 m6 l4">
+              <a href="recipe-details.html" class="black-text">
+                <div class="card hoverable no-top-margin recipe-card">
+                  <div class="card-image">
+                    <div class="center-and-cropped-bg" style="background-image: url('img/roasted_salmon.jpg')"></div>
+                  </div> <!-- end card-image -->
+                  <div class="card-content no-top-bot-padding center">
+                    <h5>Roasted Salmon</h5>
+                    <p class="light low-line-height">
+                      Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
+                      Dish Type: <strong>Main Course</strong></p>
+                    <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                  </div>
+                  <div class="card-action center grey lighten-4">
+                    <ul class="light no-top-bot-margin">
+                      <li>Total Cooking Time: <strong>120 minutes</strong></li>
+                      <li>Servings: <strong>8</strong></li>
+                    </ul>
+                  </div> <!-- end card-content -->
+                </div> <!--- end card -->
+              </a>
+            </div> <!-- end col -->
+            
+            <div class="col s12 m6 l4">
+              <a href="recipe-details.html" class="black-text">
+                <div class="card hoverable no-top-margin recipe-card">
+                  <div class="card-image">
+                    <div class="center-and-cropped-bg" style="background-image: url('img/braised_chicken_pancetta.jpg')"></div>
+                  </div> <!-- end card-image -->
+                  <div class="card-content no-top-bot-padding center">
+                    <h5>Braised Chicken Pancetta</h5>
+                    <p class="light low-line-height">
+                      Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
+                      Dish Type: <strong>Main Course</strong></p>
+                    <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                  </div>
+                  <div class="card-action center grey lighten-4">
+                    <ul class="light no-top-bot-margin">
+                      <li>Total Cooking Time: <strong>120 minutes</strong></li>
+                      <li>Servings: <strong>8</strong></li>
+                    </ul>
+                  </div> <!-- end card-content -->
+                </div> <!--- end card -->
+              </a>
+            </div> <!-- end col -->
+            
+            <div class="col s12 m6 l4">
+              <a href="recipe-details.html" class="black-text">
+                <div class="card hoverable no-top-margin recipe-card">
+                  <div class="card-image">
+                    <div class="center-and-cropped-bg" style="background-image: url('img/steak.jpg')"></div>
+                  </div> <!-- end card-image -->
+                  <div class="card-content no-top-bot-padding center">
+                    <h5>Cowboy Ribeyes</h5>
+                    <p class="light low-line-height">
+                      Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
+                      Dish Type: <strong>Main Course</strong></p>
+                    <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                  </div>
+                  <div class="card-action center grey lighten-4">
+                    <ul class="light no-top-bot-margin">
+                      <li>Total Cooking Time: <strong>120 minutes</strong></li>
+                      <li>Servings: <strong>8</strong></li>
+                    </ul>
+                  </div> <!-- end card-content -->
+                </div> <!--- end card -->
+              </a>
+            </div> <!-- end col -->
+            
+            <div class="col s12 m6 l4">
+              <a href="recipe-details.html" class="black-text">
+                <div class="card hoverable no-top-margin recipe-card">
+                  <div class="card-image">
+                    <div class="center-and-cropped-bg" style="background-image: url('img/cheese_tomatoes.jpg')"></div>
+                  </div> <!-- end card-image -->
+                  <div class="card-content no-top-bot-padding center">
+                    <h5>Mozzarella & Cherry Tomatoes</h5>
+                    <p class="light low-line-height">
+                      Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
+                      Dish Type: <strong>Side Dish</strong></p>
+                    <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                  </div>
+                  <div class="card-action center grey lighten-4">
+                    <ul class="light no-top-bot-margin">
+                      <li>Total Cooking Time: <strong>5 minutes</strong></li>
+                      <li>Servings: <strong>8</strong></li>
+                    </ul>
+                  </div> <!-- end card-content -->
+                </div> <!--- end card -->
+              </a>
+            </div> <!-- end col -->
+            
+            <div class="col s12 m6 l4">
+              <a href="recipe-details.html" class="black-text">
+                <div class="card hoverable no-top-margin recipe-card">
+                  <div class="card-image">
+                    <div class="center-and-cropped-bg" style="background-image: url('img/burgers.jpeg')"></div>
+                  </div> <!-- end card-image -->
+                  <div class="card-content no-top-bot-padding center">
+                    <h5>Grilled Juicy Burgers</h5>
+                    <p class="light low-line-height">
+                      Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
+                      Dish Type: <strong>Main Course</strong></p>
+                    <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                  </div>
+                  <div class="card-action center grey lighten-4">
+                    <ul class="light no-top-bot-margin">
+                      <li>Total Cooking Time: <strong>25 minutes</strong></li>
+                      <li>Servings: <strong>4</strong></li>
+                    </ul>
+                  </div> <!-- end card-content -->
+                </div> <!--- end card -->
+              </a>
+            </div> <!-- end col -->
+
+          </div>        
         </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Easy to work with</h5>
-
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+      </div> <!-- end top recipes -->
+      
+     <div class="row">
+        <div class="col s12">
+         <div class="row section-header">
+            <!--<div class="col offset-m1 m10">-->
+              <h3 class="light center section-header">Latest Recipes</h3>
+            <!--</div>-->
           </div>
-        </div>
-      </div>
+          <div class="row">
+            <div class="divider"></div>
+          </div>
+          <div class="row no-bot-margin">
+            <div class="col s12 m4 l3">
+              <a href="recipe-details.html" class="black-text">
+                <div class="card hoverable no-top-margin recipe-card">
+                  <div class="card-image">
+                    <div class="center-and-cropped-bg" style="background-image: url('img/latin_turkey.png')"></div>
+                  </div> <!-- end card-image -->
+                  <div class="card-content no-top-bot-padding center">
+                    <h5>Latin Style Turkey</h5>
+                    <p class="light low-line-height">
+                      Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
+                      Dish Type: <strong>Main Course</strong></p>
+                    <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                  </div>
+                  <div class="card-action center grey lighten-4">
+                    <ul class="light no-top-bot-margin">
+                      <li>Total Cooking Time: <strong>120 minutes</strong></li>
+                      <li>Servings: <strong>8</strong></li>
+                    </ul>
+                  </div> <!-- end card-content -->
+                </div> <!--- end card -->
+              </a>
+            </div> <!-- end col -->
+    
+            <div class="col s12 m4 l3">
+              <a href="recipe-details.html" class="black-text">
+                <div class="card hoverable no-top-margin recipe-card">
+                  <div class="card-image">
+                    <div class="center-and-cropped-bg" style="background-image: url('img/roasted_salmon.jpg')"></div>
+                  </div> <!-- end card-image -->
+                  <div class="card-content no-top-bot-padding center">
+                    <h5>Roasted Salmon</h5>
+                    <p class="light low-line-height">
+                      Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
+                      Dish Type: <strong>Main Course</strong></p>
+                    <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                  </div>
+                  <div class="card-action center grey lighten-4">
+                    <ul class="light no-top-bot-margin">
+                      <li>Total Cooking Time: <strong>120 minutes</strong></li>
+                      <li>Servings: <strong>8</strong></li>
+                    </ul>
+                  </div> <!-- end card-content -->
+                </div> <!--- end card -->
+              </a>
+            </div> <!-- end col -->
+            
+            <div class="col s12 m4 l3">
+              <a href="recipe-details.html" class="black-text">
+                <div class="card hoverable no-top-margin recipe-card">
+                  <div class="card-image">
+                    <div class="center-and-cropped-bg" style="background-image: url('img/braised_chicken_pancetta.jpg')"></div>
+                  </div> <!-- end card-image -->
+                  <div class="card-content no-top-bot-padding center">
+                    <h5>Braised Chicken Pancetta</h5>
+                    <p class="light low-line-height">
+                      Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
+                      Dish Type: <strong>Main Course</strong></p>
+                    <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                  </div>
+                  <div class="card-action center grey lighten-4">
+                    <ul class="light no-top-bot-margin">
+                      <li>Total Cooking Time: <strong>120 minutes</strong></li>
+                      <li>Servings: <strong>8</strong></li>
+                    </ul>
+                  </div> <!-- end card-content -->
+                </div> <!--- end card -->
+              </a>
+            </div> <!-- end col -->
+            
+            <div class="col s12 m4 l3">
+              <a href="recipe-details.html" class="black-text">
+                <div class="card hoverable no-top-margin recipe-card">
+                  <div class="card-image">
+                    <div class="center-and-cropped-bg" style="background-image: url('img/steak.jpg')"></div>
+                  </div> <!-- end card-image -->
+                  <div class="card-content no-top-bot-padding center">
+                    <h5>Cowboy Ribeyes</h5>
+                    <p class="light low-line-height">
+                      Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
+                      Dish Type: <strong>Main Course</strong></p>
+                    <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                  </div>
+                  <div class="card-action center grey lighten-4">
+                    <ul class="light no-top-bot-margin">
+                      <li>Total Cooking Time: <strong>120 minutes</strong></li>
+                      <li>Servings: <strong>8</strong></li>
+                    </ul>
+                  </div> <!-- end card-content -->
+                </div> <!--- end card -->
+              </a>
+            </div> <!-- end col -->
+            
+            <div class="col s12 m4 l3">
+              <a href="recipe-details.html" class="black-text">
+                <div class="card hoverable no-top-margin recipe-card">
+                  <div class="card-image">
+                    <div class="center-and-cropped-bg" style="background-image: url('img/cheese_tomatoes.jpg')"></div>
+                  </div> <!-- end card-image -->
+                  <div class="card-content no-top-bot-padding center">
+                    <h5>Mozzarella & Cherry Tomatoes</h5>
+                    <p class="light low-line-height">
+                      Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
+                      Dish Type: <strong>Side Dish</strong></p>
+                    <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                  </div>
+                  <div class="card-action center grey lighten-4">
+                    <ul class="light no-top-bot-margin">
+                      <li>Total Cooking Time: <strong>5 minutes</strong></li>
+                      <li>Servings: <strong>8</strong></li>
+                    </ul>
+                  </div> <!-- end card-content -->
+                </div> <!--- end card -->
+              </a>
+            </div> <!-- end col -->
+            
+            <div class="col s12 m4 l3">
+              <a href="recipe-details.html" class="black-text">
+                <div class="card hoverable no-top-margin recipe-card">
+                  <div class="card-image">
+                    <div class="center-and-cropped-bg" style="background-image: url('img/burgers.jpeg')"></div>
+                  </div> <!-- end card-image -->
+                  <div class="card-content no-top-bot-padding center">
+                    <h5>Grilled Juicy Burgers</h5>
+                    <p class="light low-line-height">
+                      Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
+                      Dish Type: <strong>Main Course</strong></p>
+                    <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                  </div>
+                  <div class="card-action center grey lighten-4">
+                    <ul class="light no-top-bot-margin">
+                      <li>Total Cooking Time: <strong>25 minutes</strong></li>
+                      <li>Servings: <strong>4</strong></li>
+                    </ul>
+                  </div> <!-- end card-content -->
+                </div> <!--- end card -->
+              </a>
+            </div> <!-- end col -->
+            
+            <div class="col s12 m4 l3">
+              <a href="recipe-details.html" class="black-text">
+                <div class="card hoverable no-top-margin recipe-card">
+                  <div class="card-image">
+                    <div class="center-and-cropped-bg" style="background-image: url('img/roasted_salmon.jpg')"></div>
+                  </div> <!-- end card-image -->
+                  <div class="card-content no-top-bot-padding center">
+                    <h5>Roasted Salmon</h5>
+                    <p class="light low-line-height">
+                      Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
+                      Dish Type: <strong>Main Course</strong></p>
+                    <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                  </div>
+                  <div class="card-action center grey lighten-4">
+                    <ul class="light no-top-bot-margin">
+                      <li>Total Cooking Time: <strong>120 minutes</strong></li>
+                      <li>Servings: <strong>8</strong></li>
+                    </ul>
+                  </div> <!-- end card-content -->
+                </div> <!--- end card -->
+              </a>
+            </div> <!-- end col -->
+            
+            <div class="col s12 m4 l3">
+              <a href="recipe-details.html" class="black-text">
+                <div class="card hoverable no-top-margin recipe-card">
+                  <div class="card-image">
+                    <div class="center-and-cropped-bg" style="background-image: url('img/latin_turkey.png')"></div>
+                  </div> <!-- end card-image -->
+                  <div class="card-content no-top-bot-padding center">
+                    <h5>Latin Style Turkey</h5>
+                    <p class="light low-line-height">
+                      Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
+                      Dish Type: <strong>Main Course</strong></p>
+                    <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                  </div>
+                  <div class="card-action center grey lighten-4">
+                    <ul class="light no-top-bot-margin">
+                      <li>Total Cooking Time: <strong>120 minutes</strong></li>
+                      <li>Servings: <strong>8</strong></li>
+                    </ul>
+                  </div> <!-- end card-content -->
+                </div> <!--- end card -->
+              </a>
+            </div> <!-- end col -->
 
+          </div>        
+        </div>
+      </div> <!-- end latest recipes -->
+      
     </div>
   </div>
 
-
   <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-        </div>
-      </div>
-    </div>
     <div class="parallax"><img src="img/background2.jpg" alt="Unsplashed background img 2"></div>
-  </div>
+  </div> <!-- end parallax-container -->
 
-  <div class="container">
-    <div class="section">
-
-      <div class="row">
-        <div class="col s12 center">
-          <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h4>Contact Us</h4>
-          <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-        </div>
-      </div>
-    </div>
-    <div class="parallax"><img src="img/background3.jpg" alt="Unsplashed background img 3"></div>
-  </div>
-
-  <footer class="page-footer teal">
+  <footer class="page-footer blue-brown darken-4">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-
-
+          <h5 class="grey-text text-darken-3">More Information:</h5>
+          <p class="grey-text text-lighten-4 light">I am a student at the Flatiron Scool, a coding Bootcamp that teaches full stack web development.  This project is a culimation of all of my learning through the program bringing together a Rails API backend with a sleek AngularJS front end.</p>
         </div>
+        
         <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
+          <h5 class="grey-text text-darken-3">Extras</h5>
+          <ul class="footer-links">
+            <li><a class="white-text" href="#!">Profile</a></li>
+            <li><a class="white-text" href="#!">Add a Recipe</a></li>
+            <li><a class="white-text" href="#!">View Your Recipes</a></li>
+            <li><a class="white-text" href="#!">Contact Us</a></li>
           </ul>
         </div>
+        
         <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
+          <h5 class="grey-text text-darken-3">Connect</h5>
+          <ul class="footer-links">
+            <li><a class="grey-text text-lighten-4" href="#!">Facebook</a></li>
+            <li><a class="white-text" href="http://www.twitter.com/angular_recipebox">Twitter</a></li>
+            <li><a class="white-text" href="https://www.instagram.com/angular_recipebox/">Instagram</a></li>
+            <li><a class="white-text" href="#!">Our Food Blog</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="footer-copyright">
       <div class="container">
-      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      Made by <a class="black-text text-lighten-4" href="http://breynolds.co">Brian Reynolds</a>
       </div>
     </div>
   </footer>
 
 
   <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery.matchHeight.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
 
