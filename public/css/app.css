@@ -9,10 +9,15 @@
 nav ul a,
 nav .brand-logo {
   color: #444;
+  text-transform: uppercase;
 }
 
 p {
   line-height: 2rem;
+}
+
+.page-footer {
+  margin-top:  0 !important;
 }
 
 .button-collapse {
@@ -20,15 +25,16 @@ p {
 }
 
 .parallax-container {
-  min-height: 380px;
+  min-height: 450px;
   line-height: 0;
   height: auto;
   color: rgba(255,255,255,.9);
 }
-  .parallax-container .section {
-    width: 100%;
-  }
 
+.parallax-container .section {
+  width: 100%;
+}
+  
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
     position: absolute;
@@ -45,13 +51,118 @@ p {
   }
 }
 
-.icon-block {
-  padding: 0 15px;
-}
-.icon-block .material-icons {
-  font-size: inherit;
+.input-field input[type=search] + label i,
+.input-field input[type=search] ~ .mdi-navigation-close,
+.input-field input[type=search] ~ .material-icons {
+  color: #eeeeee;
 }
 
-footer.page-footer {
+.recipe-card {
+  margin-bottom: 45px;
+}
+
+.card {
+  border: 1px #666 solid;
+  border-radius: 25px;
+}
+
+.card-action {
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.center-and-cropped-bg-no-border {
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+  border: 1px #666666 solid;
+  border-radius: 5px;
+}
+
+.center-and-cropped-bg {
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+  border-bottom: 1px #666666 solid;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+div.divider {
+  margin: 0 25px 15px;
+  background-color: #b71c1c;
+}
+
+.section-header {
+  margin-bottom: 2px !important;
+}
+.no-top-margin {
+  margin-top: 0;
+}
+
+.no-bot-margin {
+  margin-bottom: 0;
+}
+
+.no-top-bot-margin {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.no-top-padding {
+  padding-top: 0px !important;
+}
+
+.no-bot-padding {
+  padding-bottom: 0px !important;
+}
+
+.no-top-bot-padding {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.card-action {
+  padding: 10px !important;
+}
+
+.low-line-height {
+  line-height: 1.5em !important;
+  margin-bottom: 10px !important;
+}
+
+.low-table-padding {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.recipe-directions {
   margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.recipe-directions li {
+  counter-increment: step-counter;
+  margin-bottom: 10px;
+}
+
+.recipe-directions li::before {
+  content: counter(step-counter);
+  margin-right: 5px;
+  font-size: 100%;
+  font-weight: bold;
+  color: red;
+  padding: 3px 8px;
+  border-radius: 100%;
+  border: 1px black solid;
+}
+
+.recipe-directions > li {
+  padding-bottom: 5px;
+  margin-top: 15px !important;
+}
+
+.top-margin-5 {
+  margin-top: 5px !important;
 }
