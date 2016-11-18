@@ -16,6 +16,6 @@
       byRow: false,
       property: 'height'
     });
-
+    
   }); // end of document ready
 })(jQuery); // end of jQuery name space
