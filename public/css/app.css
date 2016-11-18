@@ -130,3 +130,35 @@ div.divider {
   line-height: 1.5em !important;
   margin-bottom: 10px !important;
 }
+
+.low-table-padding {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.recipe-directions {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.recipe-directions li {
+  counter-increment: step-counter;
+  margin-bottom: 10px;
+}
+
+.recipe-directions li::before {
+  content: counter(step-counter);
+  margin-right: 5px;
+  font-size: 100%;
+  font-weight: bold;
+  color: red;
+  padding: 3px 8px;
+  border-radius: 100%;
+  border: 1px black solid;
+}
+
+.recipe-directions > li {
+  padding-bottom: 5px;
+  margin-top: 15px !important;
+}
