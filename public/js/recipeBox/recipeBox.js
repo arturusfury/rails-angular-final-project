@@ -8,7 +8,7 @@ angular
       controller: 'MainController',
       resolve: {
         recipes: function ($http) {
-          return $http.get('http://localhost:3000/api/v1/recipes/')
+          // return $http.get('http://localhost:3000/api/v1/recipes/')
         }
       }
     })
@@ -18,7 +18,7 @@ angular
       controller: 'RecipesController',
       resolve: {
         recipes: function ($http) {
-          return $http.get('http://localhost:3000/api/v1/recipes/')
+          // return $http.get('http://localhost:3000/api/v1/recipes/')
         }
       }
     })
@@ -28,7 +28,7 @@ angular
       controller: 'RecipeDetailsController',
       resolve: {
         recipe: function ($http, $stateParams) {
-          return $http.get('http://localhost:3000/api/v1/recipes/' + $stateParams.id)
+          // return $http.get('http://localhost:3000/api/v1/recipes/' + $stateParams.id)
         }
       }
     });
