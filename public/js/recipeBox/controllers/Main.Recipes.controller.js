@@ -1,5 +1,9 @@
-function MainRecipesController() {
+function MainRecipesController(recipes) {
+  var ctrl = this;
 
+  ctrl.data = recipes.data;
+
+  console.log(recipes.data);
 }
 
 angular

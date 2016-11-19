@@ -1,3 +1,5 @@
+<!-- <div ng-if="recipe"> -->
+
 <div id="index-banner" class="parallax-container">
   <div class="parallax"><img class="recipe-details" src="img/steak.jpg"></div>
 </div> <!-- end parallax-container -->
@@ -8,7 +10,7 @@
     <div class="row no-bot-margin">
       <div class="col s12">
         <div class="row section-header">
-          <h3 class="light center section-header">New York Strip Steaks</h3>
+          <h3 class="light center section-header">{{ recipe.data.title }}</h3>
         </div>
         <div class="row no-bot-margin">
           <div class="divider no-bot-margin"></div>
@@ -18,7 +20,7 @@
             <div class="row">
               <div class="col s12 m6 right-align">
                 <h6 class="light no-top-margin low-line-height">
-                  Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
+                  Submitted by <strong>{{ recipe.data.username }}</strong> | Rating: <strong>4.5</strong><br />
                   Dish Type: <strong>Main Course</strong>
                 </h6>
               </div>
@@ -153,3 +155,5 @@
 <div class="parallax-container valign-wrapper">
   <div class="parallax"><img class="recipe-details" src="img/background3.jpg" alt=""></div>
 </div> <!-- end parallax-container -->
+
+<!-- </div> -->

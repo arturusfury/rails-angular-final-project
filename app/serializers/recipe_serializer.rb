@@ -1,6 +1,6 @@
 class RecipeSerializer < ActiveModel::Serializer
   attributes :id, :title, :description, :image_url, :dish_type, :total_servings,
-             :prep_time, :cook_time, :total_rating, :user_id, :tags, :ingredient_list,
+             :prep_time, :cook_time, :total_rating, :user, :tags, :ingredient_list,
              :directions, :reviews
 
   def ingredient_list
