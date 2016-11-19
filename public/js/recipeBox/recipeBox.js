@@ -21,7 +21,7 @@ angular
       templateUrl: 'views/Recipes.controller.html'
     })
     .state('recipes.list', {
-      url: '/recipes',
+      url: '',
       templateUrl: 'views/recipes/Recipes.List.controller.html',
       controller: 'RecipesListController as recipes',
       resolve: {
