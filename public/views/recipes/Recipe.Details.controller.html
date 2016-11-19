@@ -8,7 +8,7 @@
     <div class="row no-bot-margin">
       <div class="col s12">
         <div class="row section-header">
-          <h3 class="light center section-header">New York Strip Steaks</h3>
+          <h3 class="light center section-header">{{ recipe.data.title }}</h3>
         </div>
         <div class="row no-bot-margin">
           <div class="divider no-bot-margin"></div>
@@ -16,79 +16,50 @@
         <div class="row">
           <div class="latest-recipes-card center no-top-margin">
             <div class="row">
-              <div class="col s12 m6 right-align">
-                <h6 class="light no-top-margin low-line-height">
-                  Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
-                  Dish Type: <strong>Main Course</strong>
-                </h6>
+              <div class="col s12 m4 center light">
+                Dish Type: <strong>{{ recipe.data.dish_type }}</strong>
               </div>
 
-              <div class="col s12 m6 left-align">
-                <ul class="light no-top-margin low-line-height">
-                  <li>Total Cooking Time: <strong>15 minutes</strong></li>
-                  <li>Servings: <strong>8</strong></li>
-                </ul>
+              <div class="col s12 m4 center light">
+                Servings: <strong>{{ recipe.data.total_servings}}</strong><br />
+              </div>
+
+              <div class="col s12 m4 center light">
+                Submitted by <strong>{{ recipe.data.user_info.name }}</strong>
               </div>
             </div>
+            <div class="row">
+              <div class="col s12 m4 center light">
+                Prep Time: <strong>{{ recipe.data.prep_time }} minutes</strong>
+              </div>
 
+              <div class="col s12 m4 center light">
+                Cooking Time: <strong>{{ recipe.data.cook_time }} minutes</strong>
+              </div>
+
+              <div class="col s12 m4 center light">
+                Total Time: <strong>{{ recipe.data.prep_time + recipe.data.cook_time }} minutes</strong>
+              </div>
+            </div>
             <div class="row">
               <div class="col s12 offset-m1 m10">
-
-                <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, minus, earum, facilis soluta asperiores ducimus aliquam esse perferendis voluptatibus at magnam illum totam voluptatem odio cum iusto rem impedit distinctio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, minus, earum, facilis soluta asperiores ducimus aliquam esse perferendis voluptatibus at magnam illum totam voluptatem odio cum iusto rem impedit distinctio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, minus, earum, facilis soluta asperiores ducimus aliquam esse perferendis voluptatibus at magnam illum totam voluptatem odio cum iusto rem impedit distinctio.</p>
-
+                <p class="light">{{ recipe.data.description }}</p>
               </div>
             </div> <!-- end recipe description -->
 
             <div class="row">
               <div class="col s12 offset-m1 m5 left-align">
                 <table class="bordered">
-                  <tr>
-                    <td class="low-table-padding red-text text-darken-1">1/3 cup</td>
-                    <td class="low-table-padding">soy sauce</td>
-                  </tr>
-                  <tr>
-                    <td class="low-table-padding red-text text-darken-1">1/2 cup</td>
-                    <td class="low-table-padding">olive oil</td>
-                  </tr>
-                  <tr>
-                    <td class="low-table-padding red-text text-darken-1">1/3 cup</td>
-                    <td class="low-table-padding">fresh lemon juice</td>
-                  </tr>
-                  <tr>
-                    <td class="low-table-padding red-text text-darken-1">1/4 cup</td>
-                    <td class="low-table-padding">Worcestershire sauce</td>
-                  </tr>
-                  <tr>
-                    <td class="low-table-padding red-text text-darken-1">1 1/2 tablespoons</td>
-                    <td class="low-table-padding">garlic powder</td>
-                  </tr>
-                  <tr>
-                    <td class="low-table-padding red-text text-darken-1">3 tablespoons</td>
-                    <td class="low-table-padding">dried basil</td>
-                  </tr>
-                  <tr>
-                    <td class="low-table-padding red-text text-darken-1">1 1/2 tablespoons</td>
-                    <td class="low-table-padding">dried parsley flakes</td>
-                  </tr>
-                  <tr>
-                    <td class="low-table-padding red-text text-darken-1">1 teaspoon</td>
-                    <td class="low-table-padding">ground white pepper</td>
-                  </tr>
-                  <tr>
-                    <td class="low-table-padding red-text text-darken-1">1/4 teaspoon</td>
-                    <td class="low-table-padding">hot pepper sauce (optional)</td>
-                  </tr>
-                  <tr>
-                    <td class="low-table-padding red-text text-darken-1">1 teaspoon</td>
-                    <td class="low-table-padding">dried minced garlic (optional)</td>
+                  <tr ng-repeat="item in recipe.data.ingredient_list">
+                    <td class="low-table-padding red-text text-darken-1">{{ item.amount }} {{ item.measure }}</td>
+                    <td class="low-table-padding">{{ item.ingredient.name }}</td>
                   </tr>
                 </table>
               </div>
 
               <div class="col s12 m5 left-align">
                 <ol class="light recipe-directions">
-                  <li>Place the soy sauce, olive oil, lemon juice, Worcestershire sauce, garlic powder, basil, parsley, and pepper in a blender. Add hot pepper sauce and garlic, if desired. Blend on high speed for 30 seconds until thoroughly mixed.</li>
-                  <li>Pour marinade over desired type of meat. Cover, and refrigerate for up to 8 hours. Cook meat as desired.</li>
+                  <li ng-repeat="direction in recipe.data.directions">{{ direction.text }}</li>
                 </ol>
               </div>
             </div>
@@ -103,36 +74,15 @@
           <div class="divider"></div>
         </div>
 
-        <div class="row review">
+        <div class="row review" ng-repeat="review in recipe.data.review_list">
           <div class="col s12 offset-m1 m2 center">
-            Submitted by <strong>Brian</strong><br />
-            Date: <strong>11/15/2016</strong><br />
-            Rating: <strong>4.5</strong><br />
+            Submitted by<br />
+            <strong>{{ review.user.name }}</strong><br />
+            Date: <strong>{{ review.date | date: 'MM/dd/yyyy' }}</strong><br />
+            Rating: <strong>{{ review.rating }}</strong><br />
           </div>
-          <div class="col s12 m8 no-top-margin">
-            <p class="light no-top-margin ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, minus, earum, facilis soluta asperiores ducimus aliquam esse perferendis voluptatibus at magnam illum totam voluptatem odio cum iusto rem impedit distinctio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, minus, earum, facilis soluta asperiores ducimus aliquam esse perferendis voluptatibus at magnam illum totam voluptatem odio cum iusto rem impedit distinctio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, minus, earum, facilis soluta asperiores ducimus aliquam esse perferendis voluptatibus at magnam illum totam voluptatem odio cum iusto rem impedit distinctio.</p>
-          </div>
-        </div>
-
-        <div class="row review">
-          <div class="col s12 offset-m1 m2 center">
-            Submitted by <strong>Brian</strong><br />
-            Date: <strong>11/15/2016</strong><br />
-            Rating: <strong>4.5</strong><br />
-          </div>
-          <div class="col s12 m8 no-top-margin">
-            <p class="light no-top-margin ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, minus, earum, facilis soluta asperiores ducimus aliquam esse perferendis voluptatibus at magnam illum totam voluptatem odio cum iusto rem impedit distinctio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, minus, earum, facilis soluta asperiores ducimus aliquam esse perferendis voluptatibus at magnam illum totam voluptatem odio cum iusto rem impedit distinctio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, minus, earum, facilis soluta asperiores ducimus aliquam esse perferendis voluptatibus at magnam illum totam voluptatem odio cum iusto rem impedit distinctio.</p>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col s12 offset-m1 m2 center">
-            Submitted by <strong>Brian</strong><br />
-            Date: <strong>11/15/2016</strong><br />
-            Rating: <strong>4.5</strong><br />
-          </div>
-          <div class="col s12 m8 no-top-margin">
-            <p class="light no-top-margin ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, minus, earum, facilis soluta asperiores ducimus aliquam esse perferendis voluptatibus at magnam illum totam voluptatem odio cum iusto rem impedit distinctio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, minus, earum, facilis soluta asperiores ducimus aliquam esse perferendis voluptatibus at magnam illum totam voluptatem odio cum iusto rem impedit distinctio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, minus, earum, facilis soluta asperiores ducimus aliquam esse perferendis voluptatibus at magnam illum totam voluptatem odio cum iusto rem impedit distinctio.</p>
+          <div class="col s12 m8">
+            <p class="light no-top-margin ">{{ review.content }}</p>
           </div>
         </div>
 

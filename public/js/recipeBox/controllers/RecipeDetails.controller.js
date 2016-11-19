@@ -1,5 +1,7 @@
-function RecipeDetailsController() {
+function RecipeDetailsController(recipe) {
+  var ctrl = this;
 
+  ctrl.data = recipe.data;
 }
 
 angular
