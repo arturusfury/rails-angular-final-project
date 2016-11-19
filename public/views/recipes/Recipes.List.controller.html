@@ -15,14 +15,14 @@
          </div>
          <div class="row no-bot-margin">
 
-           <div class="col s12 m4 l3">
+           <div class="col s12 m4 l3" ng-repeat="recipe in recipes.data">
              <a href="/#/recipes/1" class="black-text">
                <div class="card hoverable no-top-margin recipe-card">
                  <div class="card-image">
                    <div class="center-and-cropped-bg" style="background-image: url('/img/latin_turkey.png')"></div>
                  </div> <!-- end card-image -->
                  <div class="card-content no-top-bot-padding center">
-                   <h5>Latin Style Turkey</h5>
+                   <h5>{{ recipe.title }}</h5>
                    <p class="light low-line-height">
                      Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
                      Dish Type: <strong>Main Course</strong></p>
