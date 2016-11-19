@@ -4,18 +4,14 @@ class RecipeSerializer < ActiveModel::Serializer
              :ingredient_list, :directions, :review_list
 
   def user_info
-    user = object.user
-
     {
-      id: user.id,
-      name: user.name
+      id: object.user.id,
+      name: object.user.name
     }
   end
 
   def ingredient_list
-    items = object.items
-
-    items.map do |item|
+    object.items.map do |item|
       {
         id: item.id,
         amount: item.amount,
@@ -26,9 +22,7 @@ class RecipeSerializer < ActiveModel::Serializer
   end
 
   def review_list
-    reviews = object.reviews
-
-    reviews.map do |review|
+    object.reviews.map do |review|
       {
         id: review.id,
         user: {
@@ -36,7 +30,8 @@ class RecipeSerializer < ActiveModel::Serializer
           name: User.find(review.user_id).name
         },
         rating: review.rating,
-        content: review.content
+        content: review.content,
+        date: review.updated_at
       }
     end
   end
