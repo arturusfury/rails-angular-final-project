@@ -16,6 +16,8 @@ angular
       }
     })
     .state('recipes', {
+      url: '/recipes',
+      abstract: true,
       templateUrl: 'views/Recipes.controller.html'
     })
     .state('recipes.list', {
@@ -29,12 +31,12 @@ angular
       }
     })
     .state('recipes.add', {
-      url: 'add',
+      url: '/add',
       templateUrl: 'views/recipes/Recipe.Add.controller.html',
       controller: 'RecipeAddController'
     })
     .state('recipes.detail', {
-      url: ':id',
+      url: '/:id',
       templateUrl: 'views/recipes/Recipe.Details.controller.html',
       controller: 'RecipeDetailsController as recipe',
       resolve: {
@@ -44,7 +46,7 @@ angular
       }
     })
     .state('recipes.edit', {
-      url: ':id/edit',
+      url: '/:id/edit',
       templateUrl: 'views/recipes/Recipe.Edit.controller.html',
       controller: 'RecipeEditController',
       resolve: {
