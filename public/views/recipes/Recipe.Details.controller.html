@@ -76,9 +76,10 @@
           <div class="divider"></div>
         </div>
 
-        <div class="row review" ng-repeat="review in recipe.data.reviews">
+        <div class="row review" ng-repeat="review in recipe.data.review_list">
           <div class="col s12 offset-m1 m2 center">
-            Submitted by <strong>Brian</strong><br />
+            Submitted by<br />
+            <strong>{{ review.user.name }}</strong><br />
             Date: <strong>11/15/2016</strong><br />
             Rating: <strong>4.5</strong><br />
           </div>
