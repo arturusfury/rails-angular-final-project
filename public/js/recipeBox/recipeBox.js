@@ -15,6 +15,23 @@ angular
         }
       }
     })
+    // User Routes
+    .state('user', {
+      url: '/user',
+      abstract: true,
+      templateUrl: 'views/User.template.html'
+    })
+    .state('user.login', {
+      url: '/login',
+      templateUrl: 'views/user/SignIn.template.html',
+      controller: 'UserSessionsController'
+    })
+    .state('user.create', {
+      url: '/create',
+      templateUrl: 'views/user/Create.template.html',
+      controller: 'UserSessionsController'
+    })
+    // Recipe Routes
     .state('recipes', {
       url: '/recipes',
       abstract: true,
