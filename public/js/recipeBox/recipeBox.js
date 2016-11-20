@@ -78,4 +78,8 @@ angular
     $rootScope.$on('auth:login-success', function() {
       $location.path('/');
     });
+
+    $rootScope.$on('auth:logout-success', function() {
+      $location.path('/');
+    });
   }]);
