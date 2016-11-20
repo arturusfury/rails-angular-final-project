@@ -57,6 +57,16 @@ angular
         }]
       }
     })
+    .state('recipes.edit', {
+      url: '/:id/edit',
+      templateUrl: 'views/recipes/Recipe.Edit.template.html',
+      controller: 'RecipeEditController',
+      resolve: {
+        recipe: function ($http, $stateParams) {
+          return $http.get('http://localhost:3000/api/v1/recipes/' + $stateParams.id)
+        }
+      }
+    })
     .state('recipes.detail', {
       url: '/:id',
       templateUrl: 'views/recipes/Recipe.Details.template.html',
@@ -64,16 +74,6 @@ angular
       resolve: {
         recipe: function ($http, $stateParams) {
           return $http.get('http://localhost:3000/api/v1/recipes/' + $stateParams.id)
-        }
-      }
-    })
-    .state('recipes.edit', {
-      url: '/:id/edit',
-      templateUrl: 'views/recipes/Recipe.Edit.template.html',
-      controller: 'RecipeEditController',
-      resolve: {
-        recipe: function ($http, $stateParams) {
-          // return $http.get('http://localhost:3000/api/v1/recipes/' + $stateParams.id)
         }
       }
     });
