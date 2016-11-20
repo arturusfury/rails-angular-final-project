@@ -17,16 +17,18 @@
 
     <!-- Dropdown Structure -->
     <ul id="dropdown" class="dropdown-content">
-      <li><a class="black-text">Brian</a></li>
-      <li class="divider"></li>
-      <li><a href="#!" class="black-text">Settings</a></li>
-      <li><a href="#!" class="black-text">Logout</a></li>
+      <li ng-show="user.id"><a class="black-text">{{ user.name }}</a></li>
+      <li ng-show="user.id" class="divider"></li>
+      <li ng-show="user.id"><a href="/#/user/settings" class="black-text">Settings</a></li>
+      <li ng-show="user.id"><a ng-click="signOut()" class="black-text">Logout</a></li>
+      <li ng-show="!user.id"><a href="/#/user/login" class="black-text">Login</a></li>
+      <li ng-show="!user.id"><a href="/#/user/create" class="black-text">Create Account</a></li>
     </ul>
 
     <div class="nav-wrapper container">
       <a id="logo-container" href="/#/main" class="brand-logo uppercase">Recipe<span class="red-text">Box</span></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="/#/recipes/add" class="uppercase">Add a Recipe</a></li>
+        <li ng-show="user.id"><a href="/#/recipes/add" class="uppercase">Add a Recipe</a></li>
         <li><a href="/#/recipes" class="uppercase">Browse Recipes</a></li>
         <li><a class="dropdown-button" href="javascript:void(0);" data-activates="dropdown" dropdown data-hover="false"><i class="material-icons right">supervisor_account arrow_drop_down</i></a></li>
       </ul>
@@ -38,13 +40,15 @@
         </div>
       </form>
       <ul id="nav-mobile" class="side-nav">
-        <li><a class="black-text">Brian</a></li>
-        <li class="divider"></li>
+        <li ng-show="user.id"><a class="black-text">{{ user.name }}</a></li>
+        <li ng-show="user.id" class="divider"></li>
         <li><a href="/#/recipes">Browse Recipes</a></li>
-        <li><a href="/#/recipes/add">Add a Recipes</a></li>
+        <li ng-show="user.id"><a href="/#/recipes/add">Add a Recipes</a></li>
         <li class="divider"></li>
-        <li><a href="#!">Settings</a></li>
-        <li><a href="#!">Logout</a></li>
+        <li ng-show="user.id"><a href="/#/user/settings" class="black-text">Settings</a></li>
+        <li ng-show="user.id"><a ng-click="signOut()" class="black-text">Logout</a></li>
+        <li ng-show="!user.id"><a href="/#/user/login" class="black-text">Login</a></li>
+        <li ng-show="!user.id"><a href="/#/user/create" class="black-text">Create Account</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse" data-activates="nav-mobile" data-sidenav="left" data-menuwidth="300" data-closeonclick="false"><i class="material-icons red-text">menu</i></a>
     </div> <!-- end nav-wrapper -->
@@ -96,9 +100,13 @@
   <script src="js/angular.min.js"></script>
   <script src="js/angular-ui-router.min.js"></script>
   <script src="js/angular-materialize.min.js"></script>
+  <script src="js/angular-cookie.js"></script>
+  <script src="js/ng-token-auth.min.js"></script>
   <script src="js/recipeBox/recipeBox.js"></script>
   <script src="js/recipeBox/controllers/Main.controller.js"></script>
   <script src="js/recipeBox/controllers/Main.Recipes.controller.js"></script>
+  <script src="js/recipeBox/controllers/User.Sessions.controller.js"></script>
+  <script src="js/recipeBox/controllers/User.Registrations.controller.js"></script>
   <script src="js/recipeBox/controllers/Recipes.List.controller.js"></script>
   <script src="js/recipeBox/controllers/Recipe.Details.controller.js"></script>
   <script src="js/recipeBox/controllers/Recipe.Add.controller.js"></script>
