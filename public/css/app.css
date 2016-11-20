@@ -179,9 +179,15 @@ div.divider {
   margin-top: 5px !important;
 }
 
+.recipe-img {
+  max-height: 300px;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
 img.responsive-img {
   max-width: 100%;
   width: 100%;
   height: auto;
-  object-fit: cover;
 }
