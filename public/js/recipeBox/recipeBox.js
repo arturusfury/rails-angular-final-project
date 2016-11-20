@@ -29,7 +29,7 @@ angular
     .state('user.create', {
       url: '/create',
       templateUrl: 'views/user/Create.template.html',
-      controller: 'UserSessionsController'
+      controller: 'UserRegistrationsController'
     })
     // Recipe Routes
     .state('recipes', {
