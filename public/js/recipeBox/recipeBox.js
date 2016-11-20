@@ -1,5 +1,12 @@
 angular
-  .module('recipeBox', ['ui.router', 'ui.materialize', 'ipCookie', 'ng-token-auth'])
+  .module('recipeBox',
+    [
+      'ui.router',
+      'ui.materialize',
+      'ipCookie',
+      'ng-token-auth'
+    ]
+  )
   .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
 
   $urlRouterProvider.otherwise('/');
