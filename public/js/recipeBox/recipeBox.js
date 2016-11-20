@@ -1,5 +1,5 @@
 angular
-  .module('recipeBox', ['ui.router', 'ui.materialize'])
+  .module('recipeBox', ['ui.router', 'ui.materialize', 'ipCookie', 'ng-token-auth'])
   .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
 
   $urlRouterProvider.otherwise('/');
@@ -7,7 +7,7 @@ angular
   $stateProvider
     .state('main', {
       url: '/',
-      templateUrl: 'views/Main.controller.html',
+      templateUrl: 'views/Main.template.html',
       controller: 'MainRecipesController',
       resolve: {
         recipes: function ($http) {
@@ -18,11 +18,11 @@ angular
     .state('recipes', {
       url: '/recipes',
       abstract: true,
-      templateUrl: 'views/Recipes.controller.html'
+      templateUrl: 'views/Recipes.template.html'
     })
     .state('recipes.list', {
       url: '',
-      templateUrl: 'views/recipes/Recipes.List.controller.html',
+      templateUrl: 'views/recipes/Recipes.List.template.html',
       controller: 'RecipesListController as recipes',
       resolve: {
         recipes: function ($http) {
@@ -32,12 +32,12 @@ angular
     })
     .state('recipes.add', {
       url: '/add',
-      templateUrl: 'views/recipes/Recipe.Add.controller.html',
+      templateUrl: 'views/recipes/Recipe.Add.template.html',
       controller: 'RecipeAddController'
     })
     .state('recipes.detail', {
       url: '/:id',
-      templateUrl: 'views/recipes/Recipe.Details.controller.html',
+      templateUrl: 'views/recipes/Recipe.Details.template.html',
       controller: 'RecipeDetailsController as recipe',
       resolve: {
         recipe: function ($http, $stateParams) {
@@ -47,7 +47,7 @@ angular
     })
     .state('recipes.edit', {
       url: '/:id/edit',
-      templateUrl: 'views/recipes/Recipe.Edit.controller.html',
+      templateUrl: 'views/recipes/Recipe.Edit.template.html',
       controller: 'RecipeEditController',
       resolve: {
         recipe: function ($http, $stateParams) {
