@@ -72,4 +72,10 @@ angular
         }
       }
     });
-}]);
+  }])
+  // Redirect after a successful login
+  .run(['$rootScope', '$location', function($rootScope, $location) {
+    $rootScope.$on('auth:login-success', function() {
+      $location.path('/');
+    });
+  }]);
