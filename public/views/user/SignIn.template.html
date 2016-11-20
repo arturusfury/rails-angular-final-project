@@ -7,12 +7,14 @@
           <h3 class="light center section-header">Login</h3>
         </div>
 
-        <div class="row no-bot-margin">
+        <div class="row no-bot-margin center">
           <div class="divider no-bot-margin"></div>
         </div>
 
-        <div class="alert alert-danger" role="alert" ng-show="error">
-          {{error}}
+        <div class="row" ng-show="error">
+          <div class="col s12 red lighten-4 error">
+            <p><strong>{{error}}</strong></p>
+          </div>
         </div>
 
         <div class="row">
