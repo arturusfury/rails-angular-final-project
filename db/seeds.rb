@@ -193,19 +193,19 @@ Item.create(
 )
 Item.create(
   amount: 0.33,
-  measure: 'cup',
+  measure: 'cups',
   recipe_id: @roasted_salmon.id,
   ingredient_id: @soy_sauce.id
 )
 Item.create(
   amount: 0.33,
-  measure: 'cup',
+  measure: 'cups',
   recipe_id: @roasted_salmon.id,
   ingredient_id: @brown_sugar.id
 )
 Item.create(
   amount: 0.33,
-  measure: 'cup',
+  measure: 'cups',
   recipe_id: @roasted_salmon.id,
   ingredient_id: @water.id
 )
@@ -247,97 +247,202 @@ Review.create(
   content: 'Pie sugar plum macaroon halvah chupa chups jujubes. Cake cupcake cookie soufflé powder wafer gummi bears. Marshmallow soufflé fruitcake muffin. Jujubes wafer cookie jelly pastry. Sweet roll gummies icing. Lollipop lemon drops topping dessert tiramisu. Sweet jujubes topping. Oat cake gummi bears oat cake jujubes caramels toffee chocolate bar. Ice cream toffee tiramisu candy. Marzipan jelly beans danish halvah. Chocolate bar tart cookie soufflé. Gingerbread jelly beans jelly beans candy canes chocolate cake. Cake tart tart. Gummi bears jelly gummies.'
 )
 
-# Roasted Salmon
-@roasted_salmon = Recipe.create(
-  title: 'Grilled Salmon',
+# Bacon-Cheddar Bites
+@bacon_bites = Recipe.create(
+  title: 'Bacon-Cheddar Bites',
   user_id: rand(1..10),
-  total_rating: 4.3,
-  total_servings: 6,
+  total_rating: 3.8,
+  total_servings: 24,
   prep_time: 15,
-  cook_time: 16,
-  description: 'A simple soy sauce and brown sugar marinade, with hints of lemon and garlic, are the perfect salty-sweet complement to rich salmon fillets. Even my 9 year old loves this recipe!',
-  image_url: 'http://images.media-allrecipes.com/userphotos/720x405/800839.jpg',
-  dish_type: 'Main Course'
+  cook_time: 30,
+  description: 'These Smokey, cheesy tarlets can be part of a bunrch or evening party spread!',
+  image_url: 'https://www.pamperedchef.com/iceberg/com/recipe/88195-lg.jpg',
+  dish_type: 'Appetizer & Snacks'
 )
 
-@salmon_filet = Ingredient.create(
-  name: 'Salmon Filet'
+@pie_crust = Ingredient.create(
+  name: 'Pie Crusts, softened according to package directions'
 )
 
-@soy_sauce = Ingredient.create(
-  name: 'Soy Sauce'
+@bacon = Ingredient.create(
+  name: 'Bacon'
 )
 
-@brown_sugar = Ingredient.create(
-  name: 'Brown Sugar'
+@plum_tomatoes = Ingredient.create(
+  name: 'Plum Tomatoes'
 )
 
-@water = Ingredient.create(
-  name: 'Water'
+@cheddar_cheese = Ingredient.create(
+  name: 'Shredded Cheddar Cheese'
 )
 
-@vegtable_oil = Ingredient.create(
-  name: 'Vegtable Oil'
+@dijon_mustard = Ingredient.create(
+  name: 'Dijon Mustard'
 )
 
 Item.create(
-  amount: 1.5,
-  measure: 'lbs',
-  recipe_id: @roasted_salmon.id,
-  ingredient_id: @salmon_filet.id
+  amount: 2,
+  recipe_id: @bacon_bites.id,
+  ingredient_id: @pie_crust.id
 )
 Item.create(
-  amount: 0.33,
-  measure: 'cup',
-  recipe_id: @roasted_salmon.id,
-  ingredient_id: @soy_sauce.id
+  amount: 8,
+  measure: 'slices',
+  recipe_id: @bacon_bites.id,
+  ingredient_id: @bacon.id
 )
 Item.create(
-  amount: 0.33,
-  measure: 'cup',
-  recipe_id: @roasted_salmon.id,
-  ingredient_id: @brown_sugar.id
+  amount: 2,
+  recipe_id: @bacon_bites.id,
+  ingredient_id: @plum_tomatoes.id
 )
 Item.create(
-  amount: 0.33,
-  measure: 'cup',
-  recipe_id: @roasted_salmon.id,
-  ingredient_id: @water.id
+  amount: 1,
+  measure: 'cups',
+  recipe_id: @bacon_bites.id,
+  ingredient_id: @cheddar_cheese.id
 )
 Item.create(
-  amount: 0.25,
+  amount: 2,
+  measure: 'tsp',
+  recipe_id: @bacon_bites.id,
+  ingredient_id: @dijon_mustard.id
+)
+Item.create(
+  amount: 1,
   measure: 'tbsp',
-  recipe_id: @roasted_salmon.id,
-  ingredient_id: @vegtable_oil.id
+  recipe_id: @garlic.id,
+  ingredient_id: @dijon_mustard.id
 )
 
 Direction.create(
-  recipe_id: @roasted_salmon.id,
+  recipe_id: @bacon_bites.id,
   step: 1,
-  text: 'Season salmon fillets with lemon pepper, garlic powder, and salt.'
+  text: 'Preheat oven to 400°F (200°C). Unroll pie crust onto lightly floured surface. Spacing closely together, cut 12 disks from crust using outer tube of Measure-All® Cup (nine around outside edge and three in center). Press disks into wells of Deluxe Mini-Muffin Pan using Mini-Tart Shaper. Repeat with remaining crust. Bake 8-10 minutes or until golden brown.'
 )
 
 Direction.create(
-  recipe_id: @roasted_salmon.id,
+  recipe_id: @bacon_bites.id,
   step: 2,
-  text: 'In a small bowl, stir together soy sauce, brown sugar, water, and vegetable oil until sugar is dissolved. Place fish in a large resealable plastic bag with the soy sauce mixture, seal, and turn to coat. Refrigerate for at least 2 hours.'
+  text: 'Meanwhile, stack bacon; thinly slice using Utility Knife. Cook bacon in (8-in./20-cm) Sauté Pan over medium-high heat 10-12 minutes or until crisp. Remove bacon to paper towel-lined plate; cool slightly. Meanwhile, cut tomatoes in half using clean Utility Knife; scrape out seeds and dice. Chop bacon with Food Chopper. In Classic Batter Bowl, combine bacon, tomatoes, cheddar cheese, cream cheese, mustard and garlic pressed with Garlic Press; mix well.'
 )
 
 Direction.create(
-  recipe_id: @roasted_salmon.id,
+  recipe_id: @bacon_bites.id,
   step: 3,
-  text: 'Preheat grill for medium heat.'
-)
-
-Direction.create(
-  recipe_id: @roasted_salmon.id,
-  step: 4,
-  text: 'Lightly oil grill grate. Place salmon on the preheated grill, and discard marinade. Cook salmon for 6 to 8 minutes per side, or until the fish flakes easily with a fork.'
+  text: 'Remove pan from oven to Stackable Cooling Rack. Using Adjustable Measuring Spoon, fill each cup with about 1 tbsp (15 mL) of the cheese mixture. Bake 5-7 minutes or until cheese is melted. Garnish with green onions and additional tomato, if desired.'
 )
 
 Review.create(
   user_id: 1,
-  recipe_id: @roasted_salmon.id,
+  recipe_id: @bacon_bites.id,
+  rating: 4,
+  content: 'Pie sugar plum macaroon halvah chupa chups jujubes. Cake cupcake cookie soufflé powder wafer gummi bears. Marshmallow soufflé fruitcake muffin. Jujubes wafer cookie jelly pastry. Sweet roll gummies icing. Lollipop lemon drops topping dessert tiramisu. Sweet jujubes topping. Oat cake gummi bears oat cake jujubes caramels toffee chocolate bar. Ice cream toffee tiramisu candy. Marzipan jelly beans danish halvah. Chocolate bar tart cookie soufflé. Gingerbread jelly beans jelly beans candy canes chocolate cake. Cake tart tart. Gummi bears jelly gummies.'
+)
+
+# No Knead Artisian Bread
+@no_knead_bread = Recipe.create(
+  title: 'No Knead Crusty Artisian Bread',
+  user_id: rand(1..10),
+  total_rating: 4.8,
+  total_servings: 10,
+  prep_time: 15,
+  cook_time: 30,
+  description: 'One of my most reader-tested and approved recipes! This crusty, fluffy artisan bread needs only 4 ingredients and 5 minutes to come together… you won’t believe how easy and delicious it is!',
+  image_url: 'http://www.thecomfortofcooking.com/wp-content/uploads/2013/04/NoKneadCrustyArtisanBread5.jpg',
+  dish_type: 'Bread'
+)
+
+@all_purpose_flour = Ingredient.create(
+  name: 'All-Purpose Flour'
+)
+
+@kohser_salt = Ingredient.create(
+  name: 'Kosher Salt'
+)
+
+@dry_yeast = Ingredient.create(
+  name: 'Dry Yeast'
+)
+
+@dutch_oven = Ingredient.create(
+  name: 'Dutch Oven'
+)
+
+Item.create(
+  amount: 3,
+  measure: 'cups',
+  recipe_id: @no_knead_bread.id,
+  ingredient_id: @all_purpose_flour.id
+)
+Item.create(
+  amount: 2,
+  measure: 'tsp',
+  recipe_id: @no_knead_bread.id,
+  ingredient_id: @kohser_salt.id
+)
+Item.create(
+  amount: 0.5,
+  measure: 'tsp',
+  recipe_id: @no_knead_bread.id,
+  ingredient_id: @dry_yeast.id
+)
+Item.create(
+  amount: 1.5,
+  measure: 'cups',
+  recipe_id: @no_knead_bread.id,
+  ingredient_id: @water.id
+)
+Item.create(
+  recipe_id: @no_knead_bread.id,
+  ingredient_id: @dutch_oven.id
+)
+
+Direction.create(
+  recipe_id: @no_knead_bread.id,
+  step: 1,
+  text: 'In a large bowl, stir together the flour, salt and yeast. Stir in water using a wooden spoon until the mixture forms a shaggy but cohesive dough. Do not over-work the dough. The less you "work" it, the more soft, fluffy air pockets will form.'
+)
+
+Direction.create(
+  recipe_id: @no_knead_bread.id,
+  step: 2,
+  text: 'Cover bowl tightly with plastic wrap. Let dough sit at room temperature for 8-24 hours*. Dough will bubble up and rise.'
+)
+
+Direction.create(
+  recipe_id: @no_knead_bread.id,
+  step: 3,
+  text: 'After dough is ready, preheat oven to 450 degrees F. Place your Dutch oven, uncovered, into the preheated oven for 30 minutes.'
+)
+
+Direction.create(
+  recipe_id: @no_knead_bread.id,
+  step: 4,
+  text: 'While your Dutch oven preheats, turn dough onto a well-floured surface. With floured hands, form the dough into a ball. Cover dough loosely with plastic wrap and let rest.'
+)
+
+Direction.create(
+  recipe_id: @no_knead_bread.id,
+  step: 5,
+  text: 'After the 30 minutes are up, carefully remove Dutch oven. With floured hands, place the bread dough into it. (You can put a piece of parchment under the dough if your Dutch oven isn’t enamel coated.)'
+)
+
+Direction.create(
+  recipe_id: @no_knead_bread.id,
+  step: 6,
+  text: 'Replace cover and bake for 30 minutes covered. Carefully remove cover and bake for 7-15 minutes* more, uncovered.'
+)
+
+Direction.create(
+  recipe_id: @no_knead_bread.id,
+  step: 7,
+  text: 'Carefully remove bread to a cutting board and slice with a bread knife.'
+)
+
+Review.create(
+  user_id: 1,
+  recipe_id: @no_knead_bread.id,
   rating: 4,
   content: 'Pie sugar plum macaroon halvah chupa chups jujubes. Cake cupcake cookie soufflé powder wafer gummi bears. Marshmallow soufflé fruitcake muffin. Jujubes wafer cookie jelly pastry. Sweet roll gummies icing. Lollipop lemon drops topping dessert tiramisu. Sweet jujubes topping. Oat cake gummi bears oat cake jujubes caramels toffee chocolate bar. Ice cream toffee tiramisu candy. Marzipan jelly beans danish halvah. Chocolate bar tart cookie soufflé. Gingerbread jelly beans jelly beans candy canes chocolate cake. Cake tart tart. Gummi bears jelly gummies.'
 )
