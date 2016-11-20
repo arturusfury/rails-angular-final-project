@@ -241,7 +241,7 @@ Direction.create(
 )
 
 Review.create(
-  user_id: 1,
+  user_id: rand(1..10),
   recipe_id: @roasted_salmon.id,
   rating: 4,
   content: 'Pie sugar plum macaroon halvah chupa chups jujubes. Cake cupcake cookie soufflé powder wafer gummi bears. Marshmallow soufflé fruitcake muffin. Jujubes wafer cookie jelly pastry. Sweet roll gummies icing. Lollipop lemon drops topping dessert tiramisu. Sweet jujubes topping. Oat cake gummi bears oat cake jujubes caramels toffee chocolate bar. Ice cream toffee tiramisu candy. Marzipan jelly beans danish halvah. Chocolate bar tart cookie soufflé. Gingerbread jelly beans jelly beans candy canes chocolate cake. Cake tart tart. Gummi bears jelly gummies.'
@@ -311,8 +311,8 @@ Item.create(
 Item.create(
   amount: 1,
   measure: 'tbsp',
-  recipe_id: @garlic.id,
-  ingredient_id: @dijon_mustard.id
+  recipe_id: @bacon_bites.id,
+  ingredient_id: @garlic.id
 )
 
 Direction.create(
@@ -334,7 +334,7 @@ Direction.create(
 )
 
 Review.create(
-  user_id: 1,
+  user_id: rand(1..10),
   recipe_id: @bacon_bites.id,
   rating: 4,
   content: 'Pie sugar plum macaroon halvah chupa chups jujubes. Cake cupcake cookie soufflé powder wafer gummi bears. Marshmallow soufflé fruitcake muffin. Jujubes wafer cookie jelly pastry. Sweet roll gummies icing. Lollipop lemon drops topping dessert tiramisu. Sweet jujubes topping. Oat cake gummi bears oat cake jujubes caramels toffee chocolate bar. Ice cream toffee tiramisu candy. Marzipan jelly beans danish halvah. Chocolate bar tart cookie soufflé. Gingerbread jelly beans jelly beans candy canes chocolate cake. Cake tart tart. Gummi bears jelly gummies.'
@@ -441,8 +441,160 @@ Direction.create(
 )
 
 Review.create(
-  user_id: 1,
+  user_id: rand(1..10),
   recipe_id: @no_knead_bread.id,
+  rating: 4,
+  content: 'Pie sugar plum macaroon halvah chupa chups jujubes. Cake cupcake cookie soufflé powder wafer gummi bears. Marshmallow soufflé fruitcake muffin. Jujubes wafer cookie jelly pastry. Sweet roll gummies icing. Lollipop lemon drops topping dessert tiramisu. Sweet jujubes topping. Oat cake gummi bears oat cake jujubes caramels toffee chocolate bar. Ice cream toffee tiramisu candy. Marzipan jelly beans danish halvah. Chocolate bar tart cookie soufflé. Gingerbread jelly beans jelly beans candy canes chocolate cake. Cake tart tart. Gummi bears jelly gummies.'
+)
+
+# Cast Iron Cornbread
+@cast_iron_cornbread = Recipe.create(
+  title: 'Cast Iron Cornbread',
+  user_id: rand(1..10),
+  total_rating: 4.4,
+  total_servings: 12,
+  prep_time: 5,
+  cook_time: 35,
+  description: "This recipe is for a very simple, easy to make cornbread that everyone in the family will love!  Just in case you needed to know: Sorghum syrup is made from the sweet juice of the sorghum plant, a variety of cereal grass. It's popular in the south as a sweetener for baked goods. You can find it at natural food stores or specialty online retailers.",
+  image_url: 'http://foodnetwork.sndimg.com/content/dam/images/food/fullset/2014/6/27/1/ZD0212H_Cast-Iron-Skillet-Cornbread_s4x3.jpg.rend.sni12col.landscape.jpeg',
+  dish_type: 'Bread'
+)
+
+@coconut_oil = Ingredient.create(
+  name: 'Melted Coconut Oil'
+)
+
+@yellow_cornmeal = Ingredient.create(
+  name: 'Yellow Cornmeal'
+)
+
+@baking_powder = Ingredient.create(
+  name: 'Baking Powder'
+)
+
+@kosher_salt = Ingredient.create(
+  name: 'Kosher Salt'
+)
+
+@almond_milk = Ingredient.create(
+  name: 'Almond Milk, or Regular Milk at room temperature'
+)
+
+@applesauce = Ingredient.create(
+  name: 'Applesauce, at room temperature'
+)
+
+@sorghum = Ingredient.create(
+  name: 'Sorghum'
+)
+
+@egg = Ingredient.create(
+  name: 'Egg, at room temperature'
+)
+
+Item.create(
+  amount: 3,
+  measure: 'tbsp',
+  recipe_id: @cast_iron_cornbread.id,
+  ingredient_id: @coconut_oil.id
+)
+Item.create(
+  amount: 1,
+  measure: 'cups',
+  recipe_id: @cast_iron_cornbread.id,
+  ingredient_id: @yellow_cornmeal.id
+)
+Item.create(
+  amount: 1,
+  measure: 'cups',
+  recipe_id: @cast_iron_cornbread.id,
+  ingredient_id: @all_purpose_flour.id
+)
+Item.create(
+  amount: 1,
+  measure: 'tbsp',
+  recipe_id: @cast_iron_cornbread.id,
+  ingredient_id: @baking_powder.id
+)
+Item.create(
+  amount: 1,
+  measure: 'tsp',
+  recipe_id: @cast_iron_cornbread.id,
+  ingredient_id: @kosher_salt.id
+)
+Item.create(
+  amount: 1,
+  measure: 'cup',
+  recipe_id: @cast_iron_cornbread.id,
+  ingredient_id: @almond_milk.id
+)
+Item.create(
+  amount: 0.25,
+  measure: 'cup',
+  recipe_id: @cast_iron_cornbread.id,
+  ingredient_id: @applesauce.id
+)
+Item.create(
+  amount: 0.25,
+  measure: 'cup',
+  recipe_id: @cast_iron_cornbread.id,
+  ingredient_id: @sorghum.id
+)
+Item.create(
+  amount: 1,
+  measure: 'large',
+  recipe_id: @cast_iron_cornbread.id,
+  ingredient_id: @egg.id
+)
+
+Direction.create(
+  recipe_id: @cast_iron_cornbread.id,
+  step: 1,
+  text: 'Preheat the oven to 375 degrees F'
+)
+
+Direction.create(
+  recipe_id: @cast_iron_cornbread.id,
+  step: 2,
+  text: 'Add 1 tablespoon of the coconut oil to a 6-inch cast-iron skillet. Put the skillet in the oven and allow to heat until very hot, 6 to 8 minutes.'
+)
+
+Direction.create(
+  recipe_id: @cast_iron_cornbread.id,
+  step: 3,
+  text: 'Combine the cornmeal, flour, baking powder and salt in a large bowl with a whisk. In a different bowl, combine the almond milk, applesauce, sorghum, egg and the remaining 2 tablespoons coconut oil. Make a well in the center of the dry ingredients and pour in the wet. Fold to combine.'
+)
+
+Direction.create(
+  recipe_id: @cast_iron_cornbread.id,
+  step: 4,
+  text: 'Carefully remove the hot cast-iron skillet from the oven and pour in the batter. Return the skillet to the oven and bake until golden with a crisp crust, 25 minutes.'
+)
+
+Review.create(
+  user_id: rand(1..10),
+  recipe_id: @cast_iron_cornbread.id,
+  rating: 4,
+  content: 'Pie sugar plum macaroon halvah chupa chups jujubes. Cake cupcake cookie soufflé powder wafer gummi bears. Marshmallow soufflé fruitcake muffin. Jujubes wafer cookie jelly pastry. Sweet roll gummies icing. Lollipop lemon drops topping dessert tiramisu. Sweet jujubes topping. Oat cake gummi bears oat cake jujubes caramels toffee chocolate bar. Ice cream toffee tiramisu candy. Marzipan jelly beans danish halvah. Chocolate bar tart cookie soufflé. Gingerbread jelly beans jelly beans candy canes chocolate cake. Cake tart tart. Gummi bears jelly gummies.'
+)
+
+Review.create(
+  user_id: rand(1..10),
+  recipe_id: @cast_iron_cornbread.id,
+  rating: 4,
+  content: 'Pie sugar plum macaroon halvah chupa chups jujubes. Cake cupcake cookie soufflé powder wafer gummi bears. Marshmallow soufflé fruitcake muffin. Jujubes wafer cookie jelly pastry. Sweet roll gummies icing. Lollipop lemon drops topping dessert tiramisu. Sweet jujubes topping. Oat cake gummi bears oat cake jujubes caramels toffee chocolate bar. Ice cream toffee tiramisu candy. Marzipan jelly beans danish halvah. Chocolate bar tart cookie soufflé. Gingerbread jelly beans jelly beans candy canes chocolate cake. Cake tart tart. Gummi bears jelly gummies.'
+)
+
+Review.create(
+  user_id: rand(1..10),
+  recipe_id: @cast_iron_cornbread.id,
+  rating: 4,
+  content: 'Pie sugar plum macaroon halvah chupa chups jujubes. Cake cupcake cookie soufflé powder wafer gummi bears. Marshmallow soufflé fruitcake muffin. Jujubes wafer cookie jelly pastry. Sweet roll gummies icing. Lollipop lemon drops topping dessert tiramisu. Sweet jujubes topping. Oat cake gummi bears oat cake jujubes caramels toffee chocolate bar. Ice cream toffee tiramisu candy. Marzipan jelly beans danish halvah. Chocolate bar tart cookie soufflé. Gingerbread jelly beans jelly beans candy canes chocolate cake. Cake tart tart. Gummi bears jelly gummies.'
+)
+
+Review.create(
+  user_id: rand(1..10),
+  recipe_id: @cast_iron_cornbread.id,
   rating: 4,
   content: 'Pie sugar plum macaroon halvah chupa chups jujubes. Cake cupcake cookie soufflé powder wafer gummi bears. Marshmallow soufflé fruitcake muffin. Jujubes wafer cookie jelly pastry. Sweet roll gummies icing. Lollipop lemon drops topping dessert tiramisu. Sweet jujubes topping. Oat cake gummi bears oat cake jujubes caramels toffee chocolate bar. Ice cream toffee tiramisu candy. Marzipan jelly beans danish halvah. Chocolate bar tart cookie soufflé. Gingerbread jelly beans jelly beans candy canes chocolate cake. Cake tart tart. Gummi bears jelly gummies.'
 )
