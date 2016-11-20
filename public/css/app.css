@@ -173,3 +173,10 @@ div.divider {
 .top-margin-5 {
   margin-top: 5px !important;
 }
+
+img.responsive-img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
