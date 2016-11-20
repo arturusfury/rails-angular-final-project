@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="section">
+
+    <div class="row no-bot-margin">
+      <div class="col s12 offset-m3 m6">
+        <div class="row section-header">
+          <h3 class="light center section-header">Login</h3>
+        </div>
+
+        <div class="row no-bot-margin">
+          <div class="divider no-bot-margin"></div>
+        </div>
+
+        <div class="alert alert-danger" role="alert" ng-show="error">
+          {{error}}
+        </div>
+
+        <div class="row">
+          <form ng-submit="submitLogin(loginForm)" role="form" ng-init="loginForm = {}" class="col s12">
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons top-margin-5 prefix">email</i>
+                <input name="email" id="email" type="email" class="validate"
+                       ng-model="loginForm.email" required="required">
+                <label for="email">Email</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons top-margin-5 prefix">lock</i>
+                <input name="password" id="password" type="password" class="validate"
+                       ng-model="loginForm.password" required="required">
+                <label for="password">Password</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col s12 center">
+                <button class="btn waves-effect waves-light red" type="submit" name="action">Add!
+                  <i class="material-icons right">play_arrow</i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div> <!-- end col s12 -->
+    </div> <!-- end login page -->
+
+  </div> <!-- end section -->
+</div> <!-- emd container -->
