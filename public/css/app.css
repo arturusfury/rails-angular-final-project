@@ -11,6 +11,11 @@ nav .brand-logo {
   color: #444;
 }
 
+.error {
+  border-radius: 5px;
+  text-align: center;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
