@@ -181,8 +181,8 @@ Review.create(
   name: 'Water'
 )
 
-@vegtable_oil = Ingredient.create(
-  name: 'Vegtable Oil'
+@vegetable_oil = Ingredient.create(
+  name: 'Vegetable Oil'
 )
 
 Item.create(
@@ -213,7 +213,7 @@ Item.create(
   amount: 0.25,
   measure: 'tbsp',
   recipe_id: @roasted_salmon.id,
-  ingredient_id: @vegtable_oil.id
+  ingredient_id: @vegetable_oil.id
 )
 
 Direction.create(
@@ -596,5 +596,151 @@ Review.create(
   user_id: rand(1..10),
   recipe_id: @cast_iron_cornbread.id,
   rating: 4,
+  content: 'Pie sugar plum macaroon halvah chupa chups jujubes. Cake cupcake cookie soufflé powder wafer gummi bears. Marshmallow soufflé fruitcake muffin. Jujubes wafer cookie jelly pastry. Sweet roll gummies icing. Lollipop lemon drops topping dessert tiramisu. Sweet jujubes topping. Oat cake gummi bears oat cake jujubes caramels toffee chocolate bar. Ice cream toffee tiramisu candy. Marzipan jelly beans danish halvah. Chocolate bar tart cookie soufflé. Gingerbread jelly beans jelly beans candy canes chocolate cake. Cake tart tart. Gummi bears jelly gummies.'
+)
+
+# Baked Chicken Wings
+@baked_chicken_wings = Recipe.create(
+  title: 'Baked Chicken Wings',
+  user_id: rand(1..10),
+  total_rating: 2.4,
+  total_servings: 20,
+  prep_time: 80,
+  cook_time: 60,
+  description: "A super easy chicken wing recipe that doens't get your hands all greasy!",
+  image_url: 'http://images-gmi-pmc.edge-generalmills.com/d5ea92bc-de94-44d4-be68-76db8cc6ce65.jpg',
+  dish_type: 'Appetizer'
+)
+
+@chicken_wings = Ingredient.create(
+  name: 'Chicken Wings'
+)
+
+@salt = Ingredient.create(
+  name: 'Salt'
+)
+
+@pepper = Ingredient.create(
+  name: 'Pepper'
+)
+
+@hot_sauce = Ingredient.create(
+  name: 'Hot Sauce'
+)
+
+@cayenne_pepper = Ingredient.create(
+  name: 'Cayenne Pepper'
+)
+
+@garlic_powder = Ingredient.create(
+  name: 'Garlic Powder'
+)
+
+@melted_butter = Ingredient.create(
+  name: 'Melted Butter'
+)
+
+Item.create(
+  amount: 20,
+  measure: '',
+  recipe_id: @baked_chicken_wings.id,
+  ingredient_id: @chicken_wings.id
+)
+Item.create(
+  amount: 0.5,
+  measure: 'tsp',
+  recipe_id: @baked_chicken_wings.id,
+  ingredient_id: @salt.id
+)
+Item.create(
+  amount: 1,
+  measure: 'tbsp',
+  recipe_id: @baked_chicken_wings.id,
+  ingredient_id: @pepper.id
+)
+Item.create(
+  amount: 0.75,
+  measure: 'cups',
+  recipe_id: @baked_chicken_wings.id,
+  ingredient_id: @hot_sauce.id
+)
+Item.create(
+  amount: 1,
+  measure: 'tbsp',
+  recipe_id: @baked_chicken_wings.id,
+  ingredient_id: @vegetable_oil.id
+)
+Item.create(
+  amount: 0.75,
+  measure: 'cups',
+  recipe_id: @baked_chicken_wings.id,
+  ingredient_id: @all_purpose_flour.id
+)
+Item.create(
+  amount: 0.5,
+  measure: 'tsp',
+  recipe_id: @baked_chicken_wings.id,
+  ingredient_id: @cayenne_pepper.id
+)
+Item.create(
+  amount: 0.5,
+  measure: 'tsp',
+  recipe_id: @baked_chicken_wings.id,
+  ingredient_id: @garlic_powder.id
+)
+Item.create(
+  amount: 0.5,
+  measure: 'cup',
+  recipe_id: @baked_chicken_wings.id,
+  ingredient_id: @melted_butter.id
+)
+
+Direction.create(
+  recipe_id: @baked_chicken_wings.id,
+  step: 1,
+  text: 'Line a rimmed baking sheet with foil. Set a wire rack on the baking sheet and coat it with cooking spray.'
+)
+
+Direction.create(
+  recipe_id: @baked_chicken_wings.id,
+  step: 2,
+  text: 'Place the salt, pepper, 1 tablespoon hot sauce, and vegetable oil in a resealable plastic bag, and shake to mix. Add the chicken wings, seal, and toss until well coated.'
+)
+
+Direction.create(
+  recipe_id: @baked_chicken_wings.id,
+  step: 3,
+  text: 'Place the flour, cayenne pepper, and garlic powder in another resealable plastic bag, and shake to mix. Pour the chicken wings from the first bag into the flour bag, seal, and toss until well coated with the flour mixture. Place the wings onto the prepared baking sheet rack, and place into the refrigerator for at least 1 hour.'
+)
+
+Direction.create(
+  recipe_id: @baked_chicken_wings.id,
+  step: 4,
+  text: 'Preheat oven to 400F'
+)
+
+Direction.create(
+  recipe_id: @baked_chicken_wings.id,
+  step: 5,
+  text: 'Melt the butter in a medium microwave safe bowl. Whisk in the hot sauce. Dip the wings into the butter mixture one at a time, and place back on the baking sheet rack. Bake in the preheated oven until the chicken is no longer pink in the center, and crispy on the outside, about 1 hour. Turn the wings over halfway during cooking so they cook evenly.'
+)
+
+Direction.create(
+  recipe_id: @baked_chicken_wings.id,
+  step: 6,
+  text: 'Serve with blue cheese dressing and celery sticks'
+)
+
+Review.create(
+  user_id: rand(1..10),
+  recipe_id: @baked_chicken_wings.id,
+  rating: 2,
+  content: 'Pie sugar plum macaroon halvah chupa chups jujubes. Cake cupcake cookie soufflé powder wafer gummi bears. Marshmallow soufflé fruitcake muffin. Jujubes wafer cookie jelly pastry. Sweet roll gummies icing. Lollipop lemon drops topping dessert tiramisu. Sweet jujubes topping. Oat cake gummi bears oat cake jujubes caramels toffee chocolate bar. Ice cream toffee tiramisu candy. Marzipan jelly beans danish halvah. Chocolate bar tart cookie soufflé. Gingerbread jelly beans jelly beans candy canes chocolate cake. Cake tart tart. Gummi bears jelly gummies.'
+)
+
+Review.create(
+  user_id: rand(1..10),
+  recipe_id: @baked_chicken_wings.id,
+  rating: 3,
   content: 'Pie sugar plum macaroon halvah chupa chups jujubes. Cake cupcake cookie soufflé powder wafer gummi bears. Marshmallow soufflé fruitcake muffin. Jujubes wafer cookie jelly pastry. Sweet roll gummies icing. Lollipop lemon drops topping dessert tiramisu. Sweet jujubes topping. Oat cake gummi bears oat cake jujubes caramels toffee chocolate bar. Ice cream toffee tiramisu candy. Marzipan jelly beans danish halvah. Chocolate bar tart cookie soufflé. Gingerbread jelly beans jelly beans candy canes chocolate cake. Cake tart tart. Gummi bears jelly gummies.'
 )
