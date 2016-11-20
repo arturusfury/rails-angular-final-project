@@ -17,7 +17,7 @@
 
     <!-- Dropdown Structure -->
     <ul id="dropdown" class="dropdown-content">
-      <li ng-show="user.id"><a class="black-text">Brian</a></li>
+      <li ng-show="user.id"><a class="black-text">{{ user.name }}</a></li>
       <li ng-show="user.id" class="divider"></li>
       <li ng-show="user.id"><a href="/#/user/settings" class="black-text">Settings</a></li>
       <li ng-show="user.id"><a ng-click="signOut()" class="black-text">Logout</a></li>
@@ -40,7 +40,7 @@
         </div>
       </form>
       <ul id="nav-mobile" class="side-nav">
-        <li ng-show="user.id"><a class="black-text">Brian</a></li>
+        <li ng-show="user.id"><a class="black-text">{{ user.name }}</a></li>
         <li class="divider"></li>
         <li><a href="/#/recipes">Browse Recipes</a></li>
         <li><a href="/#/recipes/add">Add a Recipes</a></li>
@@ -106,6 +106,7 @@
   <script src="js/recipeBox/controllers/Main.controller.js"></script>
   <script src="js/recipeBox/controllers/Main.Recipes.controller.js"></script>
   <script src="js/recipeBox/controllers/User.Sessions.controller.js"></script>
+  <script src="js/recipeBox/controllers/User.Registrations.controller.js"></script>
   <script src="js/recipeBox/controllers/Recipes.List.controller.js"></script>
   <script src="js/recipeBox/controllers/Recipe.Details.controller.js"></script>
   <script src="js/recipeBox/controllers/Recipe.Add.controller.js"></script>
