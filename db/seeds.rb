@@ -161,7 +161,102 @@ Review.create(
   prep_time: 15,
   cook_time: 16,
   description: 'A simple soy sauce and brown sugar marinade, with hints of lemon and garlic, are the perfect salty-sweet complement to rich salmon fillets. Even my 9 year old loves this recipe!',
-  image_url: 'img/recipes/roasted_salmon.jpg',
+  image_url: 'http://images.media-allrecipes.com/userphotos/720x405/800839.jpg',
+  dish_type: 'Main Course'
+)
+
+@salmon_filet = Ingredient.create(
+  name: 'Salmon Filet'
+)
+
+@soy_sauce = Ingredient.create(
+  name: 'Soy Sauce'
+)
+
+@brown_sugar = Ingredient.create(
+  name: 'Brown Sugar'
+)
+
+@water = Ingredient.create(
+  name: 'Water'
+)
+
+@vegtable_oil = Ingredient.create(
+  name: 'Vegtable Oil'
+)
+
+Item.create(
+  amount: 1.5,
+  measure: 'lbs',
+  recipe_id: @roasted_salmon.id,
+  ingredient_id: @salmon_filet.id
+)
+Item.create(
+  amount: 0.33,
+  measure: 'cup',
+  recipe_id: @roasted_salmon.id,
+  ingredient_id: @soy_sauce.id
+)
+Item.create(
+  amount: 0.33,
+  measure: 'cup',
+  recipe_id: @roasted_salmon.id,
+  ingredient_id: @brown_sugar.id
+)
+Item.create(
+  amount: 0.33,
+  measure: 'cup',
+  recipe_id: @roasted_salmon.id,
+  ingredient_id: @water.id
+)
+Item.create(
+  amount: 0.25,
+  measure: 'tbsp',
+  recipe_id: @roasted_salmon.id,
+  ingredient_id: @vegtable_oil.id
+)
+
+Direction.create(
+  recipe_id: @roasted_salmon.id,
+  step: 1,
+  text: 'Season salmon fillets with lemon pepper, garlic powder, and salt.'
+)
+
+Direction.create(
+  recipe_id: @roasted_salmon.id,
+  step: 2,
+  text: 'In a small bowl, stir together soy sauce, brown sugar, water, and vegetable oil until sugar is dissolved. Place fish in a large resealable plastic bag with the soy sauce mixture, seal, and turn to coat. Refrigerate for at least 2 hours.'
+)
+
+Direction.create(
+  recipe_id: @roasted_salmon.id,
+  step: 3,
+  text: 'Preheat grill for medium heat.'
+)
+
+Direction.create(
+  recipe_id: @roasted_salmon.id,
+  step: 4,
+  text: 'Lightly oil grill grate. Place salmon on the preheated grill, and discard marinade. Cook salmon for 6 to 8 minutes per side, or until the fish flakes easily with a fork.'
+)
+
+Review.create(
+  user_id: 1,
+  recipe_id: @roasted_salmon.id,
+  rating: 4,
+  content: 'Pie sugar plum macaroon halvah chupa chups jujubes. Cake cupcake cookie soufflé powder wafer gummi bears. Marshmallow soufflé fruitcake muffin. Jujubes wafer cookie jelly pastry. Sweet roll gummies icing. Lollipop lemon drops topping dessert tiramisu. Sweet jujubes topping. Oat cake gummi bears oat cake jujubes caramels toffee chocolate bar. Ice cream toffee tiramisu candy. Marzipan jelly beans danish halvah. Chocolate bar tart cookie soufflé. Gingerbread jelly beans jelly beans candy canes chocolate cake. Cake tart tart. Gummi bears jelly gummies.'
+)
+
+# Roasted Salmon
+@roasted_salmon = Recipe.create(
+  title: 'Grilled Salmon',
+  user_id: rand(1..10),
+  total_rating: 4.3,
+  total_servings: 6,
+  prep_time: 15,
+  cook_time: 16,
+  description: 'A simple soy sauce and brown sugar marinade, with hints of lemon and garlic, are the perfect salty-sweet complement to rich salmon fillets. Even my 9 year old loves this recipe!',
+  image_url: 'http://images.media-allrecipes.com/userphotos/720x405/800839.jpg',
   dish_type: 'Main Course'
 )
 
