@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     end
 
     namespace :v1 do
+      get '/recipes/main', to: 'recipes#main'
       resources :recipes
       resources :ingredients, only: [:index]
     end
