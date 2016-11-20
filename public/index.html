@@ -28,7 +28,7 @@
     <div class="nav-wrapper container">
       <a id="logo-container" href="/#/main" class="brand-logo uppercase">Recipe<span class="red-text">Box</span></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="/#/recipes/add" class="uppercase">Add a Recipe</a></li>
+        <li ng-show="user.id"><a href="/#/recipes/add" class="uppercase">Add a Recipe</a></li>
         <li><a href="/#/recipes" class="uppercase">Browse Recipes</a></li>
         <li><a class="dropdown-button" href="javascript:void(0);" data-activates="dropdown" dropdown data-hover="false"><i class="material-icons right">supervisor_account arrow_drop_down</i></a></li>
       </ul>
@@ -41,9 +41,9 @@
       </form>
       <ul id="nav-mobile" class="side-nav">
         <li ng-show="user.id"><a class="black-text">{{ user.name }}</a></li>
-        <li class="divider"></li>
+        <li ng-show="user.id" class="divider"></li>
         <li><a href="/#/recipes">Browse Recipes</a></li>
-        <li><a href="/#/recipes/add">Add a Recipes</a></li>
+        <li ng-show="user.id"><a href="/#/recipes/add">Add a Recipes</a></li>
         <li class="divider"></li>
         <li ng-show="user.id"><a href="/#/user/settings" class="black-text">Settings</a></li>
         <li ng-show="user.id"><a ng-click="signOut()" class="black-text">Logout</a></li>
