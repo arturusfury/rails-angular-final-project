@@ -2,16 +2,12 @@ angular
   .module('recipeBox', ['ui.router', 'ui.materialize'])
   .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
 
-  $urlRouterProvider.otherwise('/main');
+  $urlRouterProvider.otherwise('/');
 
   $stateProvider
     .state('main', {
       url: '/',
-      templateUrl: 'views/Main.controller.html'
-    })
-    .state('main.list', {
-      url: 'main',
-      templateUrl: 'views/Main.Recipes.controller.html',
+      templateUrl: 'views/Main.controller.html',
       controller: 'MainRecipesController',
       resolve: {
         recipes: function ($http) {
@@ -19,8 +15,13 @@ angular
         }
       }
     })
-    .state('main.recipes', {
-      url: 'recipes',
+    .state('recipes', {
+      url: '/recipes',
+      abstract: true,
+      templateUrl: 'views/Recipes.controller.html'
+    })
+    .state('recipes.list', {
+      url: '',
       templateUrl: 'views/recipes/Recipes.List.controller.html',
       controller: 'RecipesListController as recipes',
       resolve: {
@@ -29,13 +30,13 @@ angular
         }
       }
     })
-    .state('main.recipe_add', {
-      url: 'recipes/add',
+    .state('recipes.add', {
+      url: '/add',
       templateUrl: 'views/recipes/Recipe.Add.controller.html',
       controller: 'RecipeAddController'
     })
-    .state('main.recipe', {
-      url: 'recipes/:id',
+    .state('recipes.detail', {
+      url: '/:id',
       templateUrl: 'views/recipes/Recipe.Details.controller.html',
       controller: 'RecipeDetailsController as recipe',
       resolve: {
@@ -44,8 +45,8 @@ angular
         }
       }
     })
-    .state('main.recipe_edit', {
-      url: 'recipes/:id/edit',
+    .state('recipes.edit', {
+      url: '/:id/edit',
       templateUrl: 'views/recipes/Recipe.Edit.controller.html',
       controller: 'RecipeEditController',
       resolve: {
