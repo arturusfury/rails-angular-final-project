@@ -1,7 +1,6 @@
 class Recipe < ApplicationRecord
   belongs_to :user
-  has_many :items
-  has_many :ingredients, through: :items
+  has_many :ingredients
   has_many :reviews
   has_many :directions
 end

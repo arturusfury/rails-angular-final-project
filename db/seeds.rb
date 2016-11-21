@@ -40,108 +40,72 @@ User.create(
   dish_type: 'Main Course'
 )
 
-@rib_roast = Ingredient.create(
-  name: 'Whole Prime Rib Roast'
-)
-
-@garlic = Ingredient.create(
-  name: 'Garlic'
-)
-
-@rosemary = Ingredient.create(
-  name: 'Rosemary'
-)
-
-@course_black_pepper = Ingredient.create(
-  name: 'Coarse Ground Black Pepper'
-)
-
-@dried_rosemary = Ingredient.create(
-  name: 'Dried Rosemary'
-)
-
-@sea_salt = Ingredient.create(
-  name: 'Sea Salt'
-)
-
-@paprika = Ingredient.create(
-  name: 'Paprika'
-)
-
-@drip_pan = Ingredient.create(
-  name: 'Aluminum Drip Pan'
-)
-
-Item.create(
+Ingredient.create(
   amount: 18,
   measure: 'lbs',
   recipe_id: @prime_rib.id,
-  ingredient_id: @rib_roast.id
+  ingredient: 'Whole Prime Rib Roast'
 )
-Item.create(
+Ingredient.create(
   amount: 8,
   measure: 'cloves',
   recipe_id: @prime_rib.id,
-  ingredient_id: @garlic.id
+  ingredient: 'Garlic'
 )
-Item.create(
+Ingredient.create(
   amount: 3,
   measure: 'sprigs',
   recipe_id: @prime_rib.id,
-  ingredient_id: @rosemary.id
+  ingredient: 'Fresh Rosemary'
 )
-Item.create(
+Ingredient.create(
   amount: 2,
   measure: 'tbsp',
   recipe_id: @prime_rib.id,
-  ingredient_id: @course_black_pepper.id
+  ingredient: 'Coarse Ground Black Pepper'
 )
-Item.create(
+Ingredient.create(
   amount: 2,
   measure: 'tbsp',
   recipe_id: @prime_rib.id,
-  ingredient_id: @dried_rosemary.id
+  ingredient: 'Dried Rosemary'
 )
-Item.create(
+Ingredient.create(
   amount: 2,
   measure: 'tbsp',
   recipe_id: @prime_rib.id,
-  ingredient_id: @sea_salt.id
+  ingredient: 'Sea Salt'
 )
-Item.create(
+Ingredient.create(
   amount: 2,
   measure: 'tbsp',
   recipe_id: @prime_rib.id,
-  ingredient_id: @paprika.id
+  ingredient: 'Paprika'
 )
-Item.create(
+Ingredient.create(
   amount: 1,
   measure: '',
   recipe_id: @prime_rib.id,
-  ingredient_id: @drip_pan.id
+  ingredient: 'Aluminum Drip Pan'
 )
 
 Direction.create(
   recipe_id: @prime_rib.id,
-  step: 1,
   text: 'Prepare grill for indirect grilling with a large dripping pan under where the roast will be. Aim for a grill temperature around 375 degrees F. Periodically add water to the pan to keep the drippings from burning away if you want to make gravy. Make sure you know the weight of your prime rib. Plan on grilling indirectly for 12 to 14 minutes per pound. If you are using a smaller roast, adjust the ingredients and cooking times accordingly.'
 )
 
 Direction.create(
   recipe_id: @prime_rib.id,
-  step: 2,
   text: 'With a sharp paring knife make a series of 1/2 inch deep holes every 2 inches all over the roast. Insert the garlic slivers in every other hole and a leaf from the rosemary in the rest. Combine black pepper, dried rosemary, salt and paprika and rub over the surface of the meat. When the grill is ready, place the roast on the well oiled grate directly over the dripping pan. Cook for about 12 to 14 minutes per pound. An 18 pound roast will take about 3 1/2 to 4 hours. It is very important to use an accurate meat thermometer to check for doneness. You do not want to over cook this roast.'
 )
 
 Direction.create(
   recipe_id: @prime_rib.id,
-  step: 3,
   text: 'When the meat reaches an internal temperature of 115 to 125 degrees remove it from the grill. Place it on a platter and cover loosely with foil. The meat will continue cooking and the internal temperature will continue to rise. Tent loosely wit aluminum foil and let rest for at least 15 minutes, but no more than 30. If you want the roast rare to medium rare, remove from the grill when the temperature is 115 degrees and let it rest for 15 minutes.'
 )
 
 Direction.create(
   recipe_id: @prime_rib.id,
-  step: 4,
   text: 'If you want it more well done, remove from the grill at 125 degrees and let it rest for 30 minutes.'
 )
 
@@ -165,78 +129,54 @@ Review.create(
   dish_type: 'Main Course'
 )
 
-@salmon_filet = Ingredient.create(
-  name: 'Salmon Filet'
-)
-
-@soy_sauce = Ingredient.create(
-  name: 'Soy Sauce'
-)
-
-@brown_sugar = Ingredient.create(
-  name: 'Brown Sugar'
-)
-
-@water = Ingredient.create(
-  name: 'Water'
-)
-
-@vegetable_oil = Ingredient.create(
-  name: 'Vegetable Oil'
-)
-
-Item.create(
+Ingredient.create(
   amount: 1.5,
   measure: 'lbs',
   recipe_id: @roasted_salmon.id,
-  ingredient_id: @salmon_filet.id
+  ingredient: 'Salmon Filet'
 )
-Item.create(
+Ingredient.create(
   amount: 0.33,
   measure: 'cups',
   recipe_id: @roasted_salmon.id,
-  ingredient_id: @soy_sauce.id
+  ingredient: 'Soy Sauce'
 )
-Item.create(
+Ingredient.create(
   amount: 0.33,
   measure: 'cups',
   recipe_id: @roasted_salmon.id,
-  ingredient_id: @brown_sugar.id
+  ingredient: 'Brown Sugar'
 )
-Item.create(
+Ingredient.create(
   amount: 0.33,
   measure: 'cups',
   recipe_id: @roasted_salmon.id,
-  ingredient_id: @water.id
+  ingredient: 'Water'
 )
-Item.create(
+Ingredient.create(
   amount: 0.25,
   measure: 'tbsp',
   recipe_id: @roasted_salmon.id,
-  ingredient_id: @vegetable_oil.id
+  ingredient: 'Vegtable Oil'
 )
 
 Direction.create(
   recipe_id: @roasted_salmon.id,
-  step: 1,
   text: 'Season salmon fillets with lemon pepper, garlic powder, and salt.'
 )
 
 Direction.create(
   recipe_id: @roasted_salmon.id,
-  step: 2,
   text: 'In a small bowl, stir together soy sauce, brown sugar, water, and vegetable oil until sugar is dissolved. Place fish in a large resealable plastic bag with the soy sauce mixture, seal, and turn to coat. Refrigerate for at least 2 hours.'
 )
 
 Direction.create(
   recipe_id: @roasted_salmon.id,
-  step: 3,
   text: 'Preheat grill for medium heat.'
 )
 
 Direction.create(
   recipe_id: @roasted_salmon.id,
-  step: 4,
   text: 'Lightly oil grill grate. Place salmon on the preheated grill, and discard marinade. Cook salmon for 6 to 8 minutes per side, or until the fish flakes easily with a fork.'
 )
 
@@ -260,76 +200,53 @@ Review.create(
   dish_type: 'Appetizer & Snacks'
 )
 
-@pie_crust = Ingredient.create(
-  name: 'Pie Crusts, softened according to package directions'
-)
-
-@bacon = Ingredient.create(
-  name: 'Bacon'
-)
-
-@plum_tomatoes = Ingredient.create(
-  name: 'Plum Tomatoes'
-)
-
-@cheddar_cheese = Ingredient.create(
-  name: 'Shredded Cheddar Cheese'
-)
-
-@dijon_mustard = Ingredient.create(
-  name: 'Dijon Mustard'
-)
-
-Item.create(
+Ingredient.create(
   amount: 2,
   recipe_id: @bacon_bites.id,
-  ingredient_id: @pie_crust.id
+  ingredient: "Pie Crust"
 )
-Item.create(
+Ingredient.create(
   amount: 8,
-  measure: 'slices',
+  measure: 'strips',
   recipe_id: @bacon_bites.id,
-  ingredient_id: @bacon.id
+  ingredient: 'Bacon'
 )
-Item.create(
+Ingredient.create(
   amount: 2,
   recipe_id: @bacon_bites.id,
-  ingredient_id: @plum_tomatoes.id
+  ingredient: 'Plum Tomatoes'
 )
-Item.create(
+Ingredient.create(
   amount: 1,
   measure: 'cups',
   recipe_id: @bacon_bites.id,
-  ingredient_id: @cheddar_cheese.id
+  ingredient: 'Cheddar Cheese'
 )
-Item.create(
+Ingredient.create(
   amount: 2,
   measure: 'tsp',
   recipe_id: @bacon_bites.id,
-  ingredient_id: @dijon_mustard.id
+  ingredient: 'Dijon Mustard'
 )
-Item.create(
+Ingredient.create(
   amount: 1,
   measure: 'tbsp',
   recipe_id: @bacon_bites.id,
-  ingredient_id: @garlic.id
+  ingredient: 'Garlic'
 )
 
 Direction.create(
   recipe_id: @bacon_bites.id,
-  step: 1,
   text: 'Preheat oven to 400°F (200°C). Unroll pie crust onto lightly floured surface. Spacing closely together, cut 12 disks from crust using outer tube of Measure-All® Cup (nine around outside edge and three in center). Press disks into wells of Deluxe Mini-Muffin Pan using Mini-Tart Shaper. Repeat with remaining crust. Bake 8-10 minutes or until golden brown.'
 )
 
 Direction.create(
   recipe_id: @bacon_bites.id,
-  step: 2,
   text: 'Meanwhile, stack bacon; thinly slice using Utility Knife. Cook bacon in (8-in./20-cm) Sauté Pan over medium-high heat 10-12 minutes or until crisp. Remove bacon to paper towel-lined plate; cool slightly. Meanwhile, cut tomatoes in half using clean Utility Knife; scrape out seeds and dice. Chop bacon with Food Chopper. In Classic Batter Bowl, combine bacon, tomatoes, cheddar cheese, cream cheese, mustard and garlic pressed with Garlic Press; mix well.'
 )
 
 Direction.create(
   recipe_id: @bacon_bites.id,
-  step: 3,
   text: 'Remove pan from oven to Stackable Cooling Rack. Using Adjustable Measuring Spoon, fill each cup with about 1 tbsp (15 mL) of the cheese mixture. Bake 5-7 minutes or until cheese is melted. Garnish with green onions and additional tomato, if desired.'
 )
 
@@ -353,90 +270,67 @@ Review.create(
   dish_type: 'Bread'
 )
 
-@all_purpose_flour = Ingredient.create(
-  name: 'All-Purpose Flour'
-)
-
-@kohser_salt = Ingredient.create(
-  name: 'Kosher Salt'
-)
-
-@dry_yeast = Ingredient.create(
-  name: 'Dry Yeast'
-)
-
-@dutch_oven = Ingredient.create(
-  name: 'Dutch Oven'
-)
-
-Item.create(
+Ingredient.create(
   amount: 3,
   measure: 'cups',
   recipe_id: @no_knead_bread.id,
-  ingredient_id: @all_purpose_flour.id
+  ingredient: 'All-Purpose Flour'
 )
-Item.create(
+Ingredient.create(
   amount: 2,
   measure: 'tsp',
   recipe_id: @no_knead_bread.id,
-  ingredient_id: @kohser_salt.id
+  ingredient: 'Kosher Salt'
 )
-Item.create(
+Ingredient.create(
   amount: 0.5,
   measure: 'tsp',
   recipe_id: @no_knead_bread.id,
-  ingredient_id: @dry_yeast.id
+  ingredient: 'Dry Yeast'
 )
-Item.create(
+Ingredient.create(
   amount: 1.5,
   measure: 'cups',
   recipe_id: @no_knead_bread.id,
-  ingredient_id: @water.id
+  ingredient: 'Water'
 )
-Item.create(
+Ingredient.create(
   recipe_id: @no_knead_bread.id,
-  ingredient_id: @dutch_oven.id
+  ingredient: 'Dutch Oven'
 )
 
 Direction.create(
   recipe_id: @no_knead_bread.id,
-  step: 1,
   text: 'In a large bowl, stir together the flour, salt and yeast. Stir in water using a wooden spoon until the mixture forms a shaggy but cohesive dough. Do not over-work the dough. The less you "work" it, the more soft, fluffy air pockets will form.'
 )
 
 Direction.create(
   recipe_id: @no_knead_bread.id,
-  step: 2,
   text: 'Cover bowl tightly with plastic wrap. Let dough sit at room temperature for 8-24 hours*. Dough will bubble up and rise.'
 )
 
 Direction.create(
   recipe_id: @no_knead_bread.id,
-  step: 3,
   text: 'After dough is ready, preheat oven to 450 degrees F. Place your Dutch oven, uncovered, into the preheated oven for 30 minutes.'
 )
 
 Direction.create(
   recipe_id: @no_knead_bread.id,
-  step: 4,
   text: 'While your Dutch oven preheats, turn dough onto a well-floured surface. With floured hands, form the dough into a ball. Cover dough loosely with plastic wrap and let rest.'
 )
 
 Direction.create(
   recipe_id: @no_knead_bread.id,
-  step: 5,
   text: 'After the 30 minutes are up, carefully remove Dutch oven. With floured hands, place the bread dough into it. (You can put a piece of parchment under the dough if your Dutch oven isn’t enamel coated.)'
 )
 
 Direction.create(
   recipe_id: @no_knead_bread.id,
-  step: 6,
   text: 'Replace cover and bake for 30 minutes covered. Carefully remove cover and bake for 7-15 minutes* more, uncovered.'
 )
 
 Direction.create(
   recipe_id: @no_knead_bread.id,
-  step: 7,
   text: 'Carefully remove bread to a cutting board and slice with a bread knife.'
 )
 
@@ -460,114 +354,78 @@ Review.create(
   dish_type: 'Bread'
 )
 
-@coconut_oil = Ingredient.create(
-  name: 'Melted Coconut Oil'
-)
-
-@yellow_cornmeal = Ingredient.create(
-  name: 'Yellow Cornmeal'
-)
-
-@baking_powder = Ingredient.create(
-  name: 'Baking Powder'
-)
-
-@kosher_salt = Ingredient.create(
-  name: 'Kosher Salt'
-)
-
-@almond_milk = Ingredient.create(
-  name: 'Almond Milk, or Regular Milk at room temperature'
-)
-
-@applesauce = Ingredient.create(
-  name: 'Applesauce, at room temperature'
-)
-
-@sorghum = Ingredient.create(
-  name: 'Sorghum'
-)
-
-@egg = Ingredient.create(
-  name: 'Egg, at room temperature'
-)
-
-Item.create(
+Ingredient.create(
   amount: 3,
   measure: 'tbsp',
   recipe_id: @cast_iron_cornbread.id,
-  ingredient_id: @coconut_oil.id
+  ingredient: 'Melted Coconut Oil'
 )
-Item.create(
+Ingredient.create(
   amount: 1,
   measure: 'cups',
   recipe_id: @cast_iron_cornbread.id,
-  ingredient_id: @yellow_cornmeal.id
+  ingredient: 'Yellow Cornmeal'
 )
-Item.create(
+Ingredient.create(
   amount: 1,
   measure: 'cups',
   recipe_id: @cast_iron_cornbread.id,
-  ingredient_id: @all_purpose_flour.id
+  ingredient: 'All-Purpose Flour'
 )
-Item.create(
+Ingredient.create(
   amount: 1,
   measure: 'tbsp',
   recipe_id: @cast_iron_cornbread.id,
-  ingredient_id: @baking_powder.id
+  ingredient: 'Baking Powder'
 )
-Item.create(
+Ingredient.create(
   amount: 1,
   measure: 'tsp',
   recipe_id: @cast_iron_cornbread.id,
-  ingredient_id: @kosher_salt.id
+  ingredient: 'Kosher Salt'
 )
-Item.create(
+Ingredient.create(
   amount: 1,
   measure: 'cup',
   recipe_id: @cast_iron_cornbread.id,
-  ingredient_id: @almond_milk.id
+  ingredient: 'Almond Milk, or Regular Milk at room temperature'
 )
-Item.create(
+Ingredient.create(
   amount: 0.25,
   measure: 'cup',
   recipe_id: @cast_iron_cornbread.id,
-  ingredient_id: @applesauce.id
+  ingredient: 'Applesauce, at room temperature'
 )
-Item.create(
+Ingredient.create(
   amount: 0.25,
   measure: 'cup',
   recipe_id: @cast_iron_cornbread.id,
-  ingredient_id: @sorghum.id
+  ingredient: 'Sorghum'
 )
-Item.create(
+Ingredient.create(
   amount: 1,
   measure: 'large',
   recipe_id: @cast_iron_cornbread.id,
-  ingredient_id: @egg.id
+  ingredient: 'Egg, at room temperature'
 )
 
 Direction.create(
   recipe_id: @cast_iron_cornbread.id,
-  step: 1,
   text: 'Preheat the oven to 375 degrees F'
 )
 
 Direction.create(
   recipe_id: @cast_iron_cornbread.id,
-  step: 2,
   text: 'Add 1 tablespoon of the coconut oil to a 6-inch cast-iron skillet. Put the skillet in the oven and allow to heat until very hot, 6 to 8 minutes.'
 )
 
 Direction.create(
   recipe_id: @cast_iron_cornbread.id,
-  step: 3,
   text: 'Combine the cornmeal, flour, baking powder and salt in a large bowl with a whisk. In a different bowl, combine the almond milk, applesauce, sorghum, egg and the remaining 2 tablespoons coconut oil. Make a well in the center of the dry ingredients and pour in the wet. Fold to combine.'
 )
 
 Direction.create(
   recipe_id: @cast_iron_cornbread.id,
-  step: 4,
   text: 'Carefully remove the hot cast-iron skillet from the oven and pour in the batter. Return the skillet to the oven and bake until golden with a crisp crust, 25 minutes.'
 )
 
@@ -612,122 +470,88 @@ Review.create(
   dish_type: 'Appetizer & Snacks'
 )
 
-@chicken_wings = Ingredient.create(
-  name: 'Chicken Wings'
-)
-
-@salt = Ingredient.create(
-  name: 'Salt'
-)
-
-@pepper = Ingredient.create(
-  name: 'Pepper'
-)
-
-@hot_sauce = Ingredient.create(
-  name: 'Hot Sauce'
-)
-
-@cayenne_pepper = Ingredient.create(
-  name: 'Cayenne Pepper'
-)
-
-@garlic_powder = Ingredient.create(
-  name: 'Garlic Powder'
-)
-
-@melted_butter = Ingredient.create(
-  name: 'Melted Butter'
-)
-
-Item.create(
+Ingredient.create(
   amount: 20,
   measure: '',
   recipe_id: @baked_chicken_wings.id,
-  ingredient_id: @chicken_wings.id
+  ingredient: 'Chicken Wings'
 )
-Item.create(
+Ingredient.create(
   amount: 0.5,
   measure: 'tsp',
   recipe_id: @baked_chicken_wings.id,
-  ingredient_id: @salt.id
+  ingredient: 'Salt'
 )
-Item.create(
+Ingredient.create(
   amount: 1,
   measure: 'tbsp',
   recipe_id: @baked_chicken_wings.id,
-  ingredient_id: @pepper.id
+  ingredient: "Pepper"
 )
-Item.create(
+Ingredient.create(
   amount: 0.75,
   measure: 'cups',
   recipe_id: @baked_chicken_wings.id,
-  ingredient_id: @hot_sauce.id
+  ingredient: 'Hot Sauce'
 )
-Item.create(
+Ingredient.create(
   amount: 1,
   measure: 'tbsp',
   recipe_id: @baked_chicken_wings.id,
-  ingredient_id: @vegetable_oil.id
+  ingredient: 'Vegtable Oil'
 )
-Item.create(
+Ingredient.create(
   amount: 0.75,
   measure: 'cups',
   recipe_id: @baked_chicken_wings.id,
-  ingredient_id: @all_purpose_flour.id
+  ingredient: 'All-Purpose Flour'
 )
-Item.create(
+Ingredient.create(
   amount: 0.5,
   measure: 'tsp',
   recipe_id: @baked_chicken_wings.id,
-  ingredient_id: @cayenne_pepper.id
+  ingredient: 'Cayenne Pepper'
 )
-Item.create(
+Ingredient.create(
   amount: 0.5,
   measure: 'tsp',
   recipe_id: @baked_chicken_wings.id,
-  ingredient_id: @garlic_powder.id
+  ingredient: 'Garlic Powder'
 )
-Item.create(
+Ingredient.create(
   amount: 0.5,
   measure: 'cup',
   recipe_id: @baked_chicken_wings.id,
-  ingredient_id: @melted_butter.id
+  ingredient: 'Melted Butter'
 )
 
 Direction.create(
   recipe_id: @baked_chicken_wings.id,
-  step: 1,
   text: 'Line a rimmed baking sheet with foil. Set a wire rack on the baking sheet and coat it with cooking spray.'
 )
 
 Direction.create(
   recipe_id: @baked_chicken_wings.id,
-  step: 2,
   text: 'Place the salt, pepper, 1 tablespoon hot sauce, and vegetable oil in a resealable plastic bag, and shake to mix. Add the chicken wings, seal, and toss until well coated.'
 )
 
 Direction.create(
   recipe_id: @baked_chicken_wings.id,
-  step: 3,
   text: 'Place the flour, cayenne pepper, and garlic powder in another resealable plastic bag, and shake to mix. Pour the chicken wings from the first bag into the flour bag, seal, and toss until well coated with the flour mixture. Place the wings onto the prepared baking sheet rack, and place into the refrigerator for at least 1 hour.'
 )
 
 Direction.create(
   recipe_id: @baked_chicken_wings.id,
-  step: 4,
   text: 'Preheat oven to 400F'
 )
 
 Direction.create(
   recipe_id: @baked_chicken_wings.id,
-  step: 5,
   text: 'Melt the butter in a medium microwave safe bowl. Whisk in the hot sauce. Dip the wings into the butter mixture one at a time, and place back on the baking sheet rack. Bake in the preheated oven until the chicken is no longer pink in the center, and crispy on the outside, about 1 hour. Turn the wings over halfway during cooking so they cook evenly.'
 )
 
 Direction.create(
   recipe_id: @baked_chicken_wings.id,
-  step: 6,
   text: 'Serve with blue cheese dressing and celery sticks'
 )
 
