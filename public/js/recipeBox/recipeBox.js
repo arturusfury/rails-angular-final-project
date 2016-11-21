@@ -4,7 +4,8 @@ angular
       'ui.router',
       'ui.materialize',
       'ipCookie',
-      'ng-token-auth'
+      'ng-token-auth',
+      'truncate'
     ]
   )
   .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -15,10 +16,13 @@ angular
     .state('main', {
       url: '/',
       templateUrl: 'views/Main.template.html',
-      controller: 'MainRecipesController',
+      controller: 'MainRecipesController as mainCtrl',
       resolve: {
-        recipes: function ($http) {
-          return $http.get('http://localhost:3000/api/v1/recipes/')
+        topRecipes: function ($http) {
+          return $http.get('http://localhost:3000/api/v1/recipes/top')
+        },
+        latestRecipes: function ($http) {
+          return $http.get('http://localhost:3000/api/v1/recipes/latest')
         }
       }
     })
