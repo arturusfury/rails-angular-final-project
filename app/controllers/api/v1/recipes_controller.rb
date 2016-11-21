@@ -12,4 +12,8 @@ class Api::V1::RecipesController < ApplicationController
   def main
     respond_with(Recipe.order(total_rating: :desc))
   end
+
+  def latest
+    respond_with(Recipe.order(updated_at: :desc))
+  end
 end
