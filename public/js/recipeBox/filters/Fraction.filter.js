@@ -16,6 +16,9 @@ angular.module('recipeBox')
           count++;
           f.numerator -= f.denominator;
         }
+        if (count > 0) {
+          return count + " " + f.numerator + "/" + f.denominator;
+        }
         return f.numerator + "/" + f.denominator;
       }
     }
