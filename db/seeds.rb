@@ -609,7 +609,7 @@ Review.create(
   cook_time: 60,
   description: "A super easy chicken wing recipe that doens't get your hands all greasy!",
   image_url: 'http://images-gmi-pmc.edge-generalmills.com/d5ea92bc-de94-44d4-be68-76db8cc6ce65.jpg',
-  dish_type: 'Appetizer'
+  dish_type: 'Appetizer & Snacks'
 )
 
 @chicken_wings = Ingredient.create(
