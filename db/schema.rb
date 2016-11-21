@@ -29,11 +29,6 @@ ActiveRecord::Schema.define(version: 20161115022457) do
     t.integer "ingredient_id"
   end
 
-  create_table "recipe_tags", force: :cascade do |t|
-    t.integer "recipe_id"
-    t.integer "tag_id"
-  end
-
   create_table "recipes", force: :cascade do |t|
     t.string   "title"
     t.integer  "user_id"
@@ -55,10 +50,6 @@ ActiveRecord::Schema.define(version: 20161115022457) do
     t.string   "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "tags", force: :cascade do |t|
-    t.string "name"
   end
 
   create_table "users", force: :cascade do |t|

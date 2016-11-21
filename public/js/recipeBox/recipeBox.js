@@ -1,5 +1,13 @@
 angular
-  .module('recipeBox', ['ui.router', 'ui.materialize', 'ipCookie', 'ng-token-auth'])
+  .module('recipeBox',
+    [
+      'ui.router',
+      'ui.materialize',
+      'ipCookie',
+      'ng-token-auth',
+      'truncate'
+    ]
+  )
   .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
 
   $urlRouterProvider.otherwise('/');
@@ -8,10 +16,13 @@ angular
     .state('main', {
       url: '/',
       templateUrl: 'views/Main.template.html',
-      controller: 'MainRecipesController',
+      controller: 'MainRecipesController as mainCtrl',
       resolve: {
-        recipes: function ($http) {
-          return $http.get('http://localhost:3000/api/v1/recipes/')
+        topRecipes: function ($http) {
+          return $http.get('http://localhost:3000/api/v1/recipes/top')
+        },
+        latestRecipes: function ($http) {
+          return $http.get('http://localhost:3000/api/v1/recipes/latest')
         }
       }
     })
@@ -86,5 +97,9 @@ angular
 
     $rootScope.$on('auth:logout-success', function() {
       $location.path('/');
+    });
+
+    $rootScope.$on('$viewContentLoaded',function(){
+      $("html, body").animate({ scrollTop: 0 }, 200);
     });
   }]);
