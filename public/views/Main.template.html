@@ -16,22 +16,23 @@
         <div class="row no-bot-margin">
 
           <div class="col s12 m6 l4" ng-repeat="recipe in mainCtrl.topRecipes">
-            <a href="/#/recipes/1" class="black-text">
+            <a href="/#/recipes/{{recipe.id}}" class="black-text">
               <div class="card hoverable no-top-margin recipe-card">
                 <div class="card-image">
-                  <div class="center-and-cropped-bg" style="background-image: url('img/latin_turkey.png')"></div>
+                  <div class="center-and-cropped-bg" style="background-image: url('{{recipe.image_url}}')"></div>
                 </div> <!-- end card-image -->
                 <div class="card-content no-top-bot-padding center">
                   <h5>{{ recipe.title }}</h5>
                   <p class="light low-line-height">
-                    Submitted by <strong>Brian</strong> | Rating: <strong>4.5</strong><br />
-                    Dish Type: <strong>Main Course</strong></p>
-                  <p class="light low-line-height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                    Submitted by <strong>{{ recipe.user_info.name }}</strong><br />
+                    Dish Type: <strong>{{ recipe.dish_type }}</strong><br />
+                    Rating: <strong>{{ recipe.total_rating }}</strong></p>
+                  <p class="light low-line-height">{{recipe.description | characters:200 }}</p>
                 </div>
                 <div class="card-action center grey lighten-4">
                   <ul class="light no-top-bot-margin">
-                    <li>Total Cooking Time: <strong>120 minutes</strong></li>
-                    <li>Servings: <strong>8</strong></li>
+                    <li>Total Time: <strong>{{ recipe.prep_time + recipe.cook_time }} minutes</strong></li>
+                    <li>Servings: <strong>{{ recipe.total_servings }}</strong></li>
                   </ul>
                 </div> <!-- end card-content -->
               </div> <!--- end card -->
@@ -58,7 +59,7 @@
             <a href="/#/recipes/{{recipe.id}}" class="black-text">
               <div class="card hoverable no-top-margin recipe-card">
                 <div class="card-image">
-                  <div class="center-and-cropped-bg" style="background-image: url('img/latin_turkey.png')"></div>
+                  <div class="center-and-cropped-bg" style="background-image: url('{{recipe.image_url}}')"></div>
                 </div> <!-- end card-image -->
                 <div class="card-content no-top-bot-padding center">
                   <h5>{{ recipe.title }}</h5>
@@ -66,12 +67,12 @@
                     Submitted by <strong>{{ recipe.user_info.name }}</strong><br />
                     Dish Type: <strong>{{ recipe.dish_type }}</strong><br />
                     Rating: <strong>{{ recipe.total_rating }}</strong></p>
-                  <p class="light low-line-height">{{recipe.description | characters:150 }}</p>
+                  <p class="light low-line-height">{{recipe.description | characters:200 }}</p>
                 </div>
                 <div class="card-action center grey lighten-4">
                   <ul class="light no-top-bot-margin">
-                    <li>Total Cooking Time: <strong>120 minutes</strong></li>
-                    <li>Servings: <strong>8</strong></li>
+                    <li>Total Time: <strong>{{ recipe.prep_time + recipe.cook_time }} minutes</strong></li>
+                    <li>Servings: <strong>{{ recipe.total_servings }}</strong></li>
                   </ul>
                 </div> <!-- end card-content -->
               </div> <!--- end card -->
