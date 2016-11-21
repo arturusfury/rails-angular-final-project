@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     end
 
     namespace :v1 do
-      get '/recipes/main', to: 'recipes#main'
+      get '/recipes/top', to: 'recipes#top'
       get '/recipes/latest', to: 'recipes#latest'
       resources :recipes
       resources :reviews, only: [:create, :destroy]
