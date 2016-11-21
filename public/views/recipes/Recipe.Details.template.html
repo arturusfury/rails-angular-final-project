@@ -111,27 +111,29 @@
           </div>
 
           <div class="col s12 offset-m2 m8 center">
-            <div class="row">
-              <div class="input-field col s12">
-                <textarea id="description" class="materialize-textarea"></textarea>
-                <label for="description">Review</label>
+            <form ng-submit="recipe.postReview()" role="form" name="recipe.reviewForm" class="col s12">
+              <div class="row">
+                <div class="input-field col s12">
+                  <textarea ng-model="recipe.reviewForm.reviewText" class="materialize-textarea"></textarea>
+                  <label for="review_text">Review</label>
+                </div>
               </div>
-            </div>
 
-            <div class="row">
-              <div class="rating"></div>
-            </div>
-
-            <div class="row">
-              <div class="col s12 center">
-                <button class="btn waves-effect waves-light red" type="submit" name="action">Submit
-                  <i class="material-icons right">done</i>
-                </button>
-                <button class="btn waves-effect waves-light red" ng-click="recipe.clearReviewForm()">Cancel
-                  <i class="material-icons right">not_interested</i>
-                </button>
+              <div class="row">
+                <div class="star-rating" star-rating rating-value="rating" data-max="5"></div>
               </div>
-            </div>
+
+              <div class="row">
+                <div class="col s12 center">
+                  <button class="btn waves-effect waves-light red" type="submit" name="action">Submit
+                    <i class="material-icons right">done</i>
+                  </button>
+                  <button class="btn waves-effect waves-light red" ng-click="recipe.clearReviewForm()">Cancel
+                    <i class="material-icons right">not_interested</i>
+                  </button>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
 

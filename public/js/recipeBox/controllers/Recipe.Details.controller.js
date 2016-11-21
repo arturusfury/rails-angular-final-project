@@ -1,4 +1,4 @@
-function RecipeDetailsController(recipe) {
+function RecipeDetailsController(recipe, $scope, $rootScope, $http, $stateParams) {
   var ctrl = this;
   var writingReview = false;
 
@@ -6,15 +6,24 @@ function RecipeDetailsController(recipe) {
 
   ctrl.startWritingReview = function () {
     ctrl.writingReview = true;
-    $('.rating').addRating({fieldName: 'rating', fieldId: 'rating'});
   }
 
   ctrl.clearReviewForm = function() {
     ctrl.writingReview = false;
+    ctrl.reviewForm.$setPristine();
+    ctrl.reviewForm.$setUntouched();
   }
 
   ctrl.postReview = function() {
-    $http.post()
+    var data = $.param({
+      user_id: $rootScope.user.id,
+    });
+
+    console.log(ctrl.reviewForm);
+
+
+
+    // return $http.post('/api/v1/reviews', data, config)
   }
 }
 

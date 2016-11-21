@@ -7,4 +7,59 @@
  * cc - attribution + share alike
  * http://creativecommons.org/licenses/by-sa/4.0/
  */
-!function(a){a.fn.addRating=function(b){var c=this,d=a.extend({max:5,half:!0,fieldName:"rating",fieldId:"rating",icon:"star"},b);this.settings=d;for(var e=1;e<=d.max;e++){a("<i/>").addClass("material-icons").html(this.settings.icon+"_border").data("rating",e).appendTo(this).click(function(){c.setRating(a(this).data("rating"))}).hover(function(b){c.showRating(a(this).data("rating"),!1)},function(){c.showRating(0,!1)})}a(this).append('<input type="hidden" name="'+d.fieldName+'" id="'+d.fieldId+'" />')},a.fn.setRating=function(b){var c=this;a("#"+c.settings.fieldId).val(b),c.showRating(b,!0)},a.fn.showRating=function(b,c){var d=this;(""==a("#"+d.settings.fieldId).val()||c)&&a(d).find("i").each(function(){var c=d.settings.icon+"_border";a(this).removeClass("selected"),a(this).data("rating")<=b&&(c=d.settings.icon,a(this).addClass("selected")),a(this).html(c)})}}(jQuery);
+
+(function( $ ) {
+	$.fn.addRating = function(options) {
+		var obj = this;
+		var settings = $.extend({
+			max : 5,
+			half : true,
+			fieldName : 'rating',
+			fieldId : 'rating',
+			icon : 'star'
+		}, options );
+		this.settings = settings;
+
+		// create the stars
+		for(var i = 1 ; i <= settings.max ; i++)
+		{
+			var star = $('<i/>').addClass('material-icons').html(this.settings.icon+'_border').data('rating', i).appendTo(this).click(
+				function(){
+					obj.setRating($(this).data('rating'));
+				}
+			).hover(
+				function(e){
+					obj.showRating($(this).data('rating'), false);
+				}, function(){
+					obj.showRating(0,false);
+				}
+			);
+		}
+		$(this).append('<input type="hidden" ng-model="recipe.reviewForm.newRating" name="'+settings.fieldName+'" id="'+settings.fieldId+'" />');
+	};
+
+	$.fn.setRating = function(numRating) {
+		var obj = this;
+		$('#'+obj.settings.fieldId).val(numRating);
+		obj.showRating(numRating, true);
+	};
+
+	$.fn.showRating = function(numRating, force) {
+		var obj = this;
+		if($('#'+obj.settings.fieldId).val() == '' || force)
+		{
+			$(obj).find('i').each(function(){
+				var icon = obj.settings.icon+'_border';
+				$(this).removeClass('selected');
+
+				if($(this).data('rating') <= numRating)
+				{
+					icon = obj.settings.icon;
+					$(this).addClass('selected');
+				}
+				$(this).html(icon);
+			})
+		}
+	}
+
+}( jQuery ));
