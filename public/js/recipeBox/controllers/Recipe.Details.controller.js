@@ -4,6 +4,16 @@ function RecipeDetailsController(recipe, $scope, $rootScope, $http, $stateParams
 
   ctrl.data = recipe.data;
 
+  ctrl.deleteReview = function (id) {
+    $http.delete('/api/v1/reviews/' + id)
+      .success(function (data, status, headers, config) {
+        ctrl.data.review_list.splice(id, 1);
+      })
+      .error(function (data, status, headers, config) {
+        console.log('Error in Deleting a review: ' + id);
+      })
+  }
+
   ctrl.startWritingReview = function () {
     ctrl.writingReview = true;
   }
@@ -23,6 +33,7 @@ function RecipeDetailsController(recipe, $scope, $rootScope, $http, $stateParams
     return $http.post('/api/v1/reviews', data)
       .success(function (data, status, headers, config) {
         console.log(data);
+        ctrl.data.review_list.push(data);
       })
       .error(function (data, status, header, config) {
         console.log( 'error' );
