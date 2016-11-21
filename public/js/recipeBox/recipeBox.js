@@ -61,7 +61,7 @@ angular
     .state('recipes.add', {
       url: '/add',
       templateUrl: 'views/recipes/Recipe.Add.template.html',
-      controller: 'RecipeAddController',
+      controller: 'RecipeAddController as recipe',
       resolve: {
         auth: ['$auth', function($auth) {
           return $auth.validateUser();
