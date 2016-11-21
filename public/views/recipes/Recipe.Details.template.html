@@ -87,13 +87,14 @@
             <strong>{{ review.user.name }}</strong><br />
             Date: <strong>{{ review.date | date: 'MM/dd/yyyy' }}</strong><br />
             Rating: <strong>{{ review.rating }}</strong><br />
+            <a href="" ng-click="recipe.deleteReview(review.id)" ng-hide="user.id != review.user.id">Delete?</a>
           </div>
           <div class="col s12 m8">
             <p class="light no-top-margin ">{{ review.content }}</p>
           </div>
         </div>
 
-        <div class="row" ng-show="user.id" ng-hide="recipe.writingReview">
+        <div class="row" ng-show="user.id" ng-hide="recipe.writingReview || !user.id">
           <div class="col s12 center">
             <button class="btn waves-effect waves-light red" ng-click="recipe.startWritingReview()">Write your own review!
               <i class="material-icons right">forum</i>
@@ -129,9 +130,9 @@
                   <button class="btn waves-effect waves-light red" type="submit" name="action">Submit
                     <i class="material-icons right">done</i>
                   </button>
-                  <button class="btn waves-effect waves-light red" ng-click="recipe.clearReviewForm()">Cancel
+                  <a class="btn waves-effect waves-light red" ng-click="recipe.clearReviewForm()">Cancel
                     <i class="material-icons right">not_interested</i>
-                  </button>
+                  </a>
                 </div>
               </div>
             </form>

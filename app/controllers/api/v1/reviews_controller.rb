@@ -2,7 +2,18 @@ class Api::V1::ReviewsController < ApplicationController
   respond_to :json
 
   def create
-    Review.create(review_params)
+    review = Review.create(review_params)
+
+    render json: {
+      id: review.id,
+      user: {
+        id: review.user_id,
+        name: User.find(review.user_id).name
+      },
+      rating: review.rating,
+      content: review.content,
+      date: review.updated_at
+    }
   end
 
   def destroy
