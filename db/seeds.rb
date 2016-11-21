@@ -31,7 +31,7 @@ User.create(
 @prime_rib = Recipe.create(
   title: 'Grilled Prime Rib',
   user_id: rand(1..10),
-  total_rating: 3.5,
+  total_rating: rand(1.0...5.0).to_s[0..2].to_f,
   total_servings: 14,
   prep_time: 20,
   cook_time: 180,
@@ -156,7 +156,7 @@ Review.create(
 @roasted_salmon = Recipe.create(
   title: 'Grilled Salmon',
   user_id: rand(1..10),
-  total_rating: 4.3,
+  total_rating: rand(1.0...5.0).to_s[0..2].to_f,
   total_servings: 6,
   prep_time: 15,
   cook_time: 16,
@@ -251,7 +251,7 @@ Review.create(
 @bacon_bites = Recipe.create(
   title: 'Bacon-Cheddar Bites',
   user_id: rand(1..10),
-  total_rating: 3.8,
+  total_rating: rand(1.0...5.0).to_s[0..2].to_f,
   total_servings: 24,
   prep_time: 15,
   cook_time: 30,
@@ -344,7 +344,7 @@ Review.create(
 @no_knead_bread = Recipe.create(
   title: 'No Knead Crusty Artisian Bread',
   user_id: rand(1..10),
-  total_rating: 4.8,
+  total_rating: rand(1.0...5.0).to_s[0..2].to_f,
   total_servings: 10,
   prep_time: 15,
   cook_time: 30,
@@ -451,7 +451,7 @@ Review.create(
 @cast_iron_cornbread = Recipe.create(
   title: 'Cast Iron Cornbread',
   user_id: rand(1..10),
-  total_rating: 4.4,
+  total_rating: rand(1.0...5.0).to_s[0..2].to_f,
   total_servings: 12,
   prep_time: 5,
   cook_time: 35,
@@ -603,7 +603,7 @@ Review.create(
 @baked_chicken_wings = Recipe.create(
   title: 'Baked Chicken Wings',
   user_id: rand(1..10),
-  total_rating: 2.4,
+  total_rating: rand(1.0...5.0).to_s[0..2].to_f,
   total_servings: 20,
   prep_time: 80,
   cook_time: 60,
