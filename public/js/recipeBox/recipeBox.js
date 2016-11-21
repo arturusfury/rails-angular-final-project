@@ -98,4 +98,8 @@ angular
     $rootScope.$on('auth:logout-success', function() {
       $location.path('/');
     });
+
+    $rootScope.$on('$viewContentLoaded',function(){
+      $("html, body").animate({ scrollTop: 0 }, 200);
+    });
   }]);
