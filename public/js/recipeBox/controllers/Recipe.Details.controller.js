@@ -10,20 +10,23 @@ function RecipeDetailsController(recipe, $scope, $rootScope, $http, $stateParams
 
   ctrl.clearReviewForm = function() {
     ctrl.writingReview = false;
-    ctrl.reviewForm.$setPristine();
-    ctrl.reviewForm.$setUntouched();
   }
 
   ctrl.postReview = function() {
-    var data = $.param({
+    var data = {
       user_id: $rootScope.user.id,
-    });
+      recipe_id: ctrl.data.id,
+      rating: $scope.rating,
+      content: ctrl.reviewForm.reviewText
+    };
 
-    console.log(ctrl.reviewForm);
-
-
-
-    // return $http.post('/api/v1/reviews', data, config)
+    return $http.post('/api/v1/reviews', data)
+      .success(function (data, status, headers, config) {
+        console.log(data);
+      })
+      .error(function (data, status, header, config) {
+        console.log( 'error' );
+      })
   }
 }
 
