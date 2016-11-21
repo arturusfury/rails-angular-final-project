@@ -21,8 +21,8 @@
                    <h5>{{ recipe.title }}</h5>
                    <p class="light low-line-height">
                      Submitted by <strong>{{ recipe.user_info.name }}</strong><br />
-                     Dish Type: <strong>Main Course</strong><br />
-                     Rating: <strong>4.5</strong></p>
+                     Dish Type: <strong>{{ recipe.dish_type }}</strong><br />
+                     Rating: <strong>{{ recipe.total_rating }}</strong></p>
                  </div>
                  <div class="card-action center grey lighten-4">
                    <ul class="light no-top-bot-margin">
