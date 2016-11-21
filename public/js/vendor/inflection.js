@@ -715,9 +715,6 @@
    *     inflection.inflect( 'person', 2, null, 'guys' ); // === 'guys'
    */
     inflect : function ( str, count, singular, plural ){
-      // count = parseInt( count, 10 );
-      console.log(str + ":" + count + "floored: " + Math.floor(count));
-
       if( isNaN( count )) return str;
 
       if( count === 0 || count > 1 ){
