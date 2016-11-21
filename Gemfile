@@ -11,6 +11,7 @@ gem 'omniauth'
 gem 'omniauth-github'
 gem 'omniauth-google-oauth2'
 gem 'responders'
+gem 'faker'
 
 group :development, :test do
   gem 'byebug', platform: :mri
