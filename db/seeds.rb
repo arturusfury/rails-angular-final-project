@@ -44,49 +44,49 @@ Ingredient.create(
   amount: 18,
   measure: 'lbs',
   recipe_id: @prime_rib.id,
-  ingredient: 'Whole Prime Rib Roast'
+  name: 'Whole Prime Rib Roast'
 )
 Ingredient.create(
   amount: 8,
   measure: 'cloves',
   recipe_id: @prime_rib.id,
-  ingredient: 'Garlic'
+  name: 'Garlic'
 )
 Ingredient.create(
   amount: 3,
   measure: 'sprigs',
   recipe_id: @prime_rib.id,
-  ingredient: 'Fresh Rosemary'
+  name: 'Fresh Rosemary'
 )
 Ingredient.create(
   amount: 2,
   measure: 'tbsp',
   recipe_id: @prime_rib.id,
-  ingredient: 'Coarse Ground Black Pepper'
+  name: 'Coarse Ground Black Pepper'
 )
 Ingredient.create(
   amount: 2,
   measure: 'tbsp',
   recipe_id: @prime_rib.id,
-  ingredient: 'Dried Rosemary'
+  name: 'Dried Rosemary'
 )
 Ingredient.create(
   amount: 2,
   measure: 'tbsp',
   recipe_id: @prime_rib.id,
-  ingredient: 'Sea Salt'
+  name: 'Sea Salt'
 )
 Ingredient.create(
   amount: 2,
   measure: 'tbsp',
   recipe_id: @prime_rib.id,
-  ingredient: 'Paprika'
+  name: 'Paprika'
 )
 Ingredient.create(
   amount: 1,
   measure: '',
   recipe_id: @prime_rib.id,
-  ingredient: 'Aluminum Drip Pan'
+  name: 'Aluminum Drip Pan'
 )
 
 Direction.create(
@@ -133,31 +133,31 @@ Ingredient.create(
   amount: 1.5,
   measure: 'lbs',
   recipe_id: @roasted_salmon.id,
-  ingredient: 'Salmon Filet'
+  name: 'Salmon Filet'
 )
 Ingredient.create(
   amount: 0.33,
   measure: 'cups',
   recipe_id: @roasted_salmon.id,
-  ingredient: 'Soy Sauce'
+  name: 'Soy Sauce'
 )
 Ingredient.create(
   amount: 0.33,
   measure: 'cups',
   recipe_id: @roasted_salmon.id,
-  ingredient: 'Brown Sugar'
+  name: 'Brown Sugar'
 )
 Ingredient.create(
   amount: 0.33,
   measure: 'cups',
   recipe_id: @roasted_salmon.id,
-  ingredient: 'Water'
+  name: 'Water'
 )
 Ingredient.create(
   amount: 0.25,
   measure: 'tbsp',
   recipe_id: @roasted_salmon.id,
-  ingredient: 'Vegtable Oil'
+  name: 'Vegtable Oil'
 )
 
 Direction.create(
@@ -203,36 +203,36 @@ Review.create(
 Ingredient.create(
   amount: 2,
   recipe_id: @bacon_bites.id,
-  ingredient: "Pie Crust"
+  name: "Pie Crust"
 )
 Ingredient.create(
   amount: 8,
   measure: 'strips',
   recipe_id: @bacon_bites.id,
-  ingredient: 'Bacon'
+  name: 'Bacon'
 )
 Ingredient.create(
   amount: 2,
   recipe_id: @bacon_bites.id,
-  ingredient: 'Plum Tomatoes'
+  name: 'Plum Tomatoes'
 )
 Ingredient.create(
   amount: 1,
   measure: 'cups',
   recipe_id: @bacon_bites.id,
-  ingredient: 'Cheddar Cheese'
+  name: 'Cheddar Cheese'
 )
 Ingredient.create(
   amount: 2,
   measure: 'tsp',
   recipe_id: @bacon_bites.id,
-  ingredient: 'Dijon Mustard'
+  name: 'Dijon Mustard'
 )
 Ingredient.create(
   amount: 1,
   measure: 'tbsp',
   recipe_id: @bacon_bites.id,
-  ingredient: 'Garlic'
+  name: 'Garlic'
 )
 
 Direction.create(
@@ -274,29 +274,29 @@ Ingredient.create(
   amount: 3,
   measure: 'cups',
   recipe_id: @no_knead_bread.id,
-  ingredient: 'All-Purpose Flour'
+  name: 'All-Purpose Flour'
 )
 Ingredient.create(
   amount: 2,
   measure: 'tsp',
   recipe_id: @no_knead_bread.id,
-  ingredient: 'Kosher Salt'
+  name: 'Kosher Salt'
 )
 Ingredient.create(
   amount: 0.5,
   measure: 'tsp',
   recipe_id: @no_knead_bread.id,
-  ingredient: 'Dry Yeast'
+  name: 'Dry Yeast'
 )
 Ingredient.create(
   amount: 1.5,
   measure: 'cups',
   recipe_id: @no_knead_bread.id,
-  ingredient: 'Water'
+  name: 'Water'
 )
 Ingredient.create(
   recipe_id: @no_knead_bread.id,
-  ingredient: 'Dutch Oven'
+  name: 'Dutch Oven'
 )
 
 Direction.create(
@@ -358,55 +358,55 @@ Ingredient.create(
   amount: 3,
   measure: 'tbsp',
   recipe_id: @cast_iron_cornbread.id,
-  ingredient: 'Melted Coconut Oil'
+  name: 'Melted Coconut Oil'
 )
 Ingredient.create(
   amount: 1,
   measure: 'cups',
   recipe_id: @cast_iron_cornbread.id,
-  ingredient: 'Yellow Cornmeal'
+  name: 'Yellow Cornmeal'
 )
 Ingredient.create(
   amount: 1,
   measure: 'cups',
   recipe_id: @cast_iron_cornbread.id,
-  ingredient: 'All-Purpose Flour'
+  name: 'All-Purpose Flour'
 )
 Ingredient.create(
   amount: 1,
   measure: 'tbsp',
   recipe_id: @cast_iron_cornbread.id,
-  ingredient: 'Baking Powder'
+  name: 'Baking Powder'
 )
 Ingredient.create(
   amount: 1,
   measure: 'tsp',
   recipe_id: @cast_iron_cornbread.id,
-  ingredient: 'Kosher Salt'
+  name: 'Kosher Salt'
 )
 Ingredient.create(
   amount: 1,
   measure: 'cup',
   recipe_id: @cast_iron_cornbread.id,
-  ingredient: 'Almond Milk, or Regular Milk at room temperature'
+  name: 'Almond Milk, or Regular Milk at room temperature'
 )
 Ingredient.create(
   amount: 0.25,
   measure: 'cup',
   recipe_id: @cast_iron_cornbread.id,
-  ingredient: 'Applesauce, at room temperature'
+  name: 'Applesauce, at room temperature'
 )
 Ingredient.create(
   amount: 0.25,
   measure: 'cup',
   recipe_id: @cast_iron_cornbread.id,
-  ingredient: 'Sorghum'
+  name: 'Sorghum'
 )
 Ingredient.create(
   amount: 1,
   measure: 'large',
   recipe_id: @cast_iron_cornbread.id,
-  ingredient: 'Egg, at room temperature'
+  name: 'Egg, at room temperature'
 )
 
 Direction.create(
@@ -474,55 +474,55 @@ Ingredient.create(
   amount: 20,
   measure: '',
   recipe_id: @baked_chicken_wings.id,
-  ingredient: 'Chicken Wings'
+  name: 'Chicken Wings'
 )
 Ingredient.create(
   amount: 0.5,
   measure: 'tsp',
   recipe_id: @baked_chicken_wings.id,
-  ingredient: 'Salt'
+  name: 'Salt'
 )
 Ingredient.create(
   amount: 1,
   measure: 'tbsp',
   recipe_id: @baked_chicken_wings.id,
-  ingredient: "Pepper"
+  name: 'Pepper'
 )
 Ingredient.create(
   amount: 0.75,
   measure: 'cups',
   recipe_id: @baked_chicken_wings.id,
-  ingredient: 'Hot Sauce'
+  name: 'Hot Sauce'
 )
 Ingredient.create(
   amount: 1,
   measure: 'tbsp',
   recipe_id: @baked_chicken_wings.id,
-  ingredient: 'Vegtable Oil'
+  name: 'Vegtable Oil'
 )
 Ingredient.create(
   amount: 0.75,
   measure: 'cups',
   recipe_id: @baked_chicken_wings.id,
-  ingredient: 'All-Purpose Flour'
+  name: 'All-Purpose Flour'
 )
 Ingredient.create(
   amount: 0.5,
   measure: 'tsp',
   recipe_id: @baked_chicken_wings.id,
-  ingredient: 'Cayenne Pepper'
+  name: 'Cayenne Pepper'
 )
 Ingredient.create(
   amount: 0.5,
   measure: 'tsp',
   recipe_id: @baked_chicken_wings.id,
-  ingredient: 'Garlic Powder'
+  name: 'Garlic Powder'
 )
 Ingredient.create(
   amount: 0.5,
   measure: 'cup',
   recipe_id: @baked_chicken_wings.id,
-  ingredient: 'Melted Butter'
+  name: 'Melted Butter'
 )
 
 Direction.create(
