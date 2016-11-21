@@ -58,7 +58,7 @@
               <div class="col s12 m6 left-align">
                 <table class="bordered">
                   <tr ng-repeat="ingredient in recipe.data.ingredients">
-                    <td class="low-table-padding red-text text-darken-1">{{ ingredient.amount | fraction }} {{ ingredient.measure }}</td>
+                    <td class="low-table-padding red-text text-darken-1">{{ ingredient.amount | fraction }} {{ ingredient.measure | inflect:ingredient.amount }}</td>
                     <td class="low-table-padding">{{ ingredient.name }}</td>
                   </tr>
                 </table>

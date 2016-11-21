@@ -137,19 +137,19 @@ Ingredient.create(
 )
 Ingredient.create(
   amount: 0.33,
-  measure: 'cups',
+  measure: 'cup',
   recipe_id: @roasted_salmon.id,
   name: 'Soy Sauce'
 )
 Ingredient.create(
   amount: 0.33,
-  measure: 'cups',
+  measure: 'cup',
   recipe_id: @roasted_salmon.id,
   name: 'Brown Sugar'
 )
 Ingredient.create(
   amount: 0.33,
-  measure: 'cups',
+  measure: 'cup',
   recipe_id: @roasted_salmon.id,
   name: 'Water'
 )
@@ -203,11 +203,11 @@ Review.create(
 Ingredient.create(
   amount: 2,
   recipe_id: @bacon_bites.id,
-  name: "Pie Crust"
+  name: 'Pie Crust'
 )
 Ingredient.create(
   amount: 8,
-  measure: 'strips',
+  measure: 'strip',
   recipe_id: @bacon_bites.id,
   name: 'Bacon'
 )
@@ -218,7 +218,7 @@ Ingredient.create(
 )
 Ingredient.create(
   amount: 1,
-  measure: 'cups',
+  measure: 'cup',
   recipe_id: @bacon_bites.id,
   name: 'Cheddar Cheese'
 )
@@ -272,7 +272,7 @@ Review.create(
 
 Ingredient.create(
   amount: 3,
-  measure: 'cups',
+  measure: 'cup',
   recipe_id: @no_knead_bread.id,
   name: 'All-Purpose Flour'
 )
@@ -290,7 +290,7 @@ Ingredient.create(
 )
 Ingredient.create(
   amount: 1.5,
-  measure: 'cups',
+  measure: 'cup',
   recipe_id: @no_knead_bread.id,
   name: 'Water'
 )
@@ -362,13 +362,13 @@ Ingredient.create(
 )
 Ingredient.create(
   amount: 1,
-  measure: 'cups',
+  measure: 'cup',
   recipe_id: @cast_iron_cornbread.id,
   name: 'Yellow Cornmeal'
 )
 Ingredient.create(
   amount: 1,
-  measure: 'cups',
+  measure: 'cup',
   recipe_id: @cast_iron_cornbread.id,
   name: 'All-Purpose Flour'
 )
@@ -490,7 +490,7 @@ Ingredient.create(
 )
 Ingredient.create(
   amount: 0.75,
-  measure: 'cups',
+  measure: 'cup',
   recipe_id: @baked_chicken_wings.id,
   name: 'Hot Sauce'
 )
@@ -502,7 +502,7 @@ Ingredient.create(
 )
 Ingredient.create(
   amount: 0.75,
-  measure: 'cups',
+  measure: 'cup',
   recipe_id: @baked_chicken_wings.id,
   name: 'All-Purpose Flour'
 )

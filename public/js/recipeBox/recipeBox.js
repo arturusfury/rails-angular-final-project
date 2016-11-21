@@ -5,7 +5,8 @@ angular
       'ui.materialize',
       'ipCookie',
       'ng-token-auth',
-      'truncate'
+      'truncate',
+      'ngInflection'
     ]
   )
   .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
