@@ -5,10 +5,6 @@ class Api::V1::RecipesController < ApplicationController
     # recipe = Recipe.new
     # recipe.update(recipe_params)
 
-    # [:ingredients].each do |ingredient|
-    #   recipe.ingredients.create(ingredient)
-    # end
-
     render json: recipe_params
   end
 
@@ -31,6 +27,11 @@ class Api::V1::RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit!
+    params.require(:recipe).permit(
+      :id, :title, :description, :image_url, :dish_type, :total_servings,
+      :cook_time, :prep_time, :total_rating, :user_id,
+      ingredient_attributes: [:id, :amount, :measure, :name, :recipe_id],
+      direction_attributes: [:id, :text, :recipe_id]
+    )
   end
 end
