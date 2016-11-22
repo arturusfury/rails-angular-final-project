@@ -1,13 +1,16 @@
 function RecipeAddController($scope) {
   var ctrl = this;
 
-  ctrl.data = {
+  // Create a blank set of information for our recipe
+  ctrl.recipe = {
     title: '',
     prep_time: null,
     cook_time: null,
     total_servings: null,
+    dish_type: '',
     description: '',
     image_url: '',
+    user_id: 1,
     ingredients: [
       {
         amount: null,
@@ -22,8 +25,25 @@ function RecipeAddController($scope) {
     ]
   }
 
+  ctrl.dishTypes = [
+    'Main Course',
+    'Breads, Muffins, Scones & Pancakes',
+    'Breakfast',
+    'Dinner',
+    'Dips, Salad Dressings, Salsas, and Sauces',
+    'Drinks',
+    'Lunch',
+    'One Pot Meal',
+    'Salads',
+    'Side Dishes',
+    'Snacks',
+    'Soups, Stews & Chili',
+    'Desert',
+    'Appitizers & Snacks'
+  ]
+
   ctrl.addIngredient = function () {
-    ctrl.data.ingredients.push({
+    ctrl.recipe.ingredients.push({
       amount: null,
       measure: '',
       name: ''
@@ -32,20 +52,23 @@ function RecipeAddController($scope) {
 
   ctrl.deleteIngredient = function (index) {
     console.log("Delete: " + index)
-    ctrl.data.ingredients.splice(index, 1);
+    ctrl.recipe.ingredients.splice(index, 1);
   }
 
   ctrl.addDirection = function () {
-    ctrl.data.directions.push({
+    ctrl.recipe.directions.push({
       text: ''
     })
   }
 
   ctrl.deleteDirection = function (index) {
     console.log("Delete: " + index)
-    ctrl.data.directions.splice(index, 1);
+    ctrl.recipe.directions.splice(index, 1);
   }
 
+  ctrl.addRecipe = function () {
+
+  }
 }
 
 angular
