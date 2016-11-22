@@ -22,6 +22,20 @@ function RecipeAddController($scope) {
     ]
   }
 
+  ctrl.addIngredient = function () {
+    ctrl.data.ingredients.push({
+      amount: null,
+      measure: '',
+      name: ''
+    })
+  }
+
+  ctrl.addDirection = function () {
+    ctrl.data.directions.push({
+      text: ''
+    })
+  }
+
 }
 
 angular
