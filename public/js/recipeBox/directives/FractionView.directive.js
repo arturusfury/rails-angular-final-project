@@ -1,14 +1,19 @@
 angular.module('recipeBox')
-  .directive('fractionView', ['$filter', function($filter) {
+  .directive('fractionView', ['$filter', '$compile', function($filter, $compile) {
     return {
-      restrict: 'E',
+      restrict: 'A',
       require: '?ngModel',
-      template: "<input ng-focus=\"enterInputMode()\" ng-blur=\"exitInputMode()\" ng-model=\"displayValue\" />",
       scope: {
         // Bind scope.decimalValue to ngModel attribute
         decimalValue: "=ngModel"
       },
       link: function(scope, element, attrs, modelCtrl) {
+        var wrappedElement = angular.element(
+          '<input type="' + attrs.type + '" ng-focus=\"enterInputMode()\" ng-blur=\"exitInputMode()\" ng-model=\"displayValue\">'
+        );
+        element.replaceWith(wrappedElement);
+        $compile(wrappedElement)(scope);
+
         // Display the fractional value by default
         scope.displayValue = $filter('fraction')(scope.decimalValue);
 
