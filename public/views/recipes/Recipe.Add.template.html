@@ -15,7 +15,7 @@
           <form class="col s12">
             <div class="row">
               <div class="input-field col s12">
-                <input id="recipe_title" ng-model="recipe.title" type="text" class="validate">
+                <input id="recipe_title" ng-model="recipe.data.title" type="text" class="validate">
                 <label for="recipe_title">Recipe Title</label>
               </div>
             </div>
@@ -23,24 +23,24 @@
             <div class="row">
               <div class="input-field col s12 m4">
                 <i class="material-icons prefix top-margin-5">query_builder</i>
-                <input id="prep_time" ng-model="recipe.prep_time" type="number" class="validate">
+                <input id="prep_time" ng-model="recipe.data.prep_time" type="number" class="validate">
                 <label for="prep_time">Prep Time (Minutes)</label>
               </div>
               <div class="input-field col s12 m4">
                 <i class="material-icons prefix top-margin-5">query_builder</i>
-                <input id="cooking_time" ng-model="recipe.cook_time" type="number" class="validate">
+                <input id="cooking_time" ng-model="recipe.data.cook_time" type="number" class="validate">
                 <label for="cooking_time">Cooking Time (Minutes)</label>
               </div>
               <div class="input-field col s12 m4">
                 <i class="material-icons prefix top-margin-5">supervisor_account</i>
-                <input id="total_servings" ng-model="recipe.total_servings" type="number" class="validate">
+                <input id="total_servings" ng-model="recipe.data.total_servings" type="number" class="validate">
                 <label for="total_servings">Total Servings</label>
               </div>
             </div>
 
             <div class="row">
               <div class="input-field col s12">
-                <select id="dish_type" ng-model="recipe.dish_type" material-select watch>
+                <select id="dish_type" ng-model="recipe.data.dish_type" material-select watch>
                   <option value="" disabled selected>Select a type of dish</option>
                   <option value="1">Main Course</option>
                   <option value="2">Side Dish</option>
@@ -52,7 +52,7 @@
 
             <div class="row">
               <div class="input-field col s12">
-                <textarea id="description" ng-model="recipe.description" class="materialize-textarea"></textarea>
+                <textarea id="description" ng-model="recipe.data.description" class="materialize-textarea"></textarea>
                 <label for="description">Description</label>
               </div>
             </div>
@@ -63,7 +63,7 @@
                 <input type="file" id="image_url">
               </div> -->
               <div class="file-path-wrapper">
-                <input id="image_url" ng-model="recipe.image_url" type="text" class="validate">
+                <input id="image_url" ng-model="recipe.data.image_url" type="text" class="validate">
                 <label for="image_url">Image URL</label>
               </div>
             </div>
@@ -77,19 +77,19 @@
               <div class="divider"></div>
             </div>
 
-            <div class="row">
+            <div class="row" ng-repeat="item in recipe.data.ingredients">
               <div class="input-field col s4 m2 l1">
-                <input id="quantity" ng-model="recipe.title" type="text" class="validate">
+                <input id="quantity" ng-model="item.amount" type="text" class="validate">
                 <label for="quantity">Qty</label>
               </div>
 
               <div class="input-field col s8 m4 l3">
-                <input id="measure" type="text" class="validate autocomplete">
+                <input id="measure" ng-model="item.measure" type="text" class="validate autocomplete">
                 <label for="measure">Measure</label>
               </div>
 
               <div class="input-field col s12 m6 l8">
-                <input id="ingredient" type="text" class="validate autocomplete">
+                <input id="ingredient" ng-model="item.ingredient" type="text" class="validate autocomplete">
                 <label for="ingredient">Ingredient</label>
               </div>
             </div>
@@ -111,9 +111,9 @@
               <div class="divider"></div>
             </div>
 
-            <div class="row">
+            <div class="row" ng-repeat="direction in recipe.data.directions">
               <div class="input-field col s12">
-                <textarea id="direction" class="materialize-textarea"></textarea>
+                <textarea id="direction" ng-model="direction.text" class="materialize-textarea"></textarea>
                 <label for="direction">Direction</label>
               </div>
             </div>

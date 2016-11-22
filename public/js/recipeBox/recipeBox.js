@@ -64,9 +64,9 @@ angular
       templateUrl: 'views/recipes/Recipe.Add.template.html',
       controller: 'RecipeAddController as recipe',
       resolve: {
-        auth: ['$auth', function($auth) {
-          return $auth.validateUser();
-        }]
+        // auth: ['$auth', function($auth) {
+        //   return $auth.validateUser();
+        // }]
       }
     })
     .state('recipes.edit', {
