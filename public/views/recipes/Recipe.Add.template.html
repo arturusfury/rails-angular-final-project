@@ -12,45 +12,55 @@
         </div>
 
         <div class="row">
-          <form class="col s12" ng-submit="addRecipe()" role="form">
+          <form class="col s12" name="recipeForm" ng-submit="RecipeAddCtrl.addRecipe()" role="form">
             <div class="row">
-              <div class="input-field col s12">
-                <input id="recipe_title" ng-model="RecipeAddCtrl.recipe.title" type="text" class="validate" required="required">
-                <label for="recipe_title">Recipe Title</label>
+              <div class="input-field col s12" ng-messages="recipeForm.recipe_title.$error">
+                <input name="recipe_title" ng-model="RecipeAddCtrl.recipe.title" type="text" class="validate" required="required">
+                <label for="recipe_title">Recipe Title
+                  <span ng-message="required" ng-if="recipeForm.recipe_title.$dirty"> - <span class="red-text">This field is required</span></span>
+                </label>
               </div>
             </div>
 
             <div class="row">
-              <div class="input-field col s12 m4">
+              <div class="input-field col s12 m4" ng-messages="recipeForm.prep_time.$error">
                 <i class="material-icons prefix top-margin-5">query_builder</i>
-                <input id="prep_time" ng-model="RecipeAddCtrl.recipe.prep_time" type="number" class="validate" required="required">
-                <label for="prep_time">Prep Time (Minutes)</label>
+                <input name="prep_time" ng-model="RecipeAddCtrl.recipe.prep_time" type="number" class="validate" required="required">
+                <label for="prep_time">Prep Time (Minutes)
+                  <span ng-message="required" ng-if="recipeForm.prep_time.$dirty"> - <span class="red-text">Required</span></span>
+                </label>
               </div>
-              <div class="input-field col s12 m4">
+              <div class="input-field col s12 m4" ng-messages="recipeForm.cooking_time.$error">
                 <i class="material-icons prefix top-margin-5">query_builder</i>
-                <input id="cooking_time" ng-model="RecipeAddCtrl.recipe.cook_time" type="number" class="validate" required="required">
-                <label for="cooking_time">Cooking Time (Minutes)</label>
+                <input name="cooking_time" ng-model="RecipeAddCtrl.recipe.cook_time" type="number" class="validate" required="required">
+                <label for="cooking_time">Cooking Time (Minutes)
+                  <span ng-message="required" ng-if="recipeForm.cooking_time.$dirty"> - <span class="red-text">Required</span></span>
+                </label>
               </div>
-              <div class="input-field col s12 m4">
+              <div class="input-field col s12 m4" ng-messages="recipeForm.total_servings.$error">
                 <i class="material-icons prefix top-margin-5">supervisor_account</i>
-                <input id="total_servings" ng-model="RecipeAddCtrl.recipe.total_servings" type="number" class="validate" required="required">
-                <label for="total_servings">Total Servings</label>
+                <input name="total_servings" ng-model="RecipeAddCtrl.recipe.total_servings" type="number" class="validate" required="required">
+                <label for="total_servings">Total Servings
+                  <span ng-message="required" ng-if="recipeForm.total_servings.$dirty"> - <span class="red-text">Required</span></span>
+                </label>
               </div>
             </div>
 
             <div class="row">
-              <div class="input-field col s12">
-                <select id="dish_type" ng-model="RecipeAddCtrl.recipe.dish_type" material-select watch required="required">
+              <div class="input-field col s12" ng-messages="recipeForm.dish_type.$error">
+                <select name="dish_type" ng-model="RecipeAddCtrl.recipe.dish_type" material-select watch required="required">
                   <option value="" disabled selected>Select a type of dish</option>
                   <option ng-repeat="item in RecipeAddCtrl.dishTypes" value="{{item}}">{{item}}</option>
                 </select>
-                <label>Dish Type</label>
+                <label>Dish Type
+                  <span ng-message="required" ng-if="recipeForm.dish_type.$dirty"> - <span class="red-text">This field is required</span></span>
+                </label>
               </div>
             </div>
 
             <div class="row">
               <div class="input-field col s12">
-                <textarea id="description" ng-model="RecipeAddCtrl.recipe.description" class="materialize-textarea" required="required"></textarea>
+                <textarea name="description" ng-model="RecipeAddCtrl.recipe.description" class="materialize-textarea" required="required"></textarea>
                 <label for="description">Description</label>
               </div>
             </div>
@@ -58,10 +68,10 @@
             <div class="file-field input-field">
               <!-- <div class="btn red">
                 <span>Select Image</span>
-                <input type="file" id="image_url">
+                <input type="file" name="image_url">
               </div> -->
               <div class="file-path-wrapper">
-                <input id="image_url" ng-model="RecipeAddCtrl.recipe.image_url" type="text" class="validate">
+                <input name="image_url" ng-model="RecipeAddCtrl.recipe.image_url" type="text" class="validate">
                 <label for="image_url">Image URL</label>
               </div>
             </div>
@@ -77,17 +87,17 @@
 
             <div class="row" ng-repeat="item in RecipeAddCtrl.recipe.ingredients">
               <div class="input-field col s4 m2 l1">
-                <input id="quantity" ng-model="item.amount" type="text" class="validate">
+                <input name="quantity" ng-model="item.amount" type="text" class="validate">
                 <label for="quantity">Qty</label>
               </div>
 
               <div class="input-field col s8 m4 l3">
-                <input id="measure" ng-model="item.measure" type="text" class="validate autocomplete">
+                <input name="measure" ng-model="item.measure" type="text" class="validate autocomplete">
                 <label for="measure">Measure</label>
               </div>
 
               <div class="input-field col s11 m5 l7">
-                <input id="ingredient" ng-model="item.ingredient" type="text" class="validate autocomplete" required="required">
+                <input name="ingredient" ng-model="item.ingredient" type="text" class="validate autocomplete" required="required">
                 <label for="ingredient">Ingredient</label>
               </div>
 
@@ -115,7 +125,7 @@
 
             <div class="row valign-wrapper" ng-repeat="direction in RecipeAddCtrl.recipe.directions">
               <div class="input-field col s11">
-                <textarea id="direction" ng-model="direction.text" class="materialize-textarea" required="required"></textarea>
+                <textarea name="direction" ng-model="direction.text" class="materialize-textarea" required="required"></textarea>
                 <label for="direction">Direction</label>
               </div>
 
@@ -136,7 +146,7 @@
 
         <div class="row">
           <div class="col s12 center">
-            <button class="btn waves-effect waves-light red" type="submit" name="action">Add!
+            <button class="btn waves-effect waves-light red" type="submit" ng-disabled="recipeForm.$error" name="action">Add!
               <i class="material-icons right">done</i>
             </button>
             <a href="/" class="btn waves-effect waves-light red">Cancel
