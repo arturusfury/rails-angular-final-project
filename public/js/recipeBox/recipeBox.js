@@ -6,7 +6,8 @@ angular
       'ipCookie',
       'ng-token-auth',
       'truncate',
-      'ngInflection'
+      'ngInflection',
+      'ngMessages'
     ]
   )
   .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
