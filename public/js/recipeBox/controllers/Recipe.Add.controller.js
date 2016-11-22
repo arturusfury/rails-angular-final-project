@@ -30,10 +30,20 @@ function RecipeAddController($scope) {
     })
   }
 
+  ctrl.deleteIngredient = function (index) {
+    console.log("Delete: " + index)
+    ctrl.data.ingredients.splice(index, 1);
+  }
+
   ctrl.addDirection = function () {
     ctrl.data.directions.push({
       text: ''
     })
+  }
+
+  ctrl.deleteDirection = function (index) {
+    console.log("Delete: " + index)
+    ctrl.data.directions.splice(index, 1);
   }
 
 }
