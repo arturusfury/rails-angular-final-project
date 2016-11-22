@@ -15,7 +15,7 @@
           <form class="col s12" ng-submit="addRecipe()" role="form">
             <div class="row">
               <div class="input-field col s12">
-                <input id="recipe_title" ng-model="recipe.data.title" type="text" class="validate" required="required">
+                <input id="recipe_title" ng-model="RecipeAddCtrl.recipe.title" type="text" class="validate" required="required">
                 <label for="recipe_title">Recipe Title</label>
               </div>
             </div>
@@ -23,28 +23,26 @@
             <div class="row">
               <div class="input-field col s12 m4">
                 <i class="material-icons prefix top-margin-5">query_builder</i>
-                <input id="prep_time" ng-model="recipe.data.prep_time" type="number" class="validate" required="required">
+                <input id="prep_time" ng-model="RecipeAddCtrl.recipe.prep_time" type="number" class="validate" required="required">
                 <label for="prep_time">Prep Time (Minutes)</label>
               </div>
               <div class="input-field col s12 m4">
                 <i class="material-icons prefix top-margin-5">query_builder</i>
-                <input id="cooking_time" ng-model="recipe.data.cook_time" type="number" class="validate" required="required">
+                <input id="cooking_time" ng-model="RecipeAddCtrl.recipe.cook_time" type="number" class="validate" required="required">
                 <label for="cooking_time">Cooking Time (Minutes)</label>
               </div>
               <div class="input-field col s12 m4">
                 <i class="material-icons prefix top-margin-5">supervisor_account</i>
-                <input id="total_servings" ng-model="recipe.data.total_servings" type="number" class="validate" required="required">
+                <input id="total_servings" ng-model="RecipeAddCtrl.recipe.total_servings" type="number" class="validate" required="required">
                 <label for="total_servings">Total Servings</label>
               </div>
             </div>
 
             <div class="row">
               <div class="input-field col s12">
-                <select id="dish_type" ng-model="recipe.data.dish_type" material-select watch required="required">
+                <select id="dish_type" ng-model="RecipeAddCtrl.recipe.dish_type" material-select watch required="required">
                   <option value="" disabled selected>Select a type of dish</option>
-                  <option value="1">Main Course</option>
-                  <option value="2">Side Dish</option>
-                  <option value="3">Desert</option>
+                  <option ng-repeat="item in RecipeAddCtrl.dishTypes" value="{{item}}">{{item}}</option>
                 </select>
                 <label>Dish Type</label>
               </div>
@@ -52,7 +50,7 @@
 
             <div class="row">
               <div class="input-field col s12">
-                <textarea id="description" ng-model="recipe.data.description" class="materialize-textarea" required="required"></textarea>
+                <textarea id="description" ng-model="RecipeAddCtrl.recipe.description" class="materialize-textarea" required="required"></textarea>
                 <label for="description">Description</label>
               </div>
             </div>
@@ -63,7 +61,7 @@
                 <input type="file" id="image_url">
               </div> -->
               <div class="file-path-wrapper">
-                <input id="image_url" ng-model="recipe.data.image_url" type="text" class="validate">
+                <input id="image_url" ng-model="RecipeAddCtrl.recipe.image_url" type="text" class="validate">
                 <label for="image_url">Image URL</label>
               </div>
             </div>
@@ -77,7 +75,7 @@
               <div class="divider"></div>
             </div>
 
-            <div class="row" ng-repeat="item in recipe.data.ingredients">
+            <div class="row" ng-repeat="item in RecipeAddCtrl.recipe.ingredients">
               <div class="input-field col s4 m2 l1">
                 <input id="quantity" ng-model="item.amount" type="text" class="validate">
                 <label for="quantity">Qty</label>
@@ -94,13 +92,13 @@
               </div>
 
               <div class="input-field col s1">
-                <a class="btn waves-effect waves-light red" ng-disabled="$index === 0" ng-click="recipe.deleteIngredient($index)">X</a>
+                <a class="btn waves-effect waves-light red" ng-disabled="$index === 0" ng-click="RecipeAddCtrl.deleteIngredient($index)">X</a>
               </div>
             </div>
 
             <div class="row">
               <div class="col s12 center">
-                <a class="btn waves-effect waves-light red" ng-click="recipe.addIngredient()">Add More
+                <a class="btn waves-effect waves-light red" ng-click="RecipeAddCtrl.addIngredient()">Add More
                   <i class="material-icons right">add</i>
                 </a>
               </div>
@@ -115,20 +113,20 @@
               <div class="divider"></div>
             </div>
 
-            <div class="row valign-wrapper" ng-repeat="direction in recipe.data.directions">
+            <div class="row valign-wrapper" ng-repeat="direction in RecipeAddCtrl.recipe.directions">
               <div class="input-field col s11">
                 <textarea id="direction" ng-model="direction.text" class="materialize-textarea" required="required"></textarea>
                 <label for="direction">Direction</label>
               </div>
 
               <div class="input-field col s1 valign">
-                <a class="btn waves-effect waves-light red" ng-disabled="$index === 0" ng-click="recipe.deleteDirection($index)">X</a>
+                <a class="btn waves-effect waves-light red" ng-disabled="$index === 0" ng-click="RecipeAddCtrl.deleteDirection($index)">X</a>
               </div>
             </div>
 
             <div class="row">
               <div class="col s12 center">
-                <a class="btn waves-effect waves-light red" ng-click="recipe.addDirection()">Add More
+                <a class="btn waves-effect waves-light red" ng-click="RecipeAddCtrl.addDirection()">Add More
                   <i class="material-icons right">add</i>
                 </a>
               </div>
