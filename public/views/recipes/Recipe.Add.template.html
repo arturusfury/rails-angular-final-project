@@ -93,7 +93,7 @@
                 <div class="divider"></div>
               </div>
 
-              <div class="row" ng-repeat="item in RecipeAddCtrl.recipe.ingredients">
+              <div class="row" ng-repeat="item in RecipeAddCtrl.recipe.ingredients_attributes">
                 <div class="input-field col s4 m2 l1">
                   <input fraction-view name="quantity" ng-model="item.amount" type="text" class="validate">
                   <label for="quantity">Qty</label>
@@ -104,9 +104,9 @@
                   <label for="measure">Measure</label>
                 </div>
 
-                <div class="input-field col s11 m5 l7" ng-messages="recipeForm.ingredient.$error">
-                  <input name="ingredient" ng-model="item.ingredient" type="text" class="validate autocomplete" required="required">
-                  <label for="ingredient">Ingredient
+                <div class="input-field col s11 m5 l7" ng-messages="recipeForm.name.$error">
+                  <input name="name" ng-model="item.name" type="text" class="validate autocomplete" required="required">
+                  <label for="name">Ingredient
                     <span ng-message="required"> - <span class="red-text">Required</span></span>
                   </label>
                 </div>
@@ -133,7 +133,7 @@
                 <div class="divider"></div>
               </div>
 
-              <div class="row valign-wrapper" ng-repeat="direction in RecipeAddCtrl.recipe.directions">
+              <div class="row valign-wrapper" ng-repeat="direction in RecipeAddCtrl.recipe.directions_attributes">
                 <div class="input-field col s11" ng-messages="recipeForm.direction.$error">
                   <textarea name="direction" ng-model="direction.text" class="materialize-textarea" required="required"></textarea>
                   <label for="direction">Direction
