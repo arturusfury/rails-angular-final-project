@@ -14,19 +14,14 @@ ActiveRecord::Schema.define(version: 20161115022457) do
 
   create_table "directions", force: :cascade do |t|
     t.integer "recipe_id"
-    t.integer "step"
     t.string  "text"
   end
 
   create_table "ingredients", force: :cascade do |t|
-    t.string "name"
-  end
-
-  create_table "items", force: :cascade do |t|
     t.float   "amount"
     t.string  "measure"
+    t.string  "name"
     t.integer "recipe_id"
-    t.integer "ingredient_id"
   end
 
   create_table "recipes", force: :cascade do |t|
