@@ -9,9 +9,9 @@
         <div class="row no-bot-margin">
           <div class="divider no-bot-margin"></div>
         </div>
-        <div class="row no-bot-margin">
+        <div class="row no-bot-margin" ng-show="user.id == recipe.data.user_info.id">
           <div class="col s12 no-bot-margin center">
-            <a href="">Edit</a> | <a href="">Delete</a>
+            <a href="">Edit</a> | <a href="" ng-click="recipe.deleteRecipe()">Delete</a>
           </div>
         </div>
         <div class="row">

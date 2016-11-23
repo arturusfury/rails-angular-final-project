@@ -1,4 +1,4 @@
-function RecipeDetailsController(recipe, $scope, $rootScope, $http, $stateParams) {
+function RecipeDetailsController(recipe, $scope, $rootScope, $http, $stateParams, $location) {
   var ctrl = this;
   var writingReview = false;
 
@@ -8,6 +8,16 @@ function RecipeDetailsController(recipe, $scope, $rootScope, $http, $stateParams
     $http.delete('/api/v1/reviews/' + id)
       .success(function (data, status, headers, config) {
         ctrl.data.review_list.splice(index, 1);
+      })
+      .error(function (data, status, headers, config) {
+        console.log('Error in Deleting a review: ' + id);
+      })
+  }
+
+  ctrl.deleteRecipe = function () {
+    $http.delete('/api/v1/recipes/' + ctrl.data.id)
+      .success(function (data, status, headers, config) {
+        $location.path('/')
       })
       .error(function (data, status, headers, config) {
         console.log('Error in Deleting a review: ' + id);
