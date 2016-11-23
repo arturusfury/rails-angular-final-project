@@ -10,7 +10,7 @@ function RecipeAddController($scope, $http, $location, $rootScope) {
     total_rating: 0,
     dish_type: 'Main Course',
     description: '',
-    image_url: 'http://images-gmi-pmc.edge-generalmills.com/d5ea92bc-de94-44d4-be68-76db8cc6ce65.jpg',
+    image_url: '',
     user_id: $rootScope.user.id,
     ingredients_attributes: [
       {
