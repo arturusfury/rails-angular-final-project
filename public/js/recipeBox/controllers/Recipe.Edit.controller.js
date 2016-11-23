@@ -1,4 +1,4 @@
-function RecipeEditController(recipe) {
+function RecipeEditController(recipe, $scope, $http, $location, $rootScope) {
   var ctrl = this;
 
   ctrl.recipe = recipe.data;
@@ -48,7 +48,7 @@ function RecipeEditController(recipe) {
   }
 
   ctrl.submitForm = function () {
-    $http.put('/api/v1/recipes/', {
+    $http.patch('/api/v1/recipes/' + ctrl.recipe.id, {
       recipe: ctrl.recipe
     }).success(function(data, status, headers, config) {
       $location.path('/recipes/' + data.recipe.id);

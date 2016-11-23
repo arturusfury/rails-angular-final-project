@@ -35,6 +35,12 @@ class Api::V1::RecipesController < ApplicationController
     recipe = Recipe.find(params[:id])
     recipe.update(recipe_params)
 
+    Ingredient.where(recipe_id: recipe.id).each(&:destroy)
+    recipe.ingredients.create(recipe_params[:ingredients_attributes])
+
+    Direction.where(recipe_id: recipe.id).each(&:destroy)
+    recipe.directions.create(recipe_params[:directions_attributes])
+
     if recipe.save
       render json: {
         status: 200,
@@ -78,8 +84,8 @@ class Api::V1::RecipesController < ApplicationController
     params.require(:recipe).permit(
       :id, :title, :description, :image_url, :dish_type, :total_servings,
       :cook_time, :prep_time, :total_rating, :user_id,
-      ingredients_attributes: [:id, :amount, :measure, :name, :recipe_id],
-      directions_attributes: [:id, :text, :recipe_id]
+      ingredients_attributes: [:id, :amount, :measure, :name, :recipe_id, :_destroy],
+      directions_attributes: [:id, :text, :recipe_id, :_destroy]
     )
   end
 end
