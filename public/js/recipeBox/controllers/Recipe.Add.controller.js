@@ -27,20 +27,20 @@ function RecipeAddController($scope, $http, $location) {
   }
 
   ctrl.dishTypes = [
-    'Main Course',
+    'Appitizers & Snacks',
     'Breads, Muffins, Scones & Pancakes',
     'Breakfast',
+    'Desert',
     'Dinner',
     'Dips, Salad Dressings, Salsas, and Sauces',
     'Drinks',
     'Lunch',
+    'Main Course',
     'One Pot Meal',
     'Salads',
     'Side Dishes',
     'Snacks',
-    'Soups, Stews & Chili',
-    'Desert',
-    'Appitizers & Snacks'
+    'Soups, Stews & Chili'
   ]
 
   ctrl.addIngredient = function () {
@@ -71,8 +71,7 @@ function RecipeAddController($scope, $http, $location) {
     $http.post('http://localhost:3000/api/v1/recipes/', {
       recipe: ctrl.recipe
     }).success(function(data, status, headers, config) {
-      console.log(data);
-      $location.path('/#/recipes/' + data.recipe.id);
+      $location.path('/recipes/' + data.recipe.id);
     }).error(function(data, status, headers, config) {
       console.log('Failure: ' + JSON.stringify({data: data}));
     });
