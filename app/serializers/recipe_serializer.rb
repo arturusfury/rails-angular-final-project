@@ -1,6 +1,6 @@
 class RecipeSerializer < ActiveModel::Serializer
   attributes :id, :title, :description, :image_url, :dish_type, :total_servings,
-             :prep_time, :cook_time, :total_rating, :user_info, :ingredient_list,
+             :prep_time, :cook_time, :total_rating, :user_info, :ingredients,
              :directions, :review_list
 
   def user_info
@@ -8,17 +8,6 @@ class RecipeSerializer < ActiveModel::Serializer
       id: object.user.id,
       name: object.user.name
     }
-  end
-
-  def ingredient_list
-    object.items.map do |item|
-      {
-        id: item.id,
-        amount: item.amount,
-        measure: item.measure,
-        ingredient: Ingredient.find(item.ingredient_id)
-      }
-    end
   end
 
   def review_list

@@ -5,7 +5,9 @@ angular
       'ui.materialize',
       'ipCookie',
       'ng-token-auth',
-      'truncate'
+      'truncate',
+      'ngInflection',
+      'ngMessages'
     ]
   )
   .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -61,17 +63,17 @@ angular
     .state('recipes.add', {
       url: '/add',
       templateUrl: 'views/recipes/Recipe.Add.template.html',
-      controller: 'RecipeAddController',
+      controller: 'RecipeAddController as RecipeAddCtrl',
       resolve: {
-        auth: ['$auth', function($auth) {
-          return $auth.validateUser();
-        }]
+        // auth: ['$auth', function($auth) {
+        //   return $auth.validateUser();
+        // }]
       }
     })
     .state('recipes.edit', {
       url: '/:id/edit',
       templateUrl: 'views/recipes/Recipe.Edit.template.html',
-      controller: 'RecipeEditController',
+      controller: 'RecipeEditController as RecipeAddCtrl',
       resolve: {
         recipe: function ($http, $stateParams) {
           return $http.get('http://localhost:3000/api/v1/recipes/' + $stateParams.id)

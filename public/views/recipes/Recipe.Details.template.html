@@ -9,6 +9,11 @@
         <div class="row no-bot-margin">
           <div class="divider no-bot-margin"></div>
         </div>
+        <div class="row no-bot-margin">
+          <div class="col s12 no-bot-margin center">
+            <a href="">Edit</a> | <a href="">Delete</a>
+          </div>
+        </div>
         <div class="row">
           <div class="latest-recipes-card center no-top-margin">
             <div class="row">
@@ -57,9 +62,9 @@
             <div class="row">
               <div class="col s12 m6 left-align">
                 <table class="bordered">
-                  <tr ng-repeat="item in recipe.data.ingredient_list">
-                    <td class="low-table-padding red-text text-darken-1">{{ item.amount }} {{ item.measure }}</td>
-                    <td class="low-table-padding">{{ item.ingredient.name }}</td>
+                  <tr ng-repeat="ingredient in recipe.data.ingredients">
+                    <td class="low-table-padding red-text text-darken-1">{{ ingredient.amount | fraction }} {{ ingredient.measure | inflect:ingredient.amount }}</td>
+                    <td class="low-table-padding">{{ ingredient.name }}</td>
                   </tr>
                 </table>
               </div>
@@ -81,13 +86,21 @@
           <div class="divider"></div>
         </div>
 
+        <div class="row review" ng-if="recipe.data.review_list == 0">
+          <div class="col s12 offset-m2 m8 center">
+            <br />
+            <h6 ng-if="user.id">There are no reviews, be the first to add one!</h6>
+            <h6 ng-if="!user.id">There are no reviews, would you like to <a href="/#/user/create" class="red-text">create</a> an account and add one?</h6>
+          </div>
+        </div>
+
         <div class="row review" ng-repeat="review in recipe.data.review_list">
           <div class="col s12 offset-m1 m2 center">
             Submitted by<br />
             <strong>{{ review.user.name }}</strong><br />
             Date: <strong>{{ review.date | date: 'MM/dd/yyyy' }}</strong><br />
             Rating: <strong>{{ review.rating }}</strong><br />
-            <a href="" ng-click="recipe.deleteReview(review.id)" ng-hide="user.id != review.user.id">Delete?</a>
+            <a href="" ng-click="recipe.deleteReview(review.id, $index)" ng-hide="user.id != review.user.id">Delete?</a>
           </div>
           <div class="col s12 m8">
             <p class="light no-top-margin ">{{ review.content }}</p>
