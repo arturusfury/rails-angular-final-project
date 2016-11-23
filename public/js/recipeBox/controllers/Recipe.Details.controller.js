@@ -4,10 +4,10 @@ function RecipeDetailsController(recipe, $scope, $rootScope, $http, $stateParams
 
   ctrl.data = recipe.data;
 
-  ctrl.deleteReview = function (id) {
+  ctrl.deleteReview = function (id, index) {
     $http.delete('/api/v1/reviews/' + id)
       .success(function (data, status, headers, config) {
-        ctrl.data.review_list.splice(id, 1);
+        ctrl.data.review_list.splice(index, 1);
       })
       .error(function (data, status, headers, config) {
         console.log('Error in Deleting a review: ' + id);
@@ -19,6 +19,9 @@ function RecipeDetailsController(recipe, $scope, $rootScope, $http, $stateParams
   }
 
   ctrl.clearReviewForm = function() {
+    $scope.rating = 1;
+    ctrl.reviewForm.reviewText = ''
+
     ctrl.writingReview = false;
   }
 
@@ -32,11 +35,12 @@ function RecipeDetailsController(recipe, $scope, $rootScope, $http, $stateParams
 
     return $http.post('/api/v1/reviews', data)
       .success(function (data, status, headers, config) {
-        console.log(data);
-        ctrl.data.review_list.push(data);
+        ctrl.data.review_list.push(data.review);
+
+        // Clear form on successful submission
+        ctrl.clearReviewForm();
       })
       .error(function (data, status, header, config) {
-        console.log( 'error' );
       })
   }
 }

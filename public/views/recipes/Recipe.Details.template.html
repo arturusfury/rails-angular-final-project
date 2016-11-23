@@ -87,7 +87,7 @@
             <strong>{{ review.user.name }}</strong><br />
             Date: <strong>{{ review.date | date: 'MM/dd/yyyy' }}</strong><br />
             Rating: <strong>{{ review.rating }}</strong><br />
-            <a href="" ng-click="recipe.deleteReview(review.id)" ng-hide="user.id != review.user.id">Delete?</a>
+            <a href="" ng-click="recipe.deleteReview(review.id, $index)" ng-hide="user.id != review.user.id">Delete?</a>
           </div>
           <div class="col s12 m8">
             <p class="light no-top-margin ">{{ review.content }}</p>
