@@ -36,7 +36,14 @@ class Api::V1::RecipesController < ApplicationController
   end
 
   def destroy
-    #
+    recipe = Recipe.find(params[:id])
+    recipe_id = recipe.id
+
+    return false unless recipe.destroy
+
+    Direction.where(recipe_id: recipe_id).each(&:destroy)
+    Ingredient.where(recipe_id: recipe_id).each(&:destroy)
+    Review.where(recipe_id: recipe_id).each(&:destroy)
   end
 
   def top
