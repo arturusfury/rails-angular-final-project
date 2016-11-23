@@ -21,10 +21,10 @@ angular
       controller: 'MainRecipesController as mainCtrl',
       resolve: {
         topRecipes: function ($http) {
-          return $http.get('http://localhost:3000/api/v1/recipes/top')
+          return $http.get('/api/v1/recipes/top')
         },
         latestRecipes: function ($http) {
-          return $http.get('http://localhost:3000/api/v1/recipes/latest')
+          return $http.get('/api/v1/recipes/latest')
         }
       }
     })
@@ -56,7 +56,7 @@ angular
       controller: 'RecipesListController as recipes',
       resolve: {
         recipes: function ($http) {
-          return $http.get('http://localhost:3000/api/v1/recipes/')
+          return $http.get('/api/v1/recipes/')
         }
       }
     })
@@ -76,7 +76,7 @@ angular
       controller: 'RecipeEditController as RecipeAddCtrl',
       resolve: {
         recipe: function ($http, $stateParams) {
-          return $http.get('http://localhost:3000/api/v1/recipes/' + $stateParams.id)
+          return $http.get('/api/v1/recipes/' + $stateParams.id)
         }
       }
     })
@@ -86,7 +86,7 @@ angular
       controller: 'RecipeDetailsController as recipe',
       resolve: {
         recipe: function ($http, $stateParams) {
-          return $http.get('http://localhost:3000/api/v1/recipes/' + $stateParams.id)
+          return $http.get('/api/v1/recipes/' + $stateParams.id)
         }
       }
     });

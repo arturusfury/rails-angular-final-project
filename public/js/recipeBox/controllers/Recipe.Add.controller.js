@@ -68,7 +68,7 @@ function RecipeAddController($scope, $http, $location) {
   }
 
   ctrl.submitForm = function () {
-    $http.post('http://localhost:3000/api/v1/recipes/', {
+    $http.post('/api/v1/recipes/', {
       recipe: ctrl.recipe
     }).success(function(data, status, headers, config) {
       $location.path('/recipes/' + data.recipe.id);
