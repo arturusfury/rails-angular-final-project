@@ -65,9 +65,9 @@ angular
       templateUrl: 'views/recipes/Recipe.Add.template.html',
       controller: 'RecipeAddController as RecipeAddCtrl',
       resolve: {
-        // auth: ['$auth', function($auth) {
-        //   return $auth.validateUser();
-        // }]
+        auth: ['$auth', function($auth) {
+          return $auth.validateUser();
+        }]
       }
     })
     .state('recipes.edit', {
@@ -75,6 +75,9 @@ angular
       templateUrl: 'views/recipes/Recipe.Edit.template.html',
       controller: 'RecipeEditController as RecipeEditCtrl',
       resolve: {
+        auth: ['$auth', function($auth) {
+          return $auth.validateUser();
+        }],
         recipe: function ($http, $stateParams) {
           return $http.get('/api/v1/recipes/' + $stateParams.id)
         }
