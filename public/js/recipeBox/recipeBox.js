@@ -73,7 +73,7 @@ angular
     .state('recipes.edit', {
       url: '/:id/edit',
       templateUrl: 'views/recipes/Recipe.Edit.template.html',
-      controller: 'RecipeEditController as RecipeAddCtrl',
+      controller: 'RecipeEditController as RecipeEditCtrl',
       resolve: {
         recipe: function ($http, $stateParams) {
           return $http.get('/api/v1/recipes/' + $stateParams.id)
