@@ -18,15 +18,31 @@ angular.module('recipeBox')
         scope.displayValue = $filter('fraction')(scope.decimalValue);
 
         // on focus: display the decimal value
-        scope.enterInputMode = function() {
-          scope.displayValue = scope.decimalValue;
-        }
+        // scope.enterInputMode = function() {
+        //   scope.displayValue = scope.decimalValue;
+        // }
 
-        // on blur: save the new decimal value and display the
-        // fractional representation
+        // We want to be able to convert any fraction's entered into
         scope.exitInputMode = function() {
-          scope.decimalValue = scope.displayValue;
-          scope.displayValue = $filter('fraction')(scope.decimalValue);
+          if (scope.displayValue && scope.displayValue.toString().includes('/')) {
+            if (scope.displayValue.toString().includes(' ')) {
+              var wholeNumbers = scope.displayValue.slice(0, scope.displayValue.indexOf(' '));
+              var numerator = scope.displayValue.substr(scope.displayValue.indexOf(' ')).split('/')[0];
+              var denominator = scope.displayValue.split('/')[1];
+
+              scope.decimalValue = (parseFloat(wholeNumbers) + (parseInt(numerator) / parseInt(denominator))).toFixed(2);
+            } else {
+              var numerator = scope.displayValue.split('/')[0];
+              var denominator = scope.displayValue.split('/')[1];
+
+              scope.decimalValue = (numerator / denominator).toFixed(2);
+            }
+
+          } else {
+            scope.decimalValue = scope.displayValue;
+            scope.displayValue = $filter('fraction')(scope.decimalValue);
+          }
+
           if(!modelCtrl) {
             modelCtrl.$setViewValue(scope.decimalValue);
           }
