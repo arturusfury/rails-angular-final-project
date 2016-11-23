@@ -1,26 +1,27 @@
-function RecipeAddController($scope) {
+function RecipeAddController($scope, $http, $location) {
   var ctrl = this;
 
   // Create a blank set of information for our recipe
   ctrl.recipe = {
-    title: '',
-    prep_time: null,
-    cook_time: null,
-    total_servings: null,
+    title: 'Fake Recipe',
+    prep_time: 2,
+    cook_time: 5,
+    total_servings: 2,
+    total_rating: 0,
     dish_type: 'Main Course',
-    description: '',
-    image_url: '',
-    user_id: 1,
-    ingredients: [
+    description: 'Fake Description for wings!',
+    image_url: 'http://images-gmi-pmc.edge-generalmills.com/d5ea92bc-de94-44d4-be68-76db8cc6ce65.jpg',
+    user_id: 2,
+    ingredients_attributes: [
       {
-        amount: null,
-        measure: null,
-        name: null
+        amount: 0.5,
+        measure: 'Cup',
+        name: 'Ranch Dressing'
       }
     ],
-    directions: [
+    directions_attributes: [
       {
-        text: ''
+        text: 'Dip Wings in Dressing, Duh!'
       }
     ]
   }
@@ -43,7 +44,7 @@ function RecipeAddController($scope) {
   ]
 
   ctrl.addIngredient = function () {
-    ctrl.recipe.ingredients.push({
+    ctrl.recipe.ingredients_attributes.push({
       amount: null,
       measure: '',
       name: ''
@@ -52,22 +53,29 @@ function RecipeAddController($scope) {
 
   ctrl.deleteIngredient = function (index) {
     console.log("Delete: " + index)
-    ctrl.recipe.ingredients.splice(index, 1);
+    ctrl.recipe.ingredients_attributes.splice(index, 1);
   }
 
   ctrl.addDirection = function () {
-    ctrl.recipe.directions.push({
+    ctrl.recipe.directions_attributes.push({
       text: ''
     })
   }
 
   ctrl.deleteDirection = function (index) {
     console.log("Delete: " + index)
-    ctrl.recipe.directions.splice(index, 1);
+    ctrl.recipe.directions_attributes.splice(index, 1);
   }
 
   ctrl.submitForm = function () {
-    console.log("Anything");
+    $http.post('http://localhost:3000/api/v1/recipes/', {
+      recipe: ctrl.recipe
+    }).success(function(data, status, headers, config) {
+      console.log(data);
+      $location.path('/#/recipes/' + data.recipe.id);
+    }).error(function(data, status, headers, config) {
+      console.log('Failure: ' + JSON.stringify({data: data}));
+    });
   }
 }
 
