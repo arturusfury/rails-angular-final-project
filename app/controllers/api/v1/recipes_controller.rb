@@ -32,7 +32,21 @@ class Api::V1::RecipesController < ApplicationController
   end
 
   def update
-    #
+    recipe = Recipe.find(params[:id])
+    recipe.update(recipe_params)
+
+    if recipe.save
+      render json: {
+        status: 201,
+        message: 'Recipe successfully created!',
+        recipe: recipe
+      }.to_json
+    else
+      render json: {
+        status: 500,
+        errors: recipe.errors
+      }.to_json
+    end
   end
 
   def destroy
