@@ -1,8 +1,10 @@
 function RecipeEditController(recipe) {
   var ctrl = this;
 
-  // Create a blank set of information for our recipe
   ctrl.recipe = recipe.data;
+
+  ctrl.recipe.ingredients_attributes = recipe.data.ingredients;
+  ctrl.recipe.directions_attributes = recipe.data.directions;
 
   ctrl.dishTypes = [
     'Appitizers & Snacks',
