@@ -5,7 +5,18 @@ class Api::V1::RecipesController < ApplicationController
     recipe = Recipe.new
     recipe.update(recipe_params)
 
-    render json: recipe
+    if recipe.save
+      render json: {
+        status: 201,
+        message: 'Recipe successfully created!',
+        recipe: recipe
+      }.to_json
+    else
+      render json: {
+        status: 500,
+        errors: recipe.errors
+      }.to_json
+    end
   end
 
   def index
@@ -14,6 +25,18 @@ class Api::V1::RecipesController < ApplicationController
 
   def show
     respond_with(Recipe.find(params[:id]))
+  end
+
+  def reviews
+    respond_with(Recipe.find(params[:id]))
+  end
+
+  def update
+    #
+  end
+
+  def destroy
+    #
   end
 
   def top
