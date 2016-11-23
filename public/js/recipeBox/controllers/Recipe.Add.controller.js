@@ -7,15 +7,15 @@ function RecipeAddController($scope) {
     prep_time: null,
     cook_time: null,
     total_servings: null,
-    dish_type: '',
+    dish_type: 'Main Course',
     description: '',
     image_url: '',
     user_id: 1,
     ingredients: [
       {
         amount: null,
-        measure: '',
-        name: ''
+        measure: null,
+        name: null
       }
     ],
     directions: [
@@ -66,8 +66,8 @@ function RecipeAddController($scope) {
     ctrl.recipe.directions.splice(index, 1);
   }
 
-  ctrl.addRecipe = function () {
-
+  ctrl.submitForm = function () {
+    console.log("Anything");
   }
 }
 
