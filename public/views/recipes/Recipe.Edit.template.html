@@ -4,139 +4,168 @@
     <div class="row no-bot-margin">
       <div class="col s12">
         <div class="row section-header">
-          <h3 class="light center section-header">Edit Recipe</h3>
+          <h3 class="light center section-header">Add a Recipe</h3>
         </div>
 
         <div class="row no-bot-margin">
           <div class="divider no-bot-margin"></div>
         </div>
 
-        <div class="row">
-          <form class="col s12">
-            <div class="row">
-              <div class="input-field col s12">
-                <input id="recipe_title" type="text" class="validate">
-                <label for="recipe_title">Recipe Title</label>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="input-field col s12 m4">
-                <i class="material-icons prefix top-margin-5">query_builder</i>
-                <input id="prep_time" type="number" class="validate">
-                <label for="prep_time">Prep Time (Minutes)</label>
-              </div>
-              <div class="input-field col s12 m4">
-                <i class="material-icons prefix top-margin-5">query_builder</i>
-                <input id="cooking_time" type="number" class="validate">
-                <label for="cooking_time">Cooking Time (Minutes)</label>
-              </div>
-              <div class="input-field col s12 m4">
-                <i class="material-icons prefix top-margin-5">supervisor_account</i>
-                <input id="total_servings" type="number" class="validate">
-                <label for="total_servings">Total Servings</label>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="input-field col s12">
-                <select id="dish_type">
-                  <option value="" disabled selected>Select a type of dish</option>
-                  <option value="1">Main Course</option>
-                  <option value="2">Side Dish</option>
-                  <option value="3">Desert</option>
-                </select>
-                <label>Dish Type</label>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="input-field col s12">
-                <textarea id="description" class="materialize-textarea"></textarea>
-                <label for="description">Description</label>
-              </div>
-            </div>
-
-            <div class="file-field input-field">
-              <div class="btn red">
-                <span>Select Image</span>
-                <input type="file" id="image_url">
-              </div>
-              <div class="file-path-wrapper">
-                <input class="file-path validate" type="text">
-              </div>
-            </div>
-
-            <br><br>
-            <div class="row section-header">
-              <h4 class="light center section-header">Ingredients</h4>
-            </div>
-
-            <div class="row">
-              <div class="divider"></div>
-            </div>
-
-            <div class="row">
-              <div class="input-field col s4 m2 l1">
-                <input id="quantity" type="text" class="validate">
-                <label for="quantity">Qty</label>
+        <form class="col s12" name="recipeForm" ng-submit="RecipeEditCtrl.submitForm()">
+          <div class="row">
+              <div class="row">
+                <div class="input-field col s12" ng-messages="recipeForm.recipe_title.$error">
+                  <input name="recipe_title" ng-model="RecipeEditCtrl.recipe.title" type="text" class="validate" required="required">
+                  <label for="recipe_title">Recipe Title
+                    <span ng-message="required" ng-if="recipeForm.recipe_title.$dirty"> - <span class="red-text">This field is required</span></span>
+                  </label>
+                </div>
               </div>
 
-              <div class="input-field col s8 m4 l3">
-                <input id="measure" type="text" class="validate autocomplete">
-                <label for="measure">Measure</label>
+              <div class="row">
+                <div class="input-field col s12 m4" ng-messages="recipeForm.prep_time.$error">
+                  <i class="material-icons prefix top-margin-5">query_builder</i>
+                  <input name="prep_time" ng-model="RecipeEditCtrl.recipe.prep_time" type="number" min="0" class="validate" required="required" prevent-non-integer>
+                  <label for="prep_time">
+                    <span ng-if="recipeForm.prep_time.$valid || recipeForm.prep_time.$pristine">Prep Time (Minutes)</span>
+                    <span ng-message="required" ng-if="recipeForm.prep_time.$dirty"><span class="red-text">Required</span></span>
+                    <span ng-message="min" ng-if="recipeForm.prep_time.$dirty"><span class="red-text">Must be greater than 0</span></span>
+                  </label>
+                </div>
+                <div class="input-field col s12 m4" ng-messages="recipeForm.cooking_time.$error">
+                  <i class="material-icons prefix top-margin-5">query_builder</i>
+                  <input name="cooking_time" ng-model="RecipeEditCtrl.recipe.cook_time" type="number" min="0" class="validate" required="required" prevent-non-integer>
+                  <label for="cooking_time">
+                    <span ng-if="recipeForm.cooking_time.$valid || recipeForm.cooking_time.$pristine">Cooking Time (Minutes)</span>
+                    <span ng-message="required" ng-if="recipeForm.cooking_time.$dirty"><span class="red-text">Required</span></span>
+                    <span ng-message="min" ng-if="recipeForm.cooking_time.$dirty"><span class="red-text">Must be greater than 0</span></span>
+                  </label>
+                </div>
+                <div class="input-field col s12 m4" ng-messages="recipeForm.total_servings.$error">
+                  <i class="material-icons prefix top-margin-5">supervisor_account</i>
+                  <input name="total_servings" ng-model="RecipeEditCtrl.recipe.total_servings" type="number" min="0" class="validate" required="required" prevent-non-integer>
+                  <label for="total_servings">
+                    <span ng-if="recipeForm.total_servings.$valid || recipeForm.total_servings.$pristine">Total Servings</span>
+                    <span ng-message="required" ng-if="recipeForm.total_servings.$dirty"><span class="red-text">Required</span></span>
+                    <span ng-message="min" ng-if="recipeForm.total_servings.$dirty"><span class="red-text">Must be greater than 0</span></span>
+                  </label>
+                </div>
               </div>
 
-              <div class="input-field col s12 m6 l8">
-                <input id="ingredient" type="text" class="validate autocomplete">
-                <label for="ingredient">Ingredient</label>
+              <div class="row">
+                <div class="input-field col s12" ng-messages="recipeForm.dish_type.$error">
+                  <select name="dish_type" ng-model="RecipeEditCtrl.recipe.dish_type" material-select watch required>
+                    <option value="Other" disabled selected>Select a type of dish</option>
+                    <option ng-repeat="item in RecipeEditCtrl.dishTypes" value="{{item}}">{{item}}</option>
+                  </select>
+                  <label>Dish Type
+                    <span ng-message="required" ng-if="recipeForm.dish_type.$dirty"> - <span class="red-text">This field is required</span></span>
+                  </label>
+                </div>
               </div>
-            </div>
 
-            <div class="row">
-              <div class="col s12 center">
-                <button class="btn waves-effect waves-light red" type="submit" name="action">Add More
-                  <i class="material-icons right">add</i>
-                </button>
+              <div class="row">
+                <div class="input-field col s12" ng-messages="recipeForm.description.$error">
+                  <textarea name="description" ng-model="RecipeEditCtrl.recipe.description" class="materialize-textarea" required="required"></textarea>
+                  <label for="description">Description
+                    <span ng-message="required" ng-if="recipeForm.description.$dirty"> - <span class="red-text">Required</span></span>
+                  </label>
+                </div>
               </div>
-            </div>
 
-            <br><br>
-            <div class="row section-header">
-              <h4 class="light center section-header">Directions</h4>
-            </div>
-
-            <div class="row">
-              <div class="divider"></div>
-            </div>
-
-            <div class="row">
-              <div class="input-field col s12">
-                <textarea id="direction" class="materialize-textarea"></textarea>
-                <label for="direction">Direction</label>
+              <div class="file-field input-field">
+                <!-- <div class="btn red">
+                  <span>Select Image</span>
+                  <input type="file" name="image_url">
+                </div> -->
+                <div class="file-path-wrapper">
+                  <input name="image_url" ng-model="RecipeEditCtrl.recipe.image_url" type="text" class="validate">
+                  <label for="image_url">Image URL</label>
+                </div>
               </div>
-            </div>
 
-            <div class="row">
-              <div class="col s12 center">
-                <button class="btn waves-effect waves-light red" type="submit" name="action">Add More
-                  <i class="material-icons right">add</i>
-                </button>
+              <br><br>
+              <div class="row section-header">
+                <h4 class="light center section-header">Ingredients</h4>
               </div>
-            </div>
-          </form>
-        </div>
 
-        <div class="row">
-          <div class="col s12 center">
-            <button class="btn waves-effect waves-light red" type="submit" name="action">Add!
-              <i class="material-icons right">done</i>
-            </button>
-            <button class="btn waves-effect waves-light red" type="submit" name="action">Cancel
-              <i class="material-icons right">not_interested</i>
-            </button>
+              <div class="row">
+                <div class="divider"></div>
+              </div>
+
+              <div class="row" ng-repeat="item in RecipeEditCtrl.recipe.ingredients_attributes">
+                <div class="input-field col s4 m2 l1">
+                  <input fraction-view name="quantity" ng-model="item.amount" type="text" class="validate">
+                  <label for="quantity">Qty</label>
+                </div>
+
+                <div class="input-field col s8 m4 l3">
+                  <input name="measure" ng-model="item.measure" type="text" class="validate autocomplete">
+                  <label for="measure">Measure</label>
+                </div>
+
+                <div class="input-field col s11 m5 l7" ng-messages="recipeForm.name.$error">
+                  <input name="name" ng-model="item.name" type="text" class="validate autocomplete" required="required">
+                  <label for="name">Ingredient
+                    <span ng-message="required"> - <span class="red-text">Required</span></span>
+                  </label>
+                </div>
+
+                <div class="input-field col s1">
+                  <a class="btn waves-effect waves-light red" ng-disabled="$index === 0" ng-click="RecipeEditCtrl.deleteIngredient($index)">X</a>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col s12 center">
+                  <a class="btn waves-effect waves-light red" ng-click="RecipeEditCtrl.addIngredient()">Add More
+                    <i class="material-icons right">add</i>
+                  </a>
+                </div>
+              </div>
+
+              <br><br>
+              <div class="row section-header">
+                <h4 class="light center section-header">Directions</h4>
+              </div>
+
+              <div class="row">
+                <div class="divider"></div>
+              </div>
+
+              <div class="row valign-wrapper" ng-repeat="direction in RecipeEditCtrl.recipe.directions_attributes">
+                <div class="input-field col s11" ng-messages="recipeForm.direction.$error">
+                  <textarea name="direction" ng-model="direction.text" class="materialize-textarea" required="required"></textarea>
+                  <label for="direction">Direction
+                    <span ng-message="required"> - <span class="red-text">Required</span></span>
+                  </label>
+                </div>
+
+                <div class="input-field col s1 valign">
+                  <a class="btn waves-effect waves-light red" ng-disabled="$index === 0" ng-click="RecipeEditCtrl.deleteDirection($index)">X</a>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col s12 center">
+                  <a class="btn waves-effect waves-light red" ng-click="RecipeEditCtrl.addDirection()">Add More
+                    <i class="material-icons right">add</i>
+                  </a>
+                </div>
+              </div>
           </div>
-        </div>
+
+          <div class="row">
+            <div class="col s12 center">
+              <button class="btn waves-effect waves-light red" type="submit" ng-disabled="recipeForm.$invalid">Edit
+                <i class="material-icons right">done</i>
+              </button>
+              <a href="/" class="btn waves-effect waves-light red">Cancel
+                <i class="material-icons right">not_interested</i>
+              </a>
+            </div>
+          </div>
+        </form>
 
       </div>
     </div> <!-- end recipe information -->
