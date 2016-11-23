@@ -3,25 +3,25 @@ function RecipeAddController($scope, $http, $location) {
 
   // Create a blank set of information for our recipe
   ctrl.recipe = {
-    title: 'Fake Recipe',
-    prep_time: 2,
-    cook_time: 5,
-    total_servings: 2,
+    title: '',
+    prep_time: null,
+    cook_time: null,
+    total_servings: null,
     total_rating: 0,
     dish_type: 'Main Course',
-    description: 'Fake Description for wings!',
+    description: '',
     image_url: 'http://images-gmi-pmc.edge-generalmills.com/d5ea92bc-de94-44d4-be68-76db8cc6ce65.jpg',
-    user_id: 2,
+    user_id: user.id,
     ingredients_attributes: [
       {
-        amount: 0.5,
-        measure: 'Cup',
-        name: 'Ranch Dressing'
+        amount: null,
+        measure: '',
+        name: ''
       }
     ],
     directions_attributes: [
       {
-        text: 'Dip Wings in Dressing, Duh!'
+        text: ''
       }
     ]
   }
