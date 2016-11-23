@@ -37,8 +37,8 @@ class Api::V1::RecipesController < ApplicationController
 
     if recipe.save
       render json: {
-        status: 201,
-        message: 'Recipe successfully created!',
+        status: 200,
+        message: 'Recipe successfully updated!',
         recipe: recipe
       }.to_json
     else
@@ -58,6 +58,10 @@ class Api::V1::RecipesController < ApplicationController
     Direction.where(recipe_id: recipe_id).each(&:destroy)
     Ingredient.where(recipe_id: recipe_id).each(&:destroy)
     Review.where(recipe_id: recipe_id).each(&:destroy)
+    render json: {
+      status: 200,
+      message: 'Recipe has been deleted successfully!'
+    }
   end
 
   def top
