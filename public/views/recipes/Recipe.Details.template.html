@@ -9,6 +9,11 @@
         <div class="row no-bot-margin">
           <div class="divider no-bot-margin"></div>
         </div>
+        <div class="row no-bot-margin">
+          <div class="col s12 no-bot-margin center">
+            Edit | Delete
+          </div>
+        </div>
         <div class="row">
           <div class="latest-recipes-card center no-top-margin">
             <div class="row">
@@ -79,6 +84,14 @@
 
         <div>
           <div class="divider"></div>
+        </div>
+
+        <div class="row review" ng-if="recipe.data.review_list == 0">
+          <div class="col s12 offset-m2 m8 center">
+            <br />
+            <h6 ng-if="user.id">There are no reviews, be the first to add one!</h6>
+            <h6 ng-if="!user.id">There are no reviews, would you like to <a href="/#/user/create" class="red-text">create</a> an account and add one?</h6>
+          </div>
         </div>
 
         <div class="row review" ng-repeat="review in recipe.data.review_list">
