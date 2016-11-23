@@ -1,30 +1,8 @@
-function RecipeEditController() {
+function RecipeEditController(recipe) {
   var ctrl = this;
 
   // Create a blank set of information for our recipe
-  ctrl.recipe = {
-    title: '',
-    prep_time: null,
-    cook_time: null,
-    total_servings: null,
-    total_rating: 0,
-    dish_type: 'Main Course',
-    description: '',
-    image_url: '',
-    user_id: $rootScope.user.id,
-    ingredients_attributes: [
-      {
-        amount: null,
-        measure: '',
-        name: ''
-      }
-    ],
-    directions_attributes: [
-      {
-        text: ''
-      }
-    ]
-  }
+  ctrl.recipe = recipe.data;
 
   ctrl.dishTypes = [
     'Appitizers & Snacks',
