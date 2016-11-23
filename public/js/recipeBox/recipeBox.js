@@ -28,6 +28,10 @@ angular
         }
       }
     })
+    .state('contact', {
+      url: '/contact',
+      templateUrl: 'views/Contact.template.html'
+    })
     // User Routes
     .state('user', {
       url: '/user',
