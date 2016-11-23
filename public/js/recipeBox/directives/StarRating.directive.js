@@ -15,7 +15,6 @@ angular.module('recipeBox')
 			},
 			link : function(scope, elem, attrs) {
 				var updateStars = function() {
-          console.log("Update Stars")
 					scope.stars = [];
 					for ( var i = 0; i < scope.max; i++) {
 						scope.stars.push({
