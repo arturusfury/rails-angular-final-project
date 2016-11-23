@@ -1,4 +1,4 @@
-function RecipeAddController($scope, $http, $location) {
+function RecipeAddController($scope, $http, $location, $rootScope) {
   var ctrl = this;
 
   // Create a blank set of information for our recipe
@@ -10,8 +10,8 @@ function RecipeAddController($scope, $http, $location) {
     total_rating: 0,
     dish_type: 'Main Course',
     description: '',
-    image_url: 'http://images-gmi-pmc.edge-generalmills.com/d5ea92bc-de94-44d4-be68-76db8cc6ce65.jpg',
-    user_id: user.id,
+    image_url: '',
+    user_id: $rootScope.user.id,
     ingredients_attributes: [
       {
         amount: null,
