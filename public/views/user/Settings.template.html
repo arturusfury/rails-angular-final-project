@@ -1,0 +1,91 @@
+<div class="container">
+  <div class="section">
+
+    <div class="row no-bot-margin">
+      <div class="col s12 offset-m3 m6">
+        <div class="row section-header">
+          <h3 class="light center section-header">Settings</h3>
+        </div>
+
+        <div class="row no-bot-margin">
+          <div class="divider no-bot-margin"></div>
+        </div>
+
+        <div class="row no-bot-margin">
+          <div class="col s12 center">
+            <br />
+            <h5>Change Your Password</h5>
+          </div>
+        </div>
+
+        <div class="row">
+          <form ng-submit="handleRegBtnClick()" role="form" ng-init="passwordForm = {}" class="col s12">
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons top-margin-5 prefix">lock</i>
+                <input name="old_password" id="old_password" type="password" class="validate"
+                       ng-model="passwordForm.old_password" required="required">
+                <label for="old_password">Existing Password</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons top-margin-5 prefix">lock</i>
+                <input name="new_password" id="new_password" type="password" class="validate"
+                       ng-model="passwordForm.new_password" required="required">
+                <label for="new_password">New Password</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons top-margin-5 prefix">lock</i>
+                <input name="new_password_confirmation" id="new_password_confirmation" type="password" class="validate"
+                       ng-model="passwordForm.new_password_confirmation" required="required">
+                <label for="new_password_confirmation">Confrim New Password</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col s12 center">
+                <button class="btn waves-effect waves-light red" type="submit" ng-disabled="isDisabled" name="submit">Change
+                  <i class="material-icons right">play_arrow</i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="row no-bot-margin">
+          <div class="col s12 center">
+            <br />
+            <h5>Delete Your Account</h5>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="row">
+          <div class="row">
+            <div class="col s12 center" ng-hide="confirmDelete">
+              <button class="btn waves-effect waves-light red" type="submit" ng-disabled="isDisabled" name="submit">Delete
+                <i class="material-icons right">cancel</i>
+              </button>
+            </div>
+            <div class="col s12 center" ng-show="confirmDelete">
+              <button class="btn waves-effect waves-light red" type="submit" ng-disabled="isDisabled" name="submit">No
+                <i class="material-icons right">cancel</i>
+              </button>
+              <button class="btn waves-effect waves-light red" type="submit" ng-disabled="isDisabled" name="submit">Yes, Delete
+                <i class="material-icons right">check</i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- end col s12 -->
+    </div> <!-- end login page -->
+
+  </div> <!-- end section -->
+</div> <!-- emd container -->

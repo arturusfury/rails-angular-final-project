@@ -58,6 +58,11 @@ angular
       templateUrl: 'views/user/Create.template.html',
       controller: 'UserRegistrationsController'
     })
+    .state('user.settings', {
+      url: '/settings',
+      templateUrl: 'views/user/Settings.template.html',
+      controller: 'UserSettingsController'
+    })
     // Recipe Routes
     .state('recipes', {
       url: '/recipes',
