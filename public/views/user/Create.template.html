@@ -19,8 +19,9 @@
                 <input name="email" id="email" type="email" class="validate"
                        ng-model="user.registrationForm.email" required="required">
                 <label for="email">
-                  <span ng-if="registrationForm.email.$valid || registrationForm.email.$pristine">Email</span>
+                  <span ng-hide="errors" ng-if="registrationForm.email.$valid || registrationForm.email.$pristine">Email</span>
                   <span ng-message="required" ng-if="registrationForm.email.$dirty" class="red-text">Required</span></span>
+                  <span ng-repeat="error in errors" class="red-text">{{error}}</span></span>
                 </label>
               </div>
             </div>
