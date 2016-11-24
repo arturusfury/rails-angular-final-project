@@ -36,7 +36,7 @@
         <div class="input-field" ng-controller="SearchBoxController as ctrl">
           <input id="search" ng-model="ctrl.searchString" on-key-enter="ctrl.goSearch()" type="search" required>
           <label for="search"><i class="material-icons">search</i></label>
-          <i class="material-icons">close</i>
+          <i class="material-icons" ng-click="ctrl.searchString = ''">close</i>
         </div>
       </form>
       <ul id="nav-mobile" class="side-nav">
