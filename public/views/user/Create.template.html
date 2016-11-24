@@ -12,40 +12,53 @@
         </div>
 
         <div class="row">
-          <form ng-submit="handleRegBtnClick()" role="form" ng-init="registrationForm = {}" class="col s12">
+          <form name="registrationForm" ng-submit="handleRegBtnClick()" role="form" ng-init="registrationForm = {}" class="col s12">
             <div class="row">
-              <div class="input-field col s12">
+              <div class="input-field col s12" ng-messages="registrationForm.email.$error">
                 <i class="material-icons top-margin-5 prefix">email</i>
                 <input name="email" id="email" type="email" class="validate"
-                       ng-model="registrationForm.email" required="required">
-                <label for="email">Email</label>
+                       ng-model="user.registrationForm.email" required="required">
+                <label for="email">
+                  <span ng-if="registrationForm.email.$valid || registrationForm.email.$pristine">Email</span>
+                  <span ng-message="required" ng-if="registrationForm.email.$dirty" class="red-text">Required</span></span>
+                </label>
               </div>
             </div>
 
             <div class="row">
-              <div class="input-field col s12">
+              <div class="input-field col s12" ng-messages="registrationForm.name.$error">
                 <i class="material-icons top-margin-5 prefix">supervisor_account</i>
                 <input name="name" id="name" type="text" class="validate"
-                       ng-model="registrationForm.name" required="required">
-                <label for="name">Full Name</label>
+                       ng-model="user.registrationForm.name" required="required">
+                <label for="name">
+                  <span ng-if="registrationForm.name.$valid || registrationForm.name.$pristine">Full Name</span>
+                  <span ng-message="required" ng-if="registrationForm.name.$dirty" class="red-text">Required</span></span>
+                </label>
               </div>
             </div>
 
             <div class="row">
-              <div class="input-field col s12">
+              <div class="input-field col s12" ng-messages="registrationForm.password.$error">
                 <i class="material-icons top-margin-5 prefix">lock</i>
                 <input name="password" id="password" type="password" class="validate"
-                       ng-model="registrationForm.password" required="required">
-                <label for="password">Password</label>
+                       ng-model="user.registrationForm.password" required="required">
+                <label for="password">
+                  <span ng-if="registrationForm.password.$valid || registrationForm.password.$pristine">Password</span>
+                  <span ng-message="required" ng-if="registrationForm.password.$dirty" class="red-text">Required</span></span>
+                </label>
               </div>
             </div>
 
             <div class="row">
-              <div class="input-field col s12">
+              <div class="input-field col s12" ng-messages="registrationForm.password_confirmation.$error">
                 <i class="material-icons top-margin-5 prefix">lock</i>
                 <input name="password_confirmation" id="password_confirmation" type="password" class="validate"
-                       ng-model="registrationForm.password_confirmation" required="required">
-                <label for="password_confirmation">Password Confirmtion</label>
+                       ng-model="user.registrationForm.password_confirmation" required match-password="password">
+                <label for="password_confirmation">
+                  <span ng-if="registrationForm.password_confirmation.$valid || registrationForm.password_confirmation.$pristine">Confirm New Password</span>
+                  <span ng-message="required" ng-if="registrationForm.password_confirmation.$dirty" class="red-text">Required</span></span>
+                  <span ng-message="passwordMatch" ng-if="registrationForm.password_confirmation.$dirty" class="red-text">Passwords must match</span></span>
+                </label>
               </div>
             </div>
 
