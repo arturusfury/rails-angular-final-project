@@ -7,7 +7,8 @@ angular
       'ng-token-auth',
       'truncate',
       'ngInflection',
-      'ngMessages'
+      'ngMessages',
+      'ngPassword'
     ]
   )
   .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -61,7 +62,7 @@ angular
     .state('user.settings', {
       url: '/settings',
       templateUrl: 'views/user/Settings.template.html',
-      controller: 'UserSettingsController'
+      controller: 'UserSettingsController as user'
     })
     // Recipe Routes
     .state('recipes', {
