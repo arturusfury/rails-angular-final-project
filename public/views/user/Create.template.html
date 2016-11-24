@@ -11,6 +11,12 @@
           <div class="divider no-bot-margin"></div>
         </div>
 
+        <div class="row" ng-show="errors">
+          <div class="col s12 red lighten-4 error" ng-repeat="error in errors">
+            <p><strong>{{error}}</strong></p>
+          </div>
+        </div>
+
         <div class="row">
           <form name="registrationForm" ng-submit="handleRegBtnClick()" role="form" ng-init="registrationForm = {}" class="col s12">
             <div class="row">
@@ -19,9 +25,8 @@
                 <input name="email" id="email" type="email" class="validate"
                        ng-model="user.registrationForm.email" required="required">
                 <label for="email">
-                  <span ng-hide="errors" ng-if="registrationForm.email.$valid || registrationForm.email.$pristine">Email</span>
+                  <span ng-if="registrationForm.email.$valid || registrationForm.email.$pristine">Email</span>
                   <span ng-message="required" ng-if="registrationForm.email.$dirty" class="red-text">Required</span></span>
-                  <span ng-repeat="error in errors" class="red-text">{{error}}</span></span>
                 </label>
               </div>
             </div>
