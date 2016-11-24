@@ -9,6 +9,9 @@ function UserRegistrationsController($scope, $location, $auth) {
           email: $scope.user.registrationForm.email,
           password: $scope.user.registrationForm.password
         });
+      })
+      .catch(function(resp) {
+        $scope.errors = resp.data.errors.full_messages;
       });
   };
 }
