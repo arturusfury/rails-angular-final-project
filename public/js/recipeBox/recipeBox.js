@@ -62,7 +62,12 @@ angular
     .state('user.settings', {
       url: '/settings',
       templateUrl: 'views/user/Settings.template.html',
-      controller: 'UserSettingsController as user'
+      controller: 'UserSettingsController as user',
+      resolve: {
+        auth: ['$auth', function($auth) {
+          return $auth.validateUser();
+        }]
+      }
     })
     // Recipe Routes
     .state('recipes', {
