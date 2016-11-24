@@ -28,6 +28,20 @@ angular
         }
       }
     })
+    .state('contact', {
+      url: '/contact',
+      templateUrl: 'views/Contact.template.html'
+    })
+    .state('search', {
+      url: '/search',
+      templateUrl: 'views/Search.template.html',
+      controller: 'SearchResultsController as ctrl',
+      resolve: {
+        recipes: function ($http) {
+          return $http.get('/api/v1/recipes/')
+        }
+      }
+    })
     // User Routes
     .state('user', {
       url: '/user',
