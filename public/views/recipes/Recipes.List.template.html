@@ -2,41 +2,78 @@
   <div class="section" match-height>
 
     <div class="row">
-       <div class="col s12">
+      <div class="col s12">
         <div class="row section-header">
-           <h3 class="light center section-header">Latest Recipes</h3>
-         </div>
-         <div class="row">
-           <div class="divider"></div>
-         </div>
-         <div class="row no-bot-margin">
+          <h3 class="light center section-header">Latest Recipes</h3>
+        </div>
 
-           <div class="col s12 m4 l3" ng-repeat="recipe in recipes.data">
-             <a href="/#/recipes/{{recipe.id}}" class="black-text">
-               <div class="card hoverable no-top-margin recipe-card">
-                 <div class="card-image">
-                   <div class="center-and-cropped-bg" style="background-image: url('{{recipe.image_url}}')"></div>
-                 </div> <!-- end card-image -->
-                 <div class="card-content no-top-bot-padding center">
-                   <h5>{{ recipe.title }}</h5>
-                   <p class="light low-line-height">
-                     Submitted by <strong>{{ recipe.user_info.name }}</strong><br />
-                     Dish Type: <strong>{{ recipe.dish_type }}</strong><br />
-                     Rating: <strong>{{ recipe.total_rating }}</strong></p>
-                 </div>
-                 <div class="card-action center grey lighten-4">
-                   <ul class="light no-top-bot-margin">
-                     <li>Total Time: <strong>{{ recipe.prep_time + recipe.cook_time }} minutes</strong></li>
-                     <li>Servings: <strong>{{ recipe.total_servings }}</strong></li>
-                   </ul>
-                 </div> <!-- end card-content -->
-               </div> <!--- end card -->
-             </a>
-           </div> <!-- end col -->
+        <div class="row">
+          <div class="divider"></div>
+        </div>
 
-         </div>
-       </div>
-     </div> <!-- end latest recipes -->
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <select name="dish_type" ng-model="RecipesListCtrl.dish_type" material-select watch required>
+              <option value="" selected>All Types</option>
+              <option ng-repeat="item in RecipesListCtrl.dishTypes" value="{{item}}">{{item}}</option>
+            </select>
+            <label>Dish Type</label>
+          </div>
+
+          <div class="input-field col s12 m3">
+            <select material-select watch>
+              <option value="" selected>All Ratings</option>
+              <option value="1">Less than 1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <label>Rating</label>
+          </div>
+
+          <div class="input-field col s12 m3">
+            <select material-select watch>
+              <option value="" selected>All Servings</option>
+              <option value="2">2 or Less</option>
+              <option value="3-8">3 to 8</option>
+              <option value="9+">Greater than 8</option>
+            </select>
+            <label>Servings</label>
+          </div>
+
+          <br />
+          <br />
+          <br />
+        </div>
+
+        <div class="row no-bot-margin">
+          <div class="col s12 m4 l3" ng-repeat="recipe in RecipesListCtrl.recipes">
+            <a href="/#/recipes/{{recipe.id}}" class="black-text">
+              <div class="card hoverable no-top-margin recipe-card">
+                <div class="card-image">
+                  <div class="center-and-cropped-bg" style="background-image: url('{{recipe.image_url}}')"></div>
+                </div> <!-- end card-image -->
+                <div class="card-content no-top-bot-padding center">
+                  <h5>{{ recipe.title }}</h5>
+                  <p class="light low-line-height">
+                  Submitted by <strong>{{ recipe.user_info.name }}</strong><br />
+                  Dish Type: <strong>{{ recipe.dish_type }}</strong><br />
+                  Rating: <strong>{{ recipe.total_rating }}</strong></p>
+                </div>
+                <div class="card-action center grey lighten-4">
+                  <ul class="light no-top-bot-margin">
+                    <li>Total Time: <strong>{{ recipe.prep_time + recipe.cook_time }} minutes</strong></li>
+                    <li>Servings: <strong>{{ recipe.total_servings }}</strong></li>
+                  </ul>
+                </div> <!-- end card-content -->
+              </div> <!--- end card -->
+            </a>
+          </div> <!-- end col -->
+
+        </div>
+      </div>
+    </div> <!-- end latest recipes -->
 
   </div>
 </div>
