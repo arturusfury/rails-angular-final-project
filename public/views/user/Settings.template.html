@@ -11,14 +11,26 @@
           <div class="divider no-bot-margin"></div>
         </div>
 
-        <div class="row no-bot-margin">
+        <!-- <div class="row no-bot-margin">
           <div class="col s12 center">
             <br />
             <h5>Change Your Password</h5>
           </div>
         </div>
 
-        <form class="col s12" name="passwordForm" ng-submit="user.changePassword()">
+        <div class="row" ng-show="error">
+          <div class="col s12 red lighten-4 error">
+            <p><strong>{{error}}</strong></p>
+          </div>
+        </div>
+
+        <div class="row" ng-show="passwordChangeSuccess">
+          <div class="col s12 green lighten-4">
+            <p><strong>Password Successfully Changed</strong></p>
+          </div>
+        </div> -->
+
+        <!-- <form class="col s12" name="passwordForm" ng-submit="user.changePassword()">
           <div class="row">
             <div class="row">
               <div class="input-field col s12" ng-messages="passwordForm.password.$error">
@@ -53,7 +65,7 @@
               </div>
             </div>
           </div>
-        </form>
+        </form> -->
 
         <div class="row no-bot-margin">
           <div class="col s12 center">
@@ -61,7 +73,7 @@
           </div>
         </div>
 
-        <div class="divider"></div>
+        <!-- <div class="divider"></div> -->
 
         <div class="row">
           <div class="row">
