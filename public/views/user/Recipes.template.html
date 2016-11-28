@@ -2,7 +2,7 @@
   <div class="section">
 
     <div class="row no-bot-margin">
-      <div class="col s12 offset-m3 m6">
+      <div class="col s12">
         <div class="row section-header">
           <h3 class="light center section-header">My Recipes</h3>
         </div>
@@ -13,7 +13,7 @@
 
         <div class="row no-bot-margin">
 
-          <div class="col s12 m4 l3" ng-repeat="recipe in recipes.data">
+          <div class="col s12 m4 l3" ng-repeat="recipe in user.recipes">
             <a href="/#/recipes/{{recipe.id}}" class="black-text">
               <div class="card hoverable no-top-margin recipe-card">
                 <div class="card-image">
