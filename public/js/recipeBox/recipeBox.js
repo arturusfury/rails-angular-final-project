@@ -69,6 +69,19 @@ angular
         }]
       }
     })
+    .state('user.recipes', {
+      url: '/recipes',
+      templateUrl: 'views/user/Recipes.template.html',
+      controller: 'UserRecipesController as user',
+      resolve: {
+        auth: ['$auth', function($auth) {
+          return $auth.validateUser();
+        }],
+        recipes: function ($http, $rootScope) {
+          return $http.get('/api/v1/recipes/user/' + $rootScope.user.name.replace(/ /g,"_"))
+        }
+      }
+    })
     // Recipe Routes
     .state('recipes', {
       url: '/recipes',
