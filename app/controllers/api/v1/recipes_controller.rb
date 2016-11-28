@@ -78,6 +78,18 @@ class Api::V1::RecipesController < ApplicationController
     respond_with(Recipe.order(updated_at: :desc).limit(12))
   end
 
+  def user_recipes
+    user = User.find_by(name: params[:username].tr('_', ' '))
+    if user.recipes.empty?
+      render json: {
+        status: 500,
+        message: 'No Recipes Found'
+      }.to_json
+    else
+      respond_with(user.recipes)
+    end
+  end
+
   private
 
   def recipe_params
