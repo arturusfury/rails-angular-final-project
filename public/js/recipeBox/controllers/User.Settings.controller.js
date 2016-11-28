@@ -30,6 +30,7 @@ function UserSettingsController($scope, $location, $http, $auth) {
     ctrl.confirmDelete = false;
     ctrl.isDisabled = true;
 
+    $auth.destroyAccount();
     $location.path('/');
   }
 }
