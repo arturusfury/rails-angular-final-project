@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
       get '/recipes/top', to: 'recipes#top'
       get '/recipes/latest', to: 'recipes#latest'
+      get '/recipes/user/:username', to: 'recipes#user_recipes'
+
       resources :recipes
       resources :reviews, only: [:create, :destroy]
       resources :ingredients, only: [:index]
