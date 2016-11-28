@@ -91,7 +91,7 @@ angular
     .state('recipes.list', {
       url: '',
       templateUrl: 'views/recipes/Recipes.List.template.html',
-      controller: 'RecipesListController as recipes',
+      controller: 'RecipesListController as RecipesListCtrl',
       resolve: {
         recipes: function ($http) {
           return $http.get('/api/v1/recipes/')
