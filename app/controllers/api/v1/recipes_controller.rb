@@ -80,12 +80,7 @@ class Api::V1::RecipesController < ApplicationController
 
   def user_recipes
     user = User.find_by(name: params[:username].tr('_', ' '))
-    if user.recipes.empty?
-      render json: {
-      }.to_json
-    else
-      respond_with(user.recipes)
-    end
+    respond_with(user.recipes)
   end
 
   private
