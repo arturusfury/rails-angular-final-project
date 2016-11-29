@@ -52,7 +52,7 @@ angular
     .state('user.login', {
       url: '/login',
       templateUrl: 'views/user/SignIn.template.html',
-      controller: 'UserSessionsController'
+      controller: 'UserSessionsController as userSessionCtrl'
     })
     .state('user.create', {
       url: '/create',
@@ -62,12 +62,7 @@ angular
     .state('user.settings', {
       url: '/settings',
       templateUrl: 'views/user/Settings.template.html',
-      controller: 'UserSettingsController as user',
-      resolve: {
-        auth: ['$auth', function($auth) {
-          return $auth.validateUser();
-        }]
-      }
+      controller: 'UserSettingsController as user'
     })
     .state('user.recipes', {
       url: '/recipes',
@@ -134,7 +129,7 @@ angular
   }])
   // Redirect after a successful login
   .run(['$rootScope', '$location', function($rootScope, $location) {
-    $rootScope.$on('auth:login-success', function() {
+    $rootScope.$on('devise:new-session', function(event, currentUser) {
       $location.path('/');
     });
 
