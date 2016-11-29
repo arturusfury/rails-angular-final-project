@@ -11,7 +11,6 @@
   password = Faker::Internet.password(8)
 
   User.create(
-    provider: 'email',
     name: name,
     email: email,
     password: password,
@@ -20,7 +19,6 @@
 end
 
 User.create(
-  provider: 'email',
   name: 'Tim Thomas',
   email: 'tthomas@gmail.com',
   password: 'password',
