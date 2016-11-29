@@ -1,7 +1,7 @@
 angular.module('recipeBox')
   .directive('matchHeight', ['$timeout', function ($timeout) {
     var linkFunction = function(scope, element) {
-      $timeout(function() {
+      setTimeout(function() {
         angular.element(element).find('.card-content').matchHeight({
           byRow: false,
           property: 'height'
