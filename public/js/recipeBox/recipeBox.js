@@ -4,7 +4,7 @@ angular
       'ui.router',
       'ui.materialize',
       'ipCookie',
-      'ng-token-auth',
+      'Devise',
       'truncate',
       'ngInflection',
       'ngMessages',
