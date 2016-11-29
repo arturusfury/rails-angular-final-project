@@ -27,9 +27,5 @@ module RailsAngularFinalProject
     config.middleware.use ActionDispatch::Flash
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
-
-    config.to_prepare do
-      DeviseController.respond_to :html, :json
-    end
   end
 end
