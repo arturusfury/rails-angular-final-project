@@ -36,7 +36,7 @@
         <div class="input-field" ng-controller="SearchBoxController as ctrl">
           <input id="search" ng-model="ctrl.searchString" on-key-enter="ctrl.goSearch()" type="search" required>
           <label for="search"><i class="material-icons">search</i></label>
-          <i class="material-icons">close</i>
+          <i class="material-icons" ng-click="ctrl.searchString = ''">close</i>
         </div>
       </form>
       <ul id="nav-mobile" class="side-nav">
@@ -102,6 +102,7 @@
   <script src="js/vendor/angular-messages.js"></script>
   <script src="js/vendor/angular-ui-router.min.js"></script>
   <script src="js/vendor/angular-materialize.min.js"></script>
+  <script src="js/vendor/angular-password.min.js"></script>
   <script src="js/vendor/angular-cookie.js"></script>
   <script src="js/vendor/ng-token-auth.min.js"></script>
   <script src="js/vendor/angular-truncate.js"></script>
@@ -112,7 +113,9 @@
   <script src="js/recipeBox/controllers/Main.Recipes.controller.js"></script>
   <script src="js/recipeBox/controllers/Search.Box.controller.js"></script>
   <script src="js/recipeBox/controllers/Search.Results.controller.js"></script>
+  <script src="js/recipeBox/controllers/User.Recipes.controller.js"></script>
   <script src="js/recipeBox/controllers/User.Sessions.controller.js"></script>
+  <script src="js/recipeBox/controllers/User.Settings.controller.js"></script>
   <script src="js/recipeBox/controllers/User.Registrations.controller.js"></script>
   <script src="js/recipeBox/controllers/Recipes.List.controller.js"></script>
   <script src="js/recipeBox/controllers/Recipe.Details.controller.js"></script>
@@ -123,8 +126,11 @@
   <script src="js/recipeBox/directives/PreventNonInteger.directive.js"></script>
   <script src="js/recipeBox/directives/OnKeyEnter.directive.js"></script>
   <script src="js/recipeBox/directives/StarRating.directive.js"></script>
+  <script src="js/recipeBox/filters/DishType.filter.js"></script>
   <script src="js/recipeBox/filters/Fraction.filter.js"></script>
+  <script src="js/recipeBox/filters/Rating.filter.js"></script>
   <script src="js/recipeBox/filters/SearchFor.filter.js"></script>
+  <script src="js/recipeBox/filters/Servings.filter.js"></script>
   <script src="js/recipeBox/services/SearchService.service.js"></script>
 
   <!-- Materialize and Custom JS -->

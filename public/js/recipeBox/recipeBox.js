@@ -7,7 +7,8 @@ angular
       'ng-token-auth',
       'truncate',
       'ngInflection',
-      'ngMessages'
+      'ngMessages',
+      'ngPassword'
     ]
   )
   .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -58,6 +59,29 @@ angular
       templateUrl: 'views/user/Create.template.html',
       controller: 'UserRegistrationsController'
     })
+    .state('user.settings', {
+      url: '/settings',
+      templateUrl: 'views/user/Settings.template.html',
+      controller: 'UserSettingsController as user',
+      resolve: {
+        auth: ['$auth', function($auth) {
+          return $auth.validateUser();
+        }]
+      }
+    })
+    .state('user.recipes', {
+      url: '/recipes',
+      templateUrl: 'views/user/Recipes.template.html',
+      controller: 'UserRecipesController as user',
+      resolve: {
+        auth: ['$auth', function($auth) {
+          return $auth.validateUser();
+        }],
+        recipes: function ($http, $rootScope) {
+          return $http.get('/api/v1/recipes/user/' + $rootScope.user.name.replace(/ /g,"_"))
+        }
+      }
+    })
     // Recipe Routes
     .state('recipes', {
       url: '/recipes',
@@ -67,7 +91,7 @@ angular
     .state('recipes.list', {
       url: '',
       templateUrl: 'views/recipes/Recipes.List.template.html',
-      controller: 'RecipesListController as recipes',
+      controller: 'RecipesListController as RecipesListCtrl',
       resolve: {
         recipes: function ($http) {
           return $http.get('/api/v1/recipes/')
@@ -114,11 +138,11 @@ angular
       $location.path('/');
     });
 
-    $rootScope.$on('auth:logout-success', function() {
-      $location.path('/');
-    });
-
     $rootScope.$on('$viewContentLoaded',function(){
       $("html, body").animate({ scrollTop: 0 }, 200);
+    });
+
+    $rootScope.$on('$stateChangeError', function() {
+      $location.path('/');
     });
   }]);

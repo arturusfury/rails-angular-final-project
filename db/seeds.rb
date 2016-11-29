@@ -197,7 +197,7 @@ Review.create(
   cook_time: 30,
   description: 'These Smokey, cheesy tarlets can be part of a bunrch or evening party spread!',
   image_url: 'https://www.pamperedchef.com/iceberg/com/recipe/88195-lg.jpg',
-  dish_type: 'Appetizer & Snacks'
+  dish_type: 'Appitizers & Snacks'
 )
 
 Ingredient.create(
@@ -267,7 +267,7 @@ Review.create(
   cook_time: 30,
   description: 'One of my most reader-tested and approved recipes! This crusty, fluffy artisan bread needs only 4 ingredients and 5 minutes to come together… you won’t believe how easy and delicious it is!',
   image_url: 'http://www.thecomfortofcooking.com/wp-content/uploads/2013/04/NoKneadCrustyArtisanBread5.jpg',
-  dish_type: 'Bread'
+  dish_type: 'Breads, Muffins, Scones & Pancakes'
 )
 
 Ingredient.create(
@@ -351,7 +351,7 @@ Review.create(
   cook_time: 35,
   description: "This recipe is for a very simple, easy to make cornbread that everyone in the family will love!  Just in case you needed to know: Sorghum syrup is made from the sweet juice of the sorghum plant, a variety of cereal grass. It's popular in the south as a sweetener for baked goods. You can find it at natural food stores or specialty online retailers.",
   image_url: 'http://foodnetwork.sndimg.com/content/dam/images/food/fullset/2014/6/27/1/ZD0212H_Cast-Iron-Skillet-Cornbread_s4x3.jpg.rend.sni12col.landscape.jpeg',
-  dish_type: 'Bread'
+  dish_type: 'Breads, Muffins, Scones & Pancakes'
 )
 
 Ingredient.create(
@@ -467,7 +467,7 @@ Review.create(
   cook_time: 60,
   description: "A super easy chicken wing recipe that doens't get your hands all greasy!",
   image_url: 'http://images-gmi-pmc.edge-generalmills.com/d5ea92bc-de94-44d4-be68-76db8cc6ce65.jpg',
-  dish_type: 'Appetizer & Snacks'
+  dish_type: 'Appitizers & Snacks'
 )
 
 Ingredient.create(

@@ -1,0 +1,100 @@
+<div class="container">
+  <div class="section">
+
+    <div class="row no-bot-margin">
+      <div class="col s12 offset-m3 m6">
+        <div class="row section-header">
+          <h3 class="light center section-header">Settings</h3>
+        </div>
+
+        <div class="row no-bot-margin">
+          <div class="divider no-bot-margin"></div>
+        </div>
+
+        <!-- <div class="row no-bot-margin">
+          <div class="col s12 center">
+            <br />
+            <h5>Change Your Password</h5>
+          </div>
+        </div>
+
+        <div class="row" ng-show="error">
+          <div class="col s12 red lighten-4 error">
+            <p><strong>{{error}}</strong></p>
+          </div>
+        </div>
+
+        <div class="row" ng-show="passwordChangeSuccess">
+          <div class="col s12 green lighten-4">
+            <p><strong>Password Successfully Changed</strong></p>
+          </div>
+        </div> -->
+
+        <!-- <form class="col s12" name="passwordForm" ng-submit="user.changePassword()">
+          <div class="row">
+            <div class="row">
+              <div class="input-field col s12" ng-messages="passwordForm.password.$error">
+                <i class="material-icons top-margin-5 prefix">lock</i>
+                <input name="password" type="password" class="validate"
+                       ng-model="ctrl.passwordForm.password" required>
+                <label for="password">
+                  <span ng-if="passwordForm.password.$valid || passwordForm.password.$pristine">New Password</span>
+                  <span ng-message="required" ng-if="passwordForm.password.$dirty" class="red-text">Required</span></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12" ng-messages="passwordForm.passwordConfirmation.$error">
+                <i class="material-icons top-margin-5 prefix">lock</i>
+                <input name="passwordConfirmation" type="password" class="validate"
+                       match-password="password" ng-model="ctrl.passwordForm.passwordConfirmation" required>
+                <label for="passwordConfirmation">
+                  <span ng-if="passwordForm.passwordConfirmation.$valid || passwordForm.passwordConfirmation.$pristine">Confirm New Password</span>
+                  <span ng-message="required" ng-if="passwordForm.passwordConfirmation.$dirty" class="red-text">Required</span></span>
+                  <span ng-message="passwordMatch" ng-if="passwordForm.passwordConfirmation.$dirty" class="red-text">Passwords must match</span></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col s12 center">
+                <button class="btn waves-effect waves-light red" type="submit" ng-disabled="isDisabled" name="submit">Change
+                  <i class="material-icons right">play_arrow</i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form> -->
+
+        <div class="row no-bot-margin">
+          <div class="col s12 center">
+            <h5>Delete Your Account</h5>
+          </div>
+        </div>
+
+        <!-- <div class="divider"></div> -->
+
+        <div class="row">
+          <div class="row">
+            <div class="col s12 center" ng-hide="user.confirmDelete">
+              <button class="btn waves-effect waves-light red" type="submit" ng-disabled="user.isDisabled" ng-click="user.deleteConfirmation()">Delete
+                <i class="material-icons right">cancel</i>
+              </button>
+            </div>
+            <div class="col s12 center" ng-show="user.confirmDelete">
+              <button class="btn waves-effect waves-light red" type="submit" ng-disabled="user.isDisabled" ng-click="user.cancelDelete()">No
+                <i class="material-icons right">cancel</i>
+              </button>
+              <button class="btn waves-effect waves-light red" type="submit" ng-disabled="user.isDisabled" ng-click="user.deleteAccount()">Yes, Delete
+                <i class="material-icons right">check</i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- end col s12 -->
+    </div> <!-- end login page -->
+
+  </div> <!-- end section -->
+</div> <!-- emd container -->
