@@ -1,4 +1,4 @@
-function NavBarController(SearchService, $state, $location) {
+function NavBarController(SearchService, $rootScope, $state, $location, Auth) {
   var ctrl = this;
 
   ctrl.goSearch = function () {
@@ -7,6 +7,12 @@ function NavBarController(SearchService, $state, $location) {
       $state.reload();
       $location.path('/search');
   }
+
+  ctrl.logout = Auth.logout;
+
+  $rootScope.$on('devise:logout', function(event, oldCurrentUser) {
+    $rootScope.user = {}
+  });
 }
 
 angular
