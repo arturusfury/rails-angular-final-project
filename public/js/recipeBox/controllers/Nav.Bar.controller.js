@@ -1,4 +1,4 @@
-function SearchBoxController(SearchService, $state, $location) {
+function NavBarController(SearchService, $state, $location) {
   var ctrl = this;
 
   ctrl.goSearch = function () {
@@ -11,4 +11,4 @@ function SearchBoxController(SearchService, $state, $location) {
 
 angular
   .module('recipeBox')
-  .controller('SearchBoxController', SearchBoxController)
+  .controller('NavBarController', NavBarController)
