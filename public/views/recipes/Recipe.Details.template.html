@@ -51,7 +51,7 @@
                   </tr>
                   <tr>
                     <td class="low-table-padding light">Total Time:</td>
-                    <td class="low-table-padding"><strong>{{ recipe.data.prep_time + recipe.data.cook_time }} minutes</strong></td>
+                    <td class="low-table-padding"><strong>{{ recipe.data.prep_time + recipe.data.cook_time | time:'mm':'hhh mmm':false }}</strong></td>
                   </tr>
                 </table>
               </div><!-- end recipe details -->

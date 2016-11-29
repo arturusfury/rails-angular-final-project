@@ -36,7 +36,7 @@
                 </div>
                 <div class="card-action center grey lighten-4">
                   <ul class="light no-top-bot-margin">
-                    <li>Total Time: <strong>{{ recipe.prep_time + recipe.cook_time }} minutes</strong></li>
+                    <li>Total Time: <strong>{{ recipe.prep_time + recipe.cook_time | time:'mm':'hhh mmm':false }}</strong></li>
                     <li>Servings: <strong>{{ recipe.total_servings }}</strong></li>
                   </ul>
                 </div> <!-- end card-content -->
