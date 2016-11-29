@@ -32,7 +32,7 @@
           </div>
 
           <div class="input-field col s12 m3">
-            <select material-select watch>
+            <select ng-model="RecipesListCtrl.servings" material-select watch>
               <option value="" selected>All Servings</option>
               <option value="2">2 or Less</option>
               <option value="3-8">3 to 8</option>
@@ -46,7 +46,7 @@
         </div>
 
         <div class="row no-bot-margin">
-          <div class="col s12 m4 l3" ng-repeat="recipe in RecipesListCtrl.recipes | dishType: RecipesListCtrl.dish_type | rating: RecipesListCtrl.rating">
+          <div class="col s12 m4 l3" ng-repeat="recipe in RecipesListCtrl.recipes | dishType: RecipesListCtrl.dish_type | rating: RecipesListCtrl.rating | servings: RecipesListCtrl.servings">
             <a href="/#/recipes/{{recipe.id}}" class="black-text">
               <div class="card hoverable no-top-margin recipe-card">
                 <div class="card-image">
