@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="section" match-height>
+  <div class="section">
 
     <div class="row">
       <div class="col s12">
@@ -44,21 +44,20 @@
 
           <br />
           <br />
-          <br />
         </div>
 
         <div class="row no-bot-margin">
-          <div class="col s12 m4 l3" ng-repeat="recipe in RecipesListCtrl.recipes">
+          <div class="col s12 m4 l3" ng-repeat="recipe in RecipesListCtrl.recipes | dishType: RecipesListCtrl.dish_type">
             <a href="/#/recipes/{{recipe.id}}" class="black-text">
               <div class="card hoverable no-top-margin recipe-card">
                 <div class="card-image">
                   <div class="center-and-cropped-bg" style="background-image: url('{{recipe.image_url}}')"></div>
                 </div> <!-- end card-image -->
                 <div class="card-content no-top-bot-padding center">
-                  <h5>{{ recipe.title }}</h5>
+                  <h5 class="truncate">{{ recipe.title }}</h5>
                   <p class="light low-line-height">
-                  Submitted by <strong>{{ recipe.user_info.name }}</strong><br />
-                  Dish Type: <strong>{{ recipe.dish_type }}</strong><br />
+                  Submitted by <strong class="truncate">{{ recipe.user_info.name }}</strong>
+                  Dish Type: <strong class="truncate no-bot-margin">{{ recipe.dish_type }}</strong>
                   Rating: <strong>{{ recipe.total_rating }}</strong></p>
                 </div>
                 <div class="card-action center grey lighten-4">
