@@ -82,8 +82,6 @@ class Api::V1::RecipesController < ApplicationController
     user = User.find_by(name: params[:username].tr('_', ' '))
     if user.recipes.empty?
       render json: {
-        status: 500,
-        message: 'No Recipes Found'
       }.to_json
     else
       respond_with(user.recipes)

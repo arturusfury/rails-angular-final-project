@@ -13,6 +13,14 @@
 
         <div class="row no-bot-margin">
 
+          <div class="col s12" ng-if="user.recipes.length == 0">
+            <br />
+            <br />
+            <h5>You do not have any recipes!  Try adding one <a href="/#/recipes/add">here</a>!</h5>
+            <br />
+            <br />
+          </div>
+
           <div class="col s12 m4 l3" ng-repeat="recipe in user.recipes">
             <a href="/#/recipes/{{recipe.id}}" class="black-text">
               <div class="card hoverable no-top-margin recipe-card">
