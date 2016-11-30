@@ -11,19 +11,19 @@
           <div class="divider no-bot-margin"></div>
         </div>
 
-        <div class="row" ng-show="error">
+        <div class="row" ng-show="userSessionCtrl.errors">
           <div class="col s12 red lighten-4 error">
-            <p><strong>{{error}}</strong></p>
+            <p ng-repeat="error in userSessionCtrl.errors"><strong>{{error}}</strong></p>
           </div>
         </div>
 
         <div class="row">
-          <form ng-submit="submitLogin(loginForm)" role="form" ng-init="loginForm = {}" class="col s12">
+          <form id="loginForm" ng-submit="userSessionCtrl.login()" role="form" class="col s12">
             <div class="row">
               <div class="input-field col s12">
                 <i class="material-icons top-margin-5 prefix">email</i>
                 <input name="email" id="email" type="email" class="validate"
-                       ng-model="loginForm.email" required="required">
+                       ng-model="userSessionCtrl.user.email" required="required">
                 <label for="email">Email</label>
               </div>
             </div>
@@ -32,14 +32,14 @@
               <div class="input-field col s12">
                 <i class="material-icons top-margin-5 prefix">lock</i>
                 <input name="password" id="password" type="password" class="validate"
-                       ng-model="loginForm.password" required="required">
+                       ng-model="userSessionCtrl.user.password" required="required">
                 <label for="password">Password</label>
               </div>
             </div>
 
             <div class="row">
               <div class="col s12 center">
-                <button class="btn waves-effect waves-light red" type="submit" name="action">Login
+                <button class="btn waves-effect waves-light red" type="submit">Login
                   <i class="material-icons right">play_arrow</i>
                 </button>
                 <br /><br />

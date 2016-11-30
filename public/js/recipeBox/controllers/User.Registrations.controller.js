@@ -1,18 +1,19 @@
-function UserRegistrationsController($scope, $location, $auth) {
-  $scope.isDisabled = false;
+function UserRegistrationsController($rootScope, $location, Auth) {
+  var ctrl = this;
 
-  $scope.handleRegBtnClick = function() {
-    $scope.isDisabled = true;
-    $auth.submitRegistration($scope.user.registrationForm)
-      .then(function() {
-        $auth.submitLogin({
-          email: $scope.user.registrationForm.email,
-          password: $scope.user.registrationForm.password
-        });
-      })
-      .catch(function(resp) {
-        $scope.errors = resp.data.errors.full_messages;
-      });
+  ctrl.isDisabled = false;
+
+  ctrl.register = function() {
+    ctrl.isDisabled = true;
+
+    Auth.register(ctrl.user)
+      .then(function(user){
+        $rootScope.user = user;
+        $location.path('/');
+      }, function (error) {
+        ctrl.isDisabled = false;
+        ctrl.errors = error.data;
+    });
   };
 }
 
