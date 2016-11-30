@@ -5,6 +5,10 @@ class User < ActiveRecord::Base
   has_many :reviews
   has_many :recipes
 
+  validates_uniqueness_of :email, message: 'Email Address is already in use'
+  validates_uniqueness_of :username, message: 'Username already exists'
+  validates_presence_of :name, message: 'Must have a full name'
+
   before_destroy :destroy_recipes
 
   private
