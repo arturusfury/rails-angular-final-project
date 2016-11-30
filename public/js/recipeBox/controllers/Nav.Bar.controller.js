@@ -14,6 +14,14 @@ function NavBarController(SearchService, $rootScope, $state, $location, Auth) {
     $rootScope.user = {}
     $location.path('/');
   });
+
+
+  ctrl.signedIn = Auth.isAuthenticated;
+
+  Auth.currentUser()
+    .then(function(user) {
+      $rootScope.user = user;
+    });
 }
 
 angular
