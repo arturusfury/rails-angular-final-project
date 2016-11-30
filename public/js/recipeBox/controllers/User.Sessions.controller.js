@@ -9,14 +9,6 @@ function UserSessionsController($rootScope, Auth) {
         console.log(error);
     });
   };
-
-  ctrl.register = function() {
-    Auth.register(user)
-      .then(function(user){
-        $rootScope.user = user;
-        console.log(user)
-    });
-  };
   // var ctrl = this;
   //
   // ctrl.submitLogin = function (credentials) {
