@@ -3,7 +3,6 @@ angular
     [
       'ui.router',
       'ui.materialize',
-      'ipCookie',
       'Devise',
       'truncate',
       'ngInflection',
