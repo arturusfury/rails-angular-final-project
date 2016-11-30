@@ -11,7 +11,8 @@ function UserRegistrationsController($rootScope, $location, Auth) {
         $rootScope.user = user;
         $location.path('/');
       }, function (error) {
-        console.log(error);
+        ctrl.isDisabled = false;
+        ctrl.errors = error.data;
     });
   };
 }
