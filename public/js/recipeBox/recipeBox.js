@@ -57,12 +57,12 @@ angular
     .state('user.create', {
       url: '/create',
       templateUrl: 'views/user/Create.template.html',
-      controller: 'UserRegistrationsController'
+      controller: 'UserRegistrationsController as userRegCtrl'
     })
     .state('user.settings', {
       url: '/settings',
       templateUrl: 'views/user/Settings.template.html',
-      controller: 'UserSettingsController as user'
+      controller: 'UserSettingsController as userSettingsCtrl'
     })
     .state('user.recipes', {
       url: '/recipes',
