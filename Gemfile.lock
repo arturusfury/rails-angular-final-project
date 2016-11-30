@@ -49,6 +49,7 @@ GEM
     builder (3.2.2)
     byebug (9.0.6)
     concurrent-ruby (1.0.2)
+    database_cleaner (1.5.3)
     devise (4.2.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -199,6 +200,7 @@ DEPENDENCIES
   active_model_serializers (~> 0.10.0)
   awesome_print
   byebug
+  database_cleaner
   devise
   dotenv-rails
   factory_girl_rails
