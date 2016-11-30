@@ -12,6 +12,7 @@ function NavBarController(SearchService, $rootScope, $state, $location, Auth) {
 
   $rootScope.$on('devise:logout', function(event, oldCurrentUser) {
     $rootScope.user = {}
+    $location.path('/');
   });
 }
 
