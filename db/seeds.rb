@@ -7,11 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 10.times do
   name = Faker::Name.name
+  username = Faker::Internet.user_name(name)
   email = Faker::Internet.email(name)
   password = Faker::Internet.password(8)
 
   User.create(
     name: name,
+    username: username,
     email: email,
     password: password,
     password_confirmation: password
@@ -20,6 +22,7 @@ end
 
 User.create(
   name: 'Tim Thomas',
+  username: 'tthomas',
   email: 'tthomas@gmail.com',
   password: 'password',
   password_confirmation: 'password'
