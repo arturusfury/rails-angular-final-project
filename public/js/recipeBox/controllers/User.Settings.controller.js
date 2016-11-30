@@ -1,4 +1,4 @@
-function UserSettingsController($scope, $location, $http, $auth) {
+function UserSettingsController($scope, $location, $http) {
   var ctrl = this;
 
   ctrl.confirmDelete = false;
@@ -30,7 +30,13 @@ function UserSettingsController($scope, $location, $http, $auth) {
     ctrl.confirmDelete = false;
     ctrl.isDisabled = true;
 
-    $auth.destroyAccount();
+    var data = $.param({
+      email: $rootScope.user.email,
+      username: $rootScope.user.username,
+      password: $rootScope.user.password
+    });
+
+    $http.delete('/users/', data)
     $location.path('/');
   }
 }
