@@ -35,12 +35,12 @@
             <div class="row">
               <div class="input-field col s12" ng-messages="registrationForm.username.$error">
                 <i class="material-icons top-margin-5 prefix">supervisor_account</i>
-                <input name="username" id="username" type="text" class="validate" minlength="8" maxlength="20"
+                <input name="username" id="username" type="text" class="validate" minlength="6" maxlength="20"
                        ng-model="userRegCtrl.user.username" required="required">
                 <label for="username">
                   <span ng-if="registrationForm.username.$valid || registrationForm.username.$pristine">Username</span>
                   <span ng-message="required" ng-if="registrationForm.username.$dirty" class="red-text">Required</span></span>
-                  <span ng-message="minlength" ng-if="registrationForm.username.$dirty" class="red-text">Must have more than 8 characters</span></span>
+                  <span ng-message="minlength" ng-if="registrationForm.username.$dirty" class="red-text">Must have more than 6 characters</span></span>
                   <span ng-message="maxlength" ng-if="registrationForm.username.$dirty" class="red-text">Must be less than 20 characters</span></span>
                 </label>
               </div>
