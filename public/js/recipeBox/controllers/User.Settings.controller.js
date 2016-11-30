@@ -6,14 +6,15 @@ function UserSettingsController($location, $http, $rootScope) {
   ctrl.passwordChangeSuccess = false;
 
   ctrl.changePassword = function () {
-    $http.put('/users/',{
+    $http.patch('/users/password/',{
       email: $rootScope.user.email,
       username: $rootScope.user.username,
-      password: ctrl.password,
-      password_confirmation: ctrl.passwordConfirmation
+      current_password: ctrl.user.currentPassword,
+      password: ctrl.user.password,
+      password_confirmation: ctrl.user.passwordConfirmation
     }).then(function (resp) {
-      ctrl.password = "";
-      ctrl.passwordConfirmation = "";
+      ctrl.passwordForm.password = "";
+      ctrl.passwordForm.passwordConfirmation = "";
       ctrl.passwordChangeSuccess = true;
     }).catch(function (resp) {
       console.log(resp);

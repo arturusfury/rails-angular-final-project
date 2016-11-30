@@ -33,10 +33,22 @@
         <form class="col s12" name="passwordForm" ng-submit="userSettingsCtrl.changePassword()">
           <div class="row">
             <div class="row">
+              <div class="input-field col s12" ng-messages="passwordForm.currentPassword.$error">
+                <i class="material-icons top-margin-5 prefix">lock</i>
+                <input name="currentPassword" type="password" class="validate"
+                       ng-model="userSettingsCtrl.user.currentPassword" required>
+                <label for="currentPassword">
+                  <span ng-if="passwordForm.currentPassword.$valid || passwordForm.currentPassword.$pristine">Current Password</span>
+                  <span ng-message="required" ng-if="passwordForm.currentPassword.$dirty" class="red-text">Required</span></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="row">
               <div class="input-field col s12" ng-messages="passwordForm.password.$error">
                 <i class="material-icons top-margin-5 prefix">lock</i>
                 <input name="password" type="password" class="validate"
-                       ng-model="ctrl.passwordForm.password" required>
+                       ng-model="userSettingsCtrl.user.password" required>
                 <label for="password">
                   <span ng-if="passwordForm.password.$valid || passwordForm.password.$pristine">New Password</span>
                   <span ng-message="required" ng-if="passwordForm.password.$dirty" class="red-text">Required</span></span>
@@ -48,7 +60,7 @@
               <div class="input-field col s12" ng-messages="passwordForm.passwordConfirmation.$error">
                 <i class="material-icons top-margin-5 prefix">lock</i>
                 <input name="passwordConfirmation" type="password" class="validate"
-                       match-password="password" ng-model="ctrl.passwordForm.passwordConfirmation" required>
+                       match-password="password" ng-model="userSettingsCtrl.user.passwordConfirmation" required>
                 <label for="passwordConfirmation">
                   <span ng-if="passwordForm.passwordConfirmation.$valid || passwordForm.passwordConfirmation.$pristine">Confirm New Password</span>
                   <span ng-message="required" ng-if="passwordForm.passwordConfirmation.$dirty" class="red-text">Required</span></span>
