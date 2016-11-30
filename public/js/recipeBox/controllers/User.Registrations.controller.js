@@ -1,4 +1,14 @@
-function UserRegistrationsController($scope, $location, $auth) {
+function UserRegistrationsController($location, Auth) {
+  var ctrl = this;
+
+  ctrl.register = function() {
+    Auth.register(ctrl.user)
+      .then(function(user){
+        $rootScope.user = user;
+        console.log(user)
+    });
+  };
+
   $scope.isDisabled = false;
 
   $scope.handleRegBtnClick = function() {
