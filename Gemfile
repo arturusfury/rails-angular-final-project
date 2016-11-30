@@ -16,15 +16,13 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'dotenv-rails'
   gem 'rspec-rails'
+  gem 'shoulda-matchers', require: false
+  gem 'factory_girl_rails'
 end
 
 group :development do
   gem 'listen', '~> 3.0.5'
   gem 'awesome_print'
-end
-
-group :test do
-  gem 'shoulda-matchers', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
