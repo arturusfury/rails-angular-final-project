@@ -1,7 +1,14 @@
-function UserSessionsController($scope) {
-  $scope.$on('auth:login-error', function(ev, reason) {
-    $scope.error = reason.errors[0];
-  });
+function UserSessionsController($rootScope, Auth) {
+  var ctrl = this;
+
+  ctrl.login = function() {
+    Auth.login(ctrl.user)
+      .then(function(user){
+        $rootScope.user = user;
+      }, function (error) {
+        ctrl.errors = error.data;
+    });
+  };
 }
 
 angular
