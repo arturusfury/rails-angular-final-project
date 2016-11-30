@@ -1,5 +1,6 @@
 function UserSessionsController($rootScope, Auth) {
   var ctrl = this;
+
   ctrl.login = function() {
     Auth.login(ctrl.user)
       .then(function(user){
@@ -10,7 +11,7 @@ function UserSessionsController($rootScope, Auth) {
   };
 
   ctrl.register = function() {
-    Auth.register(ctrl.user)
+    Auth.register(user)
       .then(function(user){
         $rootScope.user = user;
         console.log(user)
