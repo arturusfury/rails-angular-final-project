@@ -11,9 +11,9 @@
           <div class="divider no-bot-margin"></div>
         </div>
 
-        <div class="row" ng-show="errors">
-          <div class="col s12 red lighten-4 error" ng-repeat="error in errors">
-            <p><strong>{{error}}</strong></p>
+        <div class="row" ng-show="userRegCtrl.errors">
+          <div class="col s12 red lighten-4 error" ng-repeat="error_list in userRegCtrl.errors">
+            <p ng-repeat="error in error_list"><strong>{{error[0]}}</strong></p>
           </div>
         </div>
 
