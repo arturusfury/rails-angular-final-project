@@ -69,9 +69,6 @@ angular
       templateUrl: 'views/user/Recipes.template.html',
       controller: 'UserRecipesController as user',
       resolve: {
-        auth: ['$auth', function($auth) {
-          return $auth.validateUser();
-        }],
         recipes: function ($http, $rootScope) {
           return $http.get('/api/v1/recipes/user/' + $rootScope.user.name.replace(/ /g,"_"))
         }
@@ -96,21 +93,13 @@ angular
     .state('recipes.add', {
       url: '/add',
       templateUrl: 'views/recipes/Recipe.Add.template.html',
-      controller: 'RecipeAddController as RecipeAddCtrl',
-      resolve: {
-        auth: ['$auth', function($auth) {
-          return $auth.validateUser();
-        }]
-      }
+      controller: 'RecipeAddController as RecipeAddCtrl'
     })
     .state('recipes.edit', {
       url: '/:id/edit',
       templateUrl: 'views/recipes/Recipe.Edit.template.html',
       controller: 'RecipeEditController as RecipeEditCtrl',
       resolve: {
-        auth: ['$auth', function($auth) {
-          return $auth.validateUser();
-        }],
         recipe: function ($http, $stateParams) {
           return $http.get('/api/v1/recipes/' + $stateParams.id)
         }
