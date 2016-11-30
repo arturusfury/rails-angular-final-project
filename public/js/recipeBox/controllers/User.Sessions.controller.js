@@ -6,7 +6,7 @@ function UserSessionsController($rootScope, Auth) {
       .then(function(user){
         $rootScope.user = user;
       }, function (error) {
-        console.log(error);
+        ctrl.errors = error.data;
     });
   };
 }
