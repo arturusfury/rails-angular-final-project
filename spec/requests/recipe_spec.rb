@@ -103,13 +103,34 @@ RSpec.describe 'Recipes', type: :request do
     end
   end
 
-  describe 'PUT /recipes/1' do
-    FactoryGirl.create :prime_rib, user_id: user.id
+  describe 'PUT /recipes/:id' do
+    before do
+      FactoryGirl.create :prime_rib, user_id: user.id
+    end
 
+    it 'updates the recipes title' do
+      recipe = {
+        recipe: {
+          title: 'Delicious Prime Rib'
+        }
+      }
+
+      put "/api/v1/recipes/9",
+        params: recipe.to_json,
+        headers: { 'Content-Type': 'application/json' }
+
+      expect(response.status).to eq 200
+
+      body = JSON.parse(response.body)
+
+      recipe_title = body['recipe']['title']
+      expect(recipe_title).to eq('Delicious Prime Rib')
+    end
   end
 
   describe 'DELETE /recipes/1' do
-    FactoryGirl.create :prime_rib, user_id: user.id
-
+    before do
+      FactoryGirl.create :prime_rib, user_id: user.id
+    end
   end
 end
