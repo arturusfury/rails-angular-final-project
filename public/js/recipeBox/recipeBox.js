@@ -68,8 +68,8 @@ angular
       templateUrl: 'views/user/Recipes.template.html',
       controller: 'UserRecipesController as user',
       resolve: {
-        recipes: function ($http, $rootScope) {
-          return $http.get('/api/v1/recipes/user/' + $rootScope.user.name.replace(/ /g,"_"))
+        recipes: function (Recipe) {
+          return Recipe.getUserRecipes();
         }
       }
     })

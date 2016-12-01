@@ -79,8 +79,16 @@ class Api::V1::RecipesController < ApplicationController
   end
 
   def user_recipes
-    user = User.find_by(name: params[:username].tr('_', ' '))
-    respond_with(user.recipes)
+    user = User.find_by(username: params[:username])
+
+    if user
+      respond_with(user.recipes)
+    else
+      render json: {
+        status: 500,
+        error: "No user with username '#{params[:username]}' exsits"
+      }, status: 500
+    end
   end
 
   private
