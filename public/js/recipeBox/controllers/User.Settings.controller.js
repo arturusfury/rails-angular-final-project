@@ -1,4 +1,4 @@
-function UserSettingsController($location, $http, $rootScope, User) {
+function UserSettingsController($location, User) {
   var ctrl = this;
 
   ctrl.confirmDelete = false;
