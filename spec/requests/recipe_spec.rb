@@ -26,7 +26,6 @@ RSpec.describe 'Recipes', type: :request do
   describe 'GET /recipes/:id' do
     it 'should return the specified recipe' do
       FactoryGirl.create :prime_rib, user_id: user.id
-      FactoryGirl.create :chicken_wings, user_id: user.id
 
       get '/api/v1/recipes/3'
 
@@ -81,5 +80,36 @@ RSpec.describe 'Recipes', type: :request do
         expect(@body['recipe']['user_info']['name']).to eq('Tim Thomas')
       end
     end
+
+    it 'should fail if it does not belong to a user' do
+      recipe = {
+        recipe: {
+          title: 'Grilled Prime Rib',
+          description: 'This is a classic prime rib recipe cooked on the grill. The secret is to keep the temperature low enough during cooking and to remove it immediately from the grill once done. Be sure to grill indirectly and also use a drip pan to catch those delicious drippings.',
+          image_url: 'http://f.tqn.com/y/bbq/1/W/k/H/1/GettyImages-183369518.jpg',
+          dish_type: 'Main Course',
+          total_servings: 14,
+          prep_time: 20,
+          cook_time: 180,
+          total_rating: 1.2
+        }
+      }
+
+      post '/api/v1/recipes',
+        params: recipe.to_json,
+        headers: { 'Content-Type': 'application/json' }
+
+      expect(response.status).to eq 500
+    end
+  end
+
+  describe 'PUT /recipes/1' do
+    FactoryGirl.create :prime_rib, user_id: user.id
+
+  end
+
+  describe 'DELETE /recipes/1' do
+    FactoryGirl.create :prime_rib, user_id: user.id
+
   end
 end
