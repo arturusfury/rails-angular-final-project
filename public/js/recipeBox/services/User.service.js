@@ -4,8 +4,8 @@ angular.module('recipeBox')
       Auth.currentUser().then(setUser);
     }
 
-    this.login = function(userInfo, onSuccess, onFailure) {
-      Auth.login(userInfo).then(onSuccess,onFailure);
+    this.login = function(userInfo, onFailure) {
+      Auth.login(userInfo).then(setUser,onFailure);
     }
 
     setUser = function(user) {
