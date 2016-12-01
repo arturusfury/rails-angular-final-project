@@ -9,7 +9,7 @@ class Api::V1::RecipesController < ApplicationController
       render json: {
         status: 201,
         message: 'Recipe successfully created!',
-        recipe: recipe
+        recipe: RecipeSerializer.new(recipe).attributes
       }, status: 201
     else
       render json: {
@@ -45,7 +45,7 @@ class Api::V1::RecipesController < ApplicationController
       render json: {
         status: 200,
         message: 'Recipe successfully updated!',
-        recipe: recipe
+        recipe: RecipeSerializer.new(recipe).attributes
       }, status: 200
     else
       render json: {
