@@ -3,4 +3,8 @@ angular.module('recipeBox')
     this.get = function(onSuccess,onError) {
 
     }
+
+    this.create = function(onSuccess,onError) {
+
+    }
   }]);
