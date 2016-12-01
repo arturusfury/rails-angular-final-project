@@ -37,8 +37,8 @@ angular
       templateUrl: 'views/Search.template.html',
       controller: 'SearchResultsController as ctrl',
       resolve: {
-        recipes: function ($http) {
-          return $http.get('/api/v1/recipes/')
+        recipes: function (Recipe) {
+          return Recipe.getAll();
         }
       }
     })
@@ -84,8 +84,8 @@ angular
       templateUrl: 'views/recipes/Recipes.List.template.html',
       controller: 'RecipesListController as RecipesListCtrl',
       resolve: {
-        recipes: function ($http) {
-          return $http.get('/api/v1/recipes/')
+        recipes: function (Recipe) {
+          return Recipe.getAll();
         }
       }
     })
@@ -99,8 +99,8 @@ angular
       templateUrl: 'views/recipes/Recipe.Edit.template.html',
       controller: 'RecipeEditController as RecipeEditCtrl',
       resolve: {
-        recipe: function ($http, $stateParams) {
-          return $http.get('/api/v1/recipes/' + $stateParams.id)
+        recipe: function (Recipe, $stateParams) {
+          return Recipe.get($stateParams.id);
         }
       }
     })
@@ -109,23 +109,23 @@ angular
       templateUrl: 'views/recipes/Recipe.Details.template.html',
       controller: 'RecipeDetailsController as recipe',
       resolve: {
-        recipe: function ($http, $stateParams) {
-          return $http.get('/api/v1/recipes/' + $stateParams.id)
+        recipe: function (Recipe, $stateParams) {
+          return Recipe.get($stateParams.id);
         }
       }
     });
   }])
   // handle our broadcast messages
   .run(['$rootScope', '$location', function($rootScope, $location) {
-    $rootScope.$on('devise:new-session', function(event, currentUser) {
+    $rootScope.$on('devise:new-session', function() {
       $location.path('/');
     });
 
-    $rootScope.$on('devise:new-registration', function(event, currentUser) {
+    $rootScope.$on('devise:new-registration', function() {
       $location.path('/');
     });
 
-    $rootScope.$on('devise:logout', function(event, oldCurrentUser) {
+    $rootScope.$on('devise:logout', function() {
       $rootScope.user = {}
       $location.path('/');
     });
