@@ -1,5 +1,5 @@
 angular.module('recipeBox')
-  .service('User', ['Auth', '$http', '$rootScope' function (Auth, $http, $rootScope) {
+  .service('User', ['Auth', '$http', '$rootScope', function (Auth, $http, $rootScope) {
     this.get = function(onSuccess,onError) {
 
     }
@@ -8,12 +8,12 @@ angular.module('recipeBox')
 
     }
 
-    this.login = function(userInfo) {
-      Auth.login(userInfo)
-        .then(function(user) {
-          $rootScope.user = user;
-        },function (error) {
-          ctrl.errors = error.data;
-        });
+    this.login = function(userInfo, onSuccess, onFailure) {
+      Auth.login(userInfo).then(onSuccess,onFailure);
+        // .then(function(user) {
+        //   $rootScope.user = user;
+        // },function (error) {
+        //   ctrl.errors = error.data;
+        // });
     }
   }]);
