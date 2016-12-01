@@ -1,4 +1,4 @@
-function UserSettingsController($location, $http, $rootScope) {
+function UserSettingsController($location, User) {
   var ctrl = this;
 
   ctrl.confirmDelete = false;
@@ -6,17 +6,11 @@ function UserSettingsController($location, $http, $rootScope) {
   ctrl.passwordChangeSuccess = false;
 
   ctrl.changePassword = function () {
-    $http.patch('/users/password/',{
-      email: $rootScope.user.email,
-      username: $rootScope.user.username,
-      current_password: ctrl.user.currentPassword,
-      password: ctrl.user.password,
-      password_confirmation: ctrl.user.passwordConfirmation
-    }).then(function (resp) {
+    User.changePassword(ctrl.user, function () {
       ctrl.passwordForm.password = "";
       ctrl.passwordForm.passwordConfirmation = "";
       ctrl.passwordChangeSuccess = true;
-    }).catch(function (resp) {
+    }, function (resp) {
       console.log(resp);
     });
   }
@@ -33,19 +27,8 @@ function UserSettingsController($location, $http, $rootScope) {
     ctrl.confirmDelete = false;
     ctrl.isDisabled = true;
 
-    var data = $.param({
-      email: $rootScope.user.email,
-      username: $rootScope.user.username,
-      password: $rootScope.user.password
-    });
-
-    $http.delete('/users/', data)
-         .then( function(data) {
-           console.log(data)
-         }, function (error) {
-           console.log(data)
-         });
-    $rootScope.user = {};
+    User.delete();
+    console.log('User has been deleted');
     $location.path('/');
   }
 }

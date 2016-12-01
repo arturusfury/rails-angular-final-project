@@ -1,14 +1,13 @@
-function UserSessionsController($rootScope, Auth) {
+function UserSessionsController($rootScope, User) {
   var ctrl = this;
 
-  ctrl.login = function() {
-    Auth.login(ctrl.user)
-      .then(function(user){
-        $rootScope.user = user;
-      }, function (error) {
-        ctrl.errors = error.data;
-    });
-  };
+  ctrl.login = function () {
+    User.login(ctrl.user, onFailure);
+  }
+
+  function onFailure(error) {
+    ctrl.errors = error.data;
+  }
 }
 
 angular

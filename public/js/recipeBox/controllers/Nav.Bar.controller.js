@@ -1,27 +1,16 @@
-function NavBarController(SearchService, $rootScope, $state, $location, Auth) {
+function NavBarController(SearchService, $state, $location, User) {
   var ctrl = this;
 
   ctrl.goSearch = function () {
       SearchService.searchParams = ctrl.searchString;
-      console.log(SearchService.searchParams);
       $state.reload();
       $location.path('/search');
   }
 
-  ctrl.logout = Auth.logout;
+  ctrl.logout = User.logout;
+  ctrl.signedIn = User.isAuthenticated;
 
-  $rootScope.$on('devise:logout', function(event, oldCurrentUser) {
-    $rootScope.user = {}
-    $location.path('/');
-  });
-
-
-  ctrl.signedIn = Auth.isAuthenticated;
-
-  Auth.currentUser()
-    .then(function(user) {
-      $rootScope.user = user;
-    });
+  User.getUser();
 }
 
 angular
