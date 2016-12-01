@@ -50,7 +50,12 @@ RSpec.describe 'Recipes', type: :request do
           total_servings: 14,
           prep_time: 20,
           cook_time: 180,
-          total_rating: 1.2
+          total_rating: 1.2,
+          ingredients_attributes: [{
+            amount: 1,
+            measure: 'cup',
+            name: 'flour'
+          }]
         }
       }
 
@@ -63,6 +68,11 @@ RSpec.describe 'Recipes', type: :request do
 
     it 'creates a new recipe' do
       expect(response.status).to eq 201
+      expect(@body['message']).to eq('Recipe successfully created!')
+    end
+
+    it 'creates associated models' do
+      expect(@body['recipe']['ingredients'][0]['name']).to eq('flour')
     end
 
     describe 'after creation it' do
@@ -115,22 +125,33 @@ RSpec.describe 'Recipes', type: :request do
         }
       }
 
-      put "/api/v1/recipes/9",
+      put "/api/v1/recipes/10",
         params: recipe.to_json,
         headers: { 'Content-Type': 'application/json' }
 
-      expect(response.status).to eq 200
-
       body = JSON.parse(response.body)
+
+      expect(response.status).to eq 200
+      expect(body['message']).to eq('Recipe successfully updated!')
 
       recipe_title = body['recipe']['title']
       expect(recipe_title).to eq('Delicious Prime Rib')
     end
   end
 
-  describe 'DELETE /recipes/1' do
+  describe 'DELETE /recipes/:id' do
     before do
-      FactoryGirl.create :prime_rib, user_id: user.id
+      FactoryGirl.create :recipe_with_ingredients, user_id: user.id
+    end
+
+    it 'deletes a recipe' do
+      delete "/api/v1/recipes/11"
+      expect(response.status).to eq 204
+    end
+
+    it 'removes an associated models' do
+      delete "/api/v1/recipes/12"
+      expect(Ingredient.all).to eq(0)
     end
   end
 end
