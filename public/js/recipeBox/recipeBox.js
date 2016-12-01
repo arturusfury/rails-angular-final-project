@@ -10,7 +10,7 @@ angular
       'ngPassword'
     ]
   )
-  .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
+  .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
 
   $urlRouterProvider.otherwise('/');
 
@@ -20,11 +20,11 @@ angular
       templateUrl: 'views/Main.template.html',
       controller: 'MainRecipesController as mainCtrl',
       resolve: {
-        topRecipes: function ($http) {
-          return $http.get('/api/v1/recipes/top')
+        topRecipes: function (Recipe) {
+          return Recipe.getTop();
         },
-        latestRecipes: function ($http) {
-          return $http.get('/api/v1/recipes/latest')
+        latestRecipes: function (Recipe) {
+          return Recipe.getLatest();
         }
       }
     })
