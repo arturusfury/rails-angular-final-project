@@ -8,14 +8,9 @@ function NavBarController(SearchService, $rootScope, $state, $location, Auth) {
       $location.path('/search');
   }
 
-  ctrl.logout = Auth.logout;
-
-  $rootScope.$on('devise:logout', function(event, oldCurrentUser) {
-    $rootScope.user = {}
-    $location.path('/');
-  });
-
-
+  ctrl.logout = function () {
+    User.logout;
+  };
   ctrl.signedIn = Auth.isAuthenticated;
 
   Auth.currentUser()
