@@ -21,5 +21,21 @@ FactoryGirl.define do
     description ''
     image_url 'http://images-gmi-pmc.edge-generalmills.com/d5ea92bc-de94-44d4-be68-76db8cc6ce65.jpg'
     dish_type 'Appitizers & Snacks'
+
+    factory :recipe_with_ingredients do
+      transient do
+        ingredients_count 2
+      end
+
+      after(:create) do |chicken_wings, evaluator|
+        create_list(:ingredient, evaluator.ingredients_count, recipe_id: chicken_wings.id)
+      end
+    end
+  end
+
+  factory :ingredient do
+    amount 1
+    measure 'cup'
+    name 'flour'
   end
 end
