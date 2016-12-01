@@ -115,9 +115,14 @@ angular
       }
     });
   }])
-  // Redirect after a successful login
+  // handle our broadcast messages
   .run(['$rootScope', '$location', function($rootScope, $location) {
     $rootScope.$on('devise:new-session', function(event, currentUser) {
+      $location.path('/');
+    });
+
+    $rootScope.$on('devise:logout', function(event, oldCurrentUser) {
+      $rootScope.user = {}
       $location.path('/');
     });
 
