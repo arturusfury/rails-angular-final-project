@@ -4,7 +4,7 @@
     <div class="row no-bot-margin">
       <div class="col s12">
         <div class="row section-header">
-          <h3 class="light center section-header">Add a Recipe</h3>
+          <h3 class="light center section-header">Edit Recipe</h3>
         </div>
 
         <div class="row no-bot-margin">
@@ -160,7 +160,7 @@
               <button class="btn waves-effect waves-light red" type="submit" ng-disabled="recipeForm.$invalid">Edit
                 <i class="material-icons right">done</i>
               </button>
-              <a href="/" class="btn waves-effect waves-light red">Cancel
+              <a href="/#/recipes/{{RecipeEditCtrl.recipe.id}}" class="btn waves-effect waves-light red">Cancel
                 <i class="material-icons right">not_interested</i>
               </a>
             </div>

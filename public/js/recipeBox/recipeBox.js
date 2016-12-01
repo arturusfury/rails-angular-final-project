@@ -10,7 +10,7 @@ angular
       'ngPassword'
     ]
   )
-  .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
+  .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
 
   $urlRouterProvider.otherwise('/');
 
@@ -20,11 +20,11 @@ angular
       templateUrl: 'views/Main.template.html',
       controller: 'MainRecipesController as mainCtrl',
       resolve: {
-        topRecipes: function ($http) {
-          return $http.get('/api/v1/recipes/top')
+        topRecipes: function (Recipe) {
+          return Recipe.getTop();
         },
-        latestRecipes: function ($http) {
-          return $http.get('/api/v1/recipes/latest')
+        latestRecipes: function (Recipe) {
+          return Recipe.getLatest();
         }
       }
     })
@@ -37,8 +37,8 @@ angular
       templateUrl: 'views/Search.template.html',
       controller: 'SearchResultsController as ctrl',
       resolve: {
-        recipes: function ($http) {
-          return $http.get('/api/v1/recipes/')
+        recipes: function (Recipe) {
+          return Recipe.getAll();
         }
       }
     })
@@ -68,8 +68,8 @@ angular
       templateUrl: 'views/user/Recipes.template.html',
       controller: 'UserRecipesController as user',
       resolve: {
-        recipes: function ($http, $rootScope) {
-          return $http.get('/api/v1/recipes/user/' + $rootScope.user.name.replace(/ /g,"_"))
+        recipes: function (Recipe) {
+          return Recipe.getUserRecipes();
         }
       }
     })
@@ -84,8 +84,8 @@ angular
       templateUrl: 'views/recipes/Recipes.List.template.html',
       controller: 'RecipesListController as RecipesListCtrl',
       resolve: {
-        recipes: function ($http) {
-          return $http.get('/api/v1/recipes/')
+        recipes: function (Recipe) {
+          return Recipe.getAll();
         }
       }
     })
@@ -99,8 +99,8 @@ angular
       templateUrl: 'views/recipes/Recipe.Edit.template.html',
       controller: 'RecipeEditController as RecipeEditCtrl',
       resolve: {
-        recipe: function ($http, $stateParams) {
-          return $http.get('/api/v1/recipes/' + $stateParams.id)
+        recipe: function (Recipe, $stateParams) {
+          return Recipe.get($stateParams.id);
         }
       }
     })
@@ -109,15 +109,24 @@ angular
       templateUrl: 'views/recipes/Recipe.Details.template.html',
       controller: 'RecipeDetailsController as recipe',
       resolve: {
-        recipe: function ($http, $stateParams) {
-          return $http.get('/api/v1/recipes/' + $stateParams.id)
+        recipe: function (Recipe, $stateParams) {
+          return Recipe.get($stateParams.id);
         }
       }
     });
   }])
-  // Redirect after a successful login
+  // handle our broadcast messages
   .run(['$rootScope', '$location', function($rootScope, $location) {
-    $rootScope.$on('devise:new-session', function(event, currentUser) {
+    $rootScope.$on('devise:new-session', function() {
+      $location.path('/');
+    });
+
+    $rootScope.$on('devise:new-registration', function() {
+      $location.path('/');
+    });
+
+    $rootScope.$on('devise:logout', function() {
+      $rootScope.user = {}
       $location.path('/');
     });
 
