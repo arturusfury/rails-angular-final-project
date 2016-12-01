@@ -77,7 +77,8 @@ RSpec.describe 'Recipes', type: :request do
       end
 
       it 'should belong to a user' do
-        expect(@body['recipe']['user_id']).to eq(user.id)
+        expect(@body['recipe']['user_info']['id']).to eq(user.id)
+        expect(@body['recipe']['user_info']['name']).to eq('Tim Thomas')
       end
     end
   end
