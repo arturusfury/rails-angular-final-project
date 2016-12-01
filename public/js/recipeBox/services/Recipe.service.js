@@ -21,8 +21,4 @@ angular.module('recipeBox')
     this.get = function (id) {
       return $http.get('/api/v1/recipes/' + id)
     }
-
-    this.create = function(onSuccess,onError) {
-
-    }
   }]);
