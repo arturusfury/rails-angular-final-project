@@ -5,8 +5,12 @@ class User < ActiveRecord::Base
   has_many :reviews
   has_many :recipes
 
-  validates_uniqueness_of :email, message: 'Email Address is already in use'
+  validates_presence_of :email, message: 'Must have a valid Email Address'
+  validates_uniqueness_of :email, message: 'Email Address is already in use', case_sensitive: true
+
+  validates_presence_of :username, message: 'Must have a valid username'
   validates_uniqueness_of :username, message: 'Username already exists'
+
   validates_presence_of :name, message: 'Must have a full name'
 
   before_destroy :destroy_recipes

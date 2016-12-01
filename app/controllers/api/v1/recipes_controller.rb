@@ -9,13 +9,13 @@ class Api::V1::RecipesController < ApplicationController
       render json: {
         status: 201,
         message: 'Recipe successfully created!',
-        recipe: recipe
-      }.to_json
+        recipe: RecipeSerializer.new(recipe).attributes
+      }, status: 201
     else
       render json: {
         status: 500,
         errors: recipe.errors
-      }.to_json
+      }, status: 500
     end
   end
 
@@ -45,13 +45,13 @@ class Api::V1::RecipesController < ApplicationController
       render json: {
         status: 200,
         message: 'Recipe successfully updated!',
-        recipe: recipe
-      }.to_json
+        recipe: RecipeSerializer.new(recipe).attributes
+      }, status: 200
     else
       render json: {
         status: 500,
         errors: recipe.errors
-      }.to_json
+      }, status: 500
     end
   end
 
@@ -65,9 +65,9 @@ class Api::V1::RecipesController < ApplicationController
     Ingredient.where(recipe_id: recipe_id).each(&:destroy)
     Review.where(recipe_id: recipe_id).each(&:destroy)
     render json: {
-      status: 200,
+      status: 204,
       message: 'Recipe has been deleted successfully!'
-    }
+    }, status: 204
   end
 
   def top
