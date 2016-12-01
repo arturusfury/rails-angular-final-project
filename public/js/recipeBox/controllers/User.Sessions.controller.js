@@ -2,14 +2,10 @@ function UserSessionsController($rootScope, User) {
   var ctrl = this;
 
   ctrl.login = function () {
-    User.login(ctrl.user, ctrl.onSuccess, ctrl.onFailure);
+    User.login(ctrl.user, onFailure);
   }
 
-  ctrl.onSuccess = function (user) {
-    $rootScope.user = user;
-  }
-
-  ctrl.onFailure = function (error) {
+  function onFailure(error) {
     ctrl.errors = error.data;
   }
 }
