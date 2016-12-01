@@ -65,9 +65,9 @@ class Api::V1::RecipesController < ApplicationController
     Ingredient.where(recipe_id: recipe_id).each(&:destroy)
     Review.where(recipe_id: recipe_id).each(&:destroy)
     render json: {
-      status: 200,
+      status: 204,
       message: 'Recipe has been deleted successfully!'
-    }, status: 200
+    }, status: 204
   end
 
   def top
