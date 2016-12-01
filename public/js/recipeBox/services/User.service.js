@@ -12,6 +12,16 @@ angular.module('recipeBox')
       Auth.register(user).then(setUser,onFailure);
     }
 
+    this.changePassword = function (user, onSuccess, onFailure) {
+      $http.patch('/users/password/', {
+        email: $rootScope.user.email,
+        username: $rootScope.user.username,
+        current_password: ctrl.user.currentPassword,
+        password: ctrl.user.password,
+        password_confirmation: ctrl.user.passwordConfirmation
+      }).then(onSuccess, onFailure);
+    }
+
     this.delete = function () {
       var data = $.param({
         email: $rootScope.user.email,
