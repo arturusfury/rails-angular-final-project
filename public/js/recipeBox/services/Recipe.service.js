@@ -18,6 +18,10 @@ angular.module('recipeBox')
       return $http.get('/api/v1/recipes/user/' + $rootScope.user.username)
     }
 
+    this.get = function (id) {
+      return $http.get('/api/v1/recipes/' + id)
+    }
+
     this.create = function(onSuccess,onError) {
 
     }
