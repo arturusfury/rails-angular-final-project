@@ -121,6 +121,10 @@ angular
       $location.path('/');
     });
 
+    $rootScope.$on('devise:new-registration', function(event, currentUser) {
+      $location.path('/');
+    });
+
     $rootScope.$on('devise:logout', function(event, oldCurrentUser) {
       $rootScope.user = {}
       $location.path('/');
