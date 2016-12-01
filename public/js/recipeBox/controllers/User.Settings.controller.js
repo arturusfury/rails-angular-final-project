@@ -33,10 +33,9 @@ function UserSettingsController($location, $http, $rootScope, User) {
     ctrl.confirmDelete = false;
     ctrl.isDisabled = true;
 
-    if (User.delete()) {
-      console.log('User has been deleted');
-      $location.path('/');
-    }
+    User.delete();
+    console.log('User has been deleted');
+    $location.path('/');
   }
 }
 

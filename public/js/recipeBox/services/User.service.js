@@ -22,7 +22,6 @@ angular.module('recipeBox')
       return $http.delete('/users/', data)
         .then(function (data) {
           $rootScope.user = {};
-          return data;
         });
     }
 
