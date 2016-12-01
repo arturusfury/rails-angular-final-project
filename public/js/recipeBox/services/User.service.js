@@ -16,9 +16,9 @@ angular.module('recipeBox')
       $http.patch('/users/password/', {
         email: $rootScope.user.email,
         username: $rootScope.user.username,
-        current_password: ctrl.user.currentPassword,
-        password: ctrl.user.password,
-        password_confirmation: ctrl.user.passwordConfirmation
+        current_password: user.currentPassword,
+        password: user.password,
+        password_confirmation: user.passwordConfirmation
       }).then(onSuccess, onFailure);
     }
 
