@@ -10,12 +10,12 @@ class Api::V1::RecipesController < ApplicationController
         status: 201,
         message: 'Recipe successfully created!',
         recipe: recipe
-      }.to_json
+      }, status: 201
     else
       render json: {
         status: 500,
         errors: recipe.errors
-      }.to_json
+      }, status: 500
     end
   end
 
@@ -46,12 +46,12 @@ class Api::V1::RecipesController < ApplicationController
         status: 200,
         message: 'Recipe successfully updated!',
         recipe: recipe
-      }.to_json
+      }, status: 200
     else
       render json: {
         status: 500,
         errors: recipe.errors
-      }.to_json
+      }, status: 500
     end
   end
 
@@ -67,7 +67,7 @@ class Api::V1::RecipesController < ApplicationController
     render json: {
       status: 200,
       message: 'Recipe has been deleted successfully!'
-    }
+    }, status: 200
   end
 
   def top
