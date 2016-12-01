@@ -5,15 +5,12 @@ function UserRegistrationsController($rootScope, $location, Auth) {
 
   ctrl.register = function() {
     ctrl.isDisabled = true;
+    User.register(ctrl.user, onFailure);
 
-    Auth.register(ctrl.user)
-      .then(function(user){
-        $rootScope.user = user;
-        $location.path('/');
-      }, function (error) {
-        ctrl.isDisabled = false;
-        ctrl.errors = error.data;
-    });
+    function onFailure (error) {
+      ctrl.isDisabled = false;
+      ctrl.errors = error.data;
+    }
   };
 }
 

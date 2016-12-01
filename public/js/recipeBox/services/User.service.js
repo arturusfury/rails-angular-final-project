@@ -8,6 +8,10 @@ angular.module('recipeBox')
       Auth.login(userInfo).then(setUser,onFailure);
     }
 
+    this.register = function (user, onFailure) {
+      Auth.register(user).then(setUser,onFailure);
+    }
+
     setUser = function(user) {
       $rootScope.user = user;
     }
