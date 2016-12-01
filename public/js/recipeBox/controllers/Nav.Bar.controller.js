@@ -1,4 +1,4 @@
-function NavBarController(SearchService, $rootScope, $state, $location, User) {
+function NavBarController(SearchService, $state, $location, User) {
   var ctrl = this;
 
   ctrl.goSearch = function () {
