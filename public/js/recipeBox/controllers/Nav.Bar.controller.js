@@ -1,22 +1,16 @@
-function NavBarController(SearchService, $rootScope, $state, $location, Auth) {
+function NavBarController(SearchService, $rootScope, $state, $location, User) {
   var ctrl = this;
 
   ctrl.goSearch = function () {
       SearchService.searchParams = ctrl.searchString;
-      console.log(SearchService.searchParams);
       $state.reload();
       $location.path('/search');
   }
 
-  ctrl.logout = function () {
-    User.logout;
-  };
-  ctrl.signedIn = Auth.isAuthenticated;
+  ctrl.logout = User.logout;
+  ctrl.signedIn = User.isAuthenticated;
 
-  Auth.currentUser()
-    .then(function(user) {
-      $rootScope.user = user;
-    });
+  User.getUser();
 }
 
 angular
