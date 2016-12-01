@@ -12,6 +12,20 @@ angular.module('recipeBox')
       Auth.register(user).then(setUser,onFailure);
     }
 
+    this.delete = function () {
+      var data = $.param({
+        email: $rootScope.user.email,
+        username: $rootScope.user.username,
+        password: $rootScope.user.password
+      });
+
+      return $http.delete('/users/', data)
+        .then(function (data) {
+          $rootScope.user = {};
+          return data;
+        });
+    }
+
     setUser = function(user) {
       $rootScope.user = user;
     }
