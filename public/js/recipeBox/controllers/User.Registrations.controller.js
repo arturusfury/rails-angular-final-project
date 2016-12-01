@@ -1,4 +1,4 @@
-function UserRegistrationsController($rootScope, $location, User) {
+function UserRegistrationsController(User) {
   var ctrl = this;
 
   ctrl.isDisabled = false;
