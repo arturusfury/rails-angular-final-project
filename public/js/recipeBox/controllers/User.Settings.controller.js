@@ -1,4 +1,4 @@
-function UserSettingsController($location, $http, $rootScope) {
+function UserSettingsController($location, $http, $rootScope, User) {
   var ctrl = this;
 
   ctrl.confirmDelete = false;
@@ -33,20 +33,10 @@ function UserSettingsController($location, $http, $rootScope) {
     ctrl.confirmDelete = false;
     ctrl.isDisabled = true;
 
-    var data = $.param({
-      email: $rootScope.user.email,
-      username: $rootScope.user.username,
-      password: $rootScope.user.password
-    });
-
-    $http.delete('/users/', data)
-         .then( function(data) {
-           console.log(data)
-         }, function (error) {
-           console.log(data)
-         });
-    $rootScope.user = {};
-    $location.path('/');
+    if (User.delete()) {
+      console.log('User has been deleted');
+      $location.path('/');
+    }
   }
 }
 
