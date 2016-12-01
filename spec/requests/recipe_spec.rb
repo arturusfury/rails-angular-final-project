@@ -151,7 +151,7 @@ RSpec.describe 'Recipes', type: :request do
 
     it 'removes an associated models' do
       delete "/api/v1/recipes/12"
-      expect(Ingredient.all).to eq(0)
+      expect(Ingredient.all.size).to eq(0)
     end
   end
 end
