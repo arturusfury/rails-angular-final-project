@@ -42,7 +42,7 @@ class Api::V1::ReviewsController < ApplicationController
   end
 
   def calculate_total_rating(recipe)
-    reviews = Review.where(recipe_id: recipe.id).map(&:rating)
+    reviews = recipe.reviews.map(&:rating)
 
     if reviews.empty?
       recipe.total_rating = 0
