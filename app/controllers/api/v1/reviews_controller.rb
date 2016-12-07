@@ -47,7 +47,7 @@ class Api::V1::ReviewsController < ApplicationController
     if reviews.empty?
       recipe.total_rating = 0
     else
-      recipe.total_rating = (reviews.reduce(:+) / reviews.length).round(2)
+      recipe.total_rating = (reviews.reduce(:+).to_f / reviews.length).round(2)
     end
     recipe.save
   end
