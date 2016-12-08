@@ -75,7 +75,7 @@ class Api::V1::RecipesController < ApplicationController
   end
 
   def latest
-    respond_with(Recipe.order(updated_at: :desc).limit(12))
+    respond_with(Recipe.order(created_at: :desc).limit(12))
   end
 
   def user_recipes
