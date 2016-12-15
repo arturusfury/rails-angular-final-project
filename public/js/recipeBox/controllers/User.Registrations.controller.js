@@ -1,11 +1,11 @@
-function UserRegistrationsController(User) {
+function UserRegistrationsController(UserService) {
   var ctrl = this;
 
   ctrl.isDisabled = false;
 
   ctrl.register = function() {
     ctrl.isDisabled = true;
-    User.register(ctrl.user, onFailure);
+    UserService.register(ctrl.user, onFailure);
 
     function onFailure (error) {
       ctrl.isDisabled = false;

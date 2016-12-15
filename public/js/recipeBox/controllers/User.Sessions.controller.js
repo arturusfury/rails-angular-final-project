@@ -1,8 +1,8 @@
-function UserSessionsController($rootScope, User) {
+function UserSessionsController($rootScope, UserService) {
   var ctrl = this;
 
   ctrl.login = function () {
-    User.login(ctrl.user, onFailure);
+    UserService.login(ctrl.user, onFailure);
   }
 
   function onFailure(error) {
