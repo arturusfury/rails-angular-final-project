@@ -1,5 +1,5 @@
 angular.module('recipeBox')
-  .service('RecipeService', ['$http', '$rootScope', 'UserService', function ($http, $rootScope, UserService) {
+  .service('RecipeService', ['$http', 'UserService', function ($http, UserService) {
     var recipesApiPath = '/api/v1/recipes'
 
     this.getAllRecipes = function() {
@@ -15,8 +15,7 @@ angular.module('recipeBox')
     }
 
     this.getUserRecipes = function () {
-      console.log(UserService.getUser);
-      return $http.get(recipesApiPath + '/user/' + $rootScope.user.username)
+      return $http.get(recipesApiPath + '/user/' + UserService.getUser().username)
     }
 
     this.getRecipe = function (id) {

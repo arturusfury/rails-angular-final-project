@@ -10,7 +10,7 @@ function NavBarController(SearchService, $state, $location, UserService) {
   ctrl.logout = UserService.logout;
   ctrl.signedIn = UserService.isAuthenticated;
 
-  UserService.getUser();
+  UserService.loadUser();
 }
 
 angular
