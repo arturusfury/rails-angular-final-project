@@ -1,4 +1,4 @@
-function NavBarController(SearchService, $state, $location, User) {
+function NavBarController(SearchService, $state, $location, UserService) {
   var ctrl = this;
 
   ctrl.goSearch = function () {
@@ -7,10 +7,10 @@ function NavBarController(SearchService, $state, $location, User) {
       $location.path('/search');
   }
 
-  ctrl.logout = User.logout;
-  ctrl.signedIn = User.isAuthenticated;
+  ctrl.logout = UserService.logout;
+  ctrl.signedIn = UserService.isAuthenticated;
 
-  User.getUser();
+  UserService.getUser();
 }
 
 angular

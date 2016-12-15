@@ -1,5 +1,5 @@
 angular.module('recipeBox')
-  .service('User', ['Auth', '$http', '$rootScope', function (Auth, $http, $rootScope) {
+  .service('UserService', ['Auth', '$http', '$rootScope', function (Auth, $http, $rootScope) {
     this.getUser = function () {
       Auth.currentUser().then(setUser);
     }

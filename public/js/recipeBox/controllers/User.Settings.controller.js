@@ -1,4 +1,4 @@
-function UserSettingsController($location, User) {
+function UserSettingsController($location, UserService) {
   var ctrl = this;
 
   ctrl.confirmDelete = false;
@@ -6,7 +6,7 @@ function UserSettingsController($location, User) {
   ctrl.passwordChangeSuccess = false;
 
   ctrl.changePassword = function () {
-    User.changePassword(ctrl.user, function () {
+    UserService.changePassword(ctrl.user, function () {
       ctrl.passwordForm.password = "";
       ctrl.passwordForm.passwordConfirmation = "";
       ctrl.passwordChangeSuccess = true;
@@ -27,7 +27,7 @@ function UserSettingsController($location, User) {
     ctrl.confirmDelete = false;
     ctrl.isDisabled = true;
 
-    User.delete();
+    UserService.delete();
     console.log('User has been deleted');
     $location.path('/');
   }
