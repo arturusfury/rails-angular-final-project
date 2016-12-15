@@ -1,4 +1,4 @@
-function UserSessionsController($rootScope, UserService) {
+function UserSessionsController(UserService) {
   var ctrl = this;
 
   ctrl.login = function () {
