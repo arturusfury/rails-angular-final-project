@@ -1,6 +1,10 @@
 angular.module('recipeBox')
   .service('UserService', ['Auth', '$http', '$rootScope', function (Auth, $http, $rootScope) {
     this.getUser = function () {
+      return $rootScope.user
+    }
+
+    this.loadUser = function () {
       Auth.currentUser().then(setUser);
     }
 
@@ -36,7 +40,7 @@ angular.module('recipeBox')
     }
 
     setUser = function(user) {
-      $rootScope.user = user;
+      $rootScope.user = user
     }
 
     this.logout = Auth.logout;
