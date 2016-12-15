@@ -1,16 +1,16 @@
 angular.module('recipeBox')
-  .service('Recipe', ['$http', '$rootScope', function ($http, $rootScope) {
+  .service('RecipeService', ['$http', '$rootScope', function ($http, $rootScope) {
     var recipesApiPath = '/api/v1/recipes'
 
-    this.getAll = function() {
+    this.getAllRecipes = function() {
       return $http.get(recipesApiPath);
     }
 
-    this.getLatest = function() {
+    this.getLatestRecipes = function() {
       return $http.get(recipesApiPath + '/latest');
     }
 
-    this.getTop = function() {
+    this.getTopRecipes = function() {
       return $http.get(recipesApiPath + '/top');
     }
 
@@ -18,7 +18,7 @@ angular.module('recipeBox')
       return $http.get('/api/v1/recipes/user/' + $rootScope.user.username)
     }
 
-    this.get = function (id) {
+    this.getRecipes = function (id) {
       return $http.get('/api/v1/recipes/' + id)
     }
   }]);
