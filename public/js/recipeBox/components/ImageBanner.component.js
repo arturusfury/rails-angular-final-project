@@ -1,9 +1,9 @@
-var ImageBannerComponent = {
+var imageBanner = {
   bindings: {
-    imageUrl: '<'
+    imageUrl: '@src'
   },
-  templateUrl: 'views/components/ImageBanner.template.html',
+  templateUrl: 'views/components/ImageBanner.template.html'
 }
 
 angular.module('recipeBox')
-  .component('ImageBannerComponent', ImageBannerComponent)
+  .component('imageBanner', imageBanner)
