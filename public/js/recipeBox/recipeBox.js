@@ -28,6 +28,18 @@ angular
         }
       }
     })
+    .state('test', {
+      url: '/test',
+      templateUrl: 'views/Comp.template.html',
+      resolve: {
+        topRecipes: function (RecipeService) {
+          return RecipeService.getTopRecipes();
+        },
+        latestRecipes: function (RecipeService) {
+          return RecipeService.getLatestRecipes();
+        }
+      }
+    })
     .state('contact', {
       url: '/contact',
       templateUrl: 'views/Contact.template.html'
