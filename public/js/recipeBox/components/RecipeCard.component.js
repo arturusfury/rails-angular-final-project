@@ -1,4 +1,4 @@
-var RecipeCardComponent = {
+var recipeCard = {
   bindings: {
     recipe: '<'
   },
@@ -6,4 +6,4 @@ var RecipeCardComponent = {
 }
 
 angular.module('recipeBox')
-  .component('RecipeCardComponent', RecipeCardComponent)
+  .component('recipeCard', recipeCard)
