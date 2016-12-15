@@ -12,7 +12,7 @@ angular
   )
   .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
 
-  // $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/');
 
   $stateProvider
     .state('main', {
@@ -138,7 +138,7 @@ angular
     });
 
     $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error) {
-      // $location.path('/');
+      $location.path('/');
       console.log(error);
     });
   }]);
