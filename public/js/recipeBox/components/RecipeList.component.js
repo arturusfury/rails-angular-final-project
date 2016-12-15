@@ -1,6 +1,7 @@
-var RecipeListComponent = {
+var recipeList = {
   bindings: {
     heading: '<heading',
+    recipes: '<recipes'
   },
   templateUrl: 'views/components/RecipeList.template.html',
   controller: RecipeListController
@@ -8,9 +9,7 @@ var RecipeListComponent = {
 
 function RecipeListController(RecipeService) {
   var ctrl = this;
-
-  ctrl.recipes = RecipeService.getTopRecipes;
 }
 
 angular.module('recipeBox')
-  .component('RecipeListComponent', RecipeListComponent)
+  .component('recipeList', recipeList)
