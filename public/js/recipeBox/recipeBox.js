@@ -20,11 +20,11 @@ angular
       templateUrl: 'views/Main.template.html',
       controller: 'MainRecipesController as mainCtrl',
       resolve: {
-        topRecipes: function (Recipe) {
-          return Recipe.getTop();
+        topRecipes: function (RecipeService) {
+          return RecipeService.getTopRecipes();
         },
-        latestRecipes: function (Recipe) {
-          return Recipe.getLatest();
+        latestRecipes: function (RecipeService) {
+          return RecipeService.getLatestRecipes();
         }
       }
     })
@@ -37,8 +37,8 @@ angular
       templateUrl: 'views/Search.template.html',
       controller: 'SearchResultsController as ctrl',
       resolve: {
-        recipes: function (Recipe) {
-          return Recipe.getAll();
+        recipes: function (RecipeService) {
+          return RecipeService.getAllRecipes();
         }
       }
     })
@@ -68,8 +68,8 @@ angular
       templateUrl: 'views/user/Recipes.template.html',
       controller: 'UserRecipesController as user',
       resolve: {
-        recipes: function (Recipe) {
-          return Recipe.getUserRecipes();
+        recipes: function (RecipeService) {
+          return RecipeService.getUserRecipes();
         }
       }
     })
@@ -84,8 +84,8 @@ angular
       templateUrl: 'views/recipes/Recipes.List.template.html',
       controller: 'RecipesListController as RecipesListCtrl',
       resolve: {
-        recipes: function (Recipe) {
-          return Recipe.getAll();
+        recipes: function (RecipeService) {
+          return RecipeService.getAll();
         }
       }
     })
@@ -99,8 +99,8 @@ angular
       templateUrl: 'views/recipes/Recipe.Edit.template.html',
       controller: 'RecipeEditController as RecipeEditCtrl',
       resolve: {
-        recipe: function (Recipe, $stateParams) {
-          return Recipe.get($stateParams.id);
+        recipe: function (RecipeService, $stateParams) {
+          return RecipeService.get($stateParams.id);
         }
       }
     })
@@ -109,8 +109,8 @@ angular
       templateUrl: 'views/recipes/Recipe.Details.template.html',
       controller: 'RecipeDetailsController as recipe',
       resolve: {
-        recipe: function (Recipe, $stateParams) {
-          return Recipe.get($stateParams.id);
+        recipe: function (RecipeService, $stateParams) {
+          return RecipeService.get($stateParams.id);
         }
       }
     });
