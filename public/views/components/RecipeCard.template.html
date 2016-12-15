@@ -1,0 +1,23 @@
+<div class="col s12 m6 l4">
+  <a href="/#/recipes/{{recipe.id}}" class="black-text">
+    <div class="card hoverable no-top-margin recipe-card">
+      <div class="card-image">
+        <div class="center-and-cropped-bg" style="background-image: url("{{recipe.image_url}}")"></div>
+      </div> <!-- end card-image -->
+      <div class="card-content no-top-bot-padding center">
+        <h5>{{ recipe.title }}</h5>
+        <p class="light low-line-height">
+          Submitted by <strong>{{ recipe.user_info.name }}</strong><br />
+          Dish Type: <strong>{{ recipe.dish_type }}</strong><br />
+          Rating: <strong>{{ recipe.total_rating }}</strong></p>
+        <p class="light low-line-height">{{recipe.description | characters:200 }}</p>
+      </div>
+      <div class="card-action center grey lighten-4">
+        <ul class="light no-top-bot-margin">
+          <li>Total Time: <strong>{{ recipe.prep_time + recipe.cook_time | time:"mm":"hhh mmm":false }}</strong></li>
+          <li>Servings: <strong>{{ recipe.total_servings }}</strong></li>
+        </ul>
+      </div> <!-- end card-content -->
+    </div> <!--- end card -->
+  </a>
+</div> <!-- end col -->
