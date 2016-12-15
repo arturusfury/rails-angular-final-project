@@ -2,7 +2,7 @@ var recipeCard = {
   bindings: {
     recipe: '<'
   },
-  templateUrl: 'views/components/RecipeCard.template.html',
+  templateUrl: 'views/components/RecipeCard.template.html'
 }
 
 angular.module('recipeBox')

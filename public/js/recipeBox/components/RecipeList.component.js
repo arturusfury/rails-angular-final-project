@@ -1,14 +1,9 @@
 var recipeList = {
   bindings: {
-    heading: '<heading',
-    recipes: '<recipes'
+    heading: '@',
+    recipes: '<'
   },
-  templateUrl: 'views/components/RecipeList.template.html',
-  controller: RecipeListController
-}
-
-function RecipeListController(RecipeService) {
-  var ctrl = this;
+  templateUrl: 'views/components/RecipeList.template.html'
 }
 
 angular.module('recipeBox')
