@@ -31,6 +31,7 @@ angular
     .state('test', {
       url: '/test',
       templateUrl: 'views/Comp.template.html',
+      controller: 'MainRecipesController as mainCtrl',
       resolve: {
         topRecipes: function (RecipeService) {
           return RecipeService.getTopRecipes();
