@@ -12,7 +12,7 @@ angular
   )
   .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
 
-  $urlRouterProvider.otherwise('/');
+  // $urlRouterProvider.otherwise('/');
 
   $stateProvider
     .state('main', {
@@ -42,6 +42,7 @@ angular
         }
       }
     })
+
     // User Routes
     .state('user', {
       url: '/user',
@@ -73,6 +74,7 @@ angular
         }
       }
     })
+
     // Recipe Routes
     .state('recipes', {
       url: '/recipes',
@@ -85,7 +87,7 @@ angular
       controller: 'RecipesListController as RecipesListCtrl',
       resolve: {
         recipes: function (RecipeService) {
-          return RecipeService.getAll();
+          return RecipeService.getAllRecipes();
         }
       }
     })
@@ -100,7 +102,7 @@ angular
       controller: 'RecipeEditController as RecipeEditCtrl',
       resolve: {
         recipe: function (RecipeService, $stateParams) {
-          return RecipeService.get($stateParams.id);
+          return RecipeService.getRecipe($stateParams.id);
         }
       }
     })
@@ -110,11 +112,12 @@ angular
       controller: 'RecipeDetailsController as recipe',
       resolve: {
         recipe: function (RecipeService, $stateParams) {
-          return RecipeService.get($stateParams.id);
+          return RecipeService.getRecipe($stateParams.id);
         }
       }
     });
   }])
+
   // handle our broadcast messages
   .run(['$rootScope', '$location', function($rootScope, $location) {
     $rootScope.$on('devise:new-session', function() {
@@ -134,7 +137,8 @@ angular
       $("html, body").animate({ scrollTop: 0 }, 200);
     });
 
-    $rootScope.$on('$stateChangeError', function() {
-      $location.path('/');
+    $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error) {
+      // $location.path('/');
+      console.log(error);
     });
   }]);
