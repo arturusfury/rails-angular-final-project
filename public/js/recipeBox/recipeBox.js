@@ -70,8 +70,12 @@ angular
     })
     .state('user.recipes', {
       url: '/recipes',
-      templateUrl: 'views/user/Recipes.template.html',
-      controller: 'UserRecipesController as user',
+      // templateUrl: 'views/user/Recipes.template.html',
+      // controller: 'UserRecipesController as user',
+      template: '<user-recipes recipes="recipes"></user-recipes>',
+      controller: function($scope, recipes) {
+        $scope.recipes = recipes.data
+      },
       resolve: {
         recipes: function (RecipeService) {
           return RecipeService.getUserRecipes();
