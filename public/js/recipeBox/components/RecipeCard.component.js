@@ -1,6 +1,7 @@
 var recipeCard = {
   bindings: {
-    recipe: '<'
+    recipe: '<',
+    cardSize: '<'
   },
   templateUrl: 'views/components/RecipeCard.template.html'
 }
