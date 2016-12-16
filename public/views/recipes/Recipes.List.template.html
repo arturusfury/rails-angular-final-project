@@ -13,11 +13,12 @@
 
         <div class="row">
           <div class="input-field col s12 m6">
-            <select name="dish_type" ng-model="RecipesListCtrl.dish_type" material-select watch required>
+            <dish-type-select></dish-type-select>
+            <!-- <select name="dish_type" ng-model="RecipesListCtrl.dish_type" material-select watch required>
               <option value="" selected>All Types</option>
               <option ng-repeat="item in RecipesListCtrl.dishTypes" value="{{item}}">{{item}}</option>
             </select>
-            <label>Dish Type</label>
+            <label>Dish Type</label> -->
           </div>
 
           <div class="input-field col s12 m3">
