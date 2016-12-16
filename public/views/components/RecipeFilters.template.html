@@ -4,8 +4,7 @@
   </div>
 
   <div class="input-field col s12 m3">
-    <!-- <select-box options="" label="Rating"></select-box> -->
-    <select ng-model="RecipesListCtrl.rating" material-select watch>
+    <select ng-model="$ctrl.rating" ng-change="$ctrl.section.changeRating($ctrl.rating)" material-select watch>
       <option value="" selected>All Ratings</option>
       <option value="1">1 or less</option>
       <option value="2">2</option>
@@ -16,8 +15,7 @@
   </div>
 
   <div class="input-field col s12 m3">
-    <!-- <select-box options="" label="Servings"></select-box> -->
-    <select ng-model="RecipesListCtrl.servings" material-select watch>
+    <select ng-model="$ctrl.servings" ng-change="$ctrl.section.changeServings($ctrl.servings)" material-select watch>
       <option value="" selected>All Servings</option>
       <option value="2">2 or Less</option>
       <option value="3-8">3 to 8</option>

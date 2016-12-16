@@ -3,7 +3,10 @@ var recipeFilters = {
     heading: '@',
     recipes: '<'
   },
-  templateUrl: 'views/components/RecipeListFilters.template.html'
+  require: {
+    section: '^section'
+  },
+  templateUrl: 'views/components/RecipeFilters.template.html'
 }
 
 angular.module('recipeBox')
