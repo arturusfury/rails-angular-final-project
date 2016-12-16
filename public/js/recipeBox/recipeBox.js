@@ -3,6 +3,7 @@ angular
     [
       'ui.router',
       'ui.materialize',
+      'angular.vertilize',
       'Devise',
       'truncate',
       'ngInflection',
