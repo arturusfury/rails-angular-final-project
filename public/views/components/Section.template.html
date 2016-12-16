@@ -1,0 +1,11 @@
+<div class="section" match-height>
+  <div class="row section-header">
+    <h3 class="light center section-header">{{ $ctrl.heading }}</h3>
+  </div>
+  <div class="row">
+    <div class="divider"></div>
+  </div>
+  <recipe-filters ng-if="$ctrl.recipeFilters"></recipe-filters>
+
+  <recipe-list recipes="$ctrl.recipes"></recipe-list>
+</div>
