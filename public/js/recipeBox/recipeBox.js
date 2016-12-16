@@ -87,8 +87,10 @@ angular
     })
     .state('recipes.list', {
       url: '',
-      templateUrl: 'views/recipes/Recipes.List.template.html',
-      controller: 'RecipesListController as RecipesListCtrl',
+      template: '<recipe-browser recipes="recipes"></recipe-browser>',
+      controller: function($scope, recipes) {
+        $scope.recipes = recipes.data
+      },
       resolve: {
         recipes: function (RecipeService) {
           return RecipeService.getAllRecipes();
