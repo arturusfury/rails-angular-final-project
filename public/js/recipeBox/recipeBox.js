@@ -17,8 +17,11 @@ angular
   $stateProvider
     .state('main', {
       url: '/',
-      templateUrl: 'views/Main.template.html',
-      controller: 'MainRecipesController as mainCtrl',
+      template: '<main-view top-recipes="topRecipes" latest-recipes="latestRecipes"></main-view>',
+      controller: function($scope, topRecipes, latestRecipes) {
+        $scope.topRecipes = topRecipes.data
+        $scope.latestRecipes = latestRecipes.data
+      },
       resolve: {
         topRecipes: function (RecipeService) {
           return RecipeService.getTopRecipes();
