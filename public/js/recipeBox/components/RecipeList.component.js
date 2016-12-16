@@ -1,7 +1,8 @@
 var recipeList = {
   bindings: {
     heading: '@',
-    recipes: '<'
+    recipes: '<',
+    cardSize: '<'
   },
   templateUrl: 'views/components/RecipeList.template.html'
 }
