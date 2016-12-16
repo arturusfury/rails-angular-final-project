@@ -1,3 +1,3 @@
 <div class="row no-bot-margin" vertilize-container>
-  <recipe-card ng-repeat="recipe in $ctrl.recipes" recipe="recipe" card-size="$ctrl.cardSize"></recipe-card>
+  <recipe-card ng-repeat="recipe in $ctrl.recipes | dishType: $ctrl.dishType | rating: $ctrl.rating | servings: $ctrl.servings" recipe="recipe" card-size="$ctrl.cardSize"></recipe-card>
 </div>

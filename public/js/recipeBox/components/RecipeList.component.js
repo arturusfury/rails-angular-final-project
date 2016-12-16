@@ -2,7 +2,10 @@ var recipeList = {
   bindings: {
     heading: '@',
     recipes: '<',
-    cardSize: '<'
+    cardSize: '<',
+    dishType: '<',
+    rating: '<',
+    servings: '<'
   },
   templateUrl: 'views/components/RecipeList.template.html'
 }
