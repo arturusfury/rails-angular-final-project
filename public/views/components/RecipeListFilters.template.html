@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="input-field col s12 m6">
+    <dish-type-select></dish-type-select>
+  </div>
+
+  <div class="input-field col s12 m3">
+    <!-- <select-box options="" label="Rating"></select-box> -->
+    <select ng-model="RecipesListCtrl.rating" material-select watch>
+      <option value="" selected>All Ratings</option>
+      <option value="1">1 or less</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4 or higher</option>
+    </select>
+    <label>Rating</label>
+  </div>
+
+  <div class="input-field col s12 m3">
+    <!-- <select-box options="" label="Servings"></select-box> -->
+    <select ng-model="RecipesListCtrl.servings" material-select watch>
+      <option value="" selected>All Servings</option>
+      <option value="2">2 or Less</option>
+      <option value="3-8">3 to 8</option>
+      <option value="9+">Greater than 8</option>
+    </select>
+    <label>Servings</label>
+  </div>
+
+  <br />
+  <br />
+</div>
