@@ -1,0 +1,5 @@
+<select name="dish_type" ng-model="$ctrl.dishType" ng-change="$ctrl.section.changeDishType($ctrl.dishType)" material-select watch required>
+  <option value="" selected>All Types</option>
+  <option ng-repeat="item in $ctrl.dishTypes" value="{{item}}">{{item}}</option>
+</select>
+<label>Dish Type</label>

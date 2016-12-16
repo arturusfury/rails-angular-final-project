@@ -1,0 +1,23 @@
+<div class="col {{$ctrl.cardSize}}">
+  <a href="/#/recipes/{{$ctrl.recipe.id}}" class="black-text">
+    <div class="card hoverable no-top-margin recipe-card">
+      <div class="card-image">
+        <div class="center-and-cropped-bg" background-image="$ctrl.recipe.image_url"></div>
+      </div> <!-- end card-image -->
+      <div class="card-content no-top-bot-padding center" vertilize>
+        <h5>{{ $ctrl.recipe.title }}</h5>
+        <p class="light low-line-height">
+          Submitted by <strong>{{ $ctrl.recipe.user_info.name }}</strong><br />
+          Dish Type: <strong>{{ $ctrl.recipe.dish_type }}</strong><br />
+          Rating: <strong>{{ $ctrl.recipe.total_rating }}</strong></p>
+        <p class="light low-line-height">{{$ctrl.recipe.description | characters:200 }}</p>
+      </div>
+      <div class="card-action center grey lighten-4">
+        <ul class="light no-top-bot-margin">
+          <li>Total Time: <strong>{{ $ctrl.recipe.prep_time + $ctrl.recipe.cook_time | time:"mm":"hhh mmm":false }}</strong></li>
+          <li>Servings: <strong>{{ $ctrl.recipe.total_servings }}</strong></li>
+        </ul>
+      </div> <!-- end card-content -->
+    </div> <!--- end card -->
+  </a>
+</div> <!-- end col -->

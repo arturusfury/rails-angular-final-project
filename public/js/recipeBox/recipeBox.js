@@ -3,6 +3,7 @@ angular
     [
       'ui.router',
       'ui.materialize',
+      'angular.vertilize',
       'Devise',
       'truncate',
       'ngInflection',
@@ -17,14 +18,17 @@ angular
   $stateProvider
     .state('main', {
       url: '/',
-      templateUrl: 'views/Main.template.html',
-      controller: 'MainRecipesController as mainCtrl',
+      template: '<main-view top-recipes="topRecipes" latest-recipes="latestRecipes"></main-view>',
+      controller: function($scope, topRecipes, latestRecipes) {
+        $scope.topRecipes = topRecipes.data
+        $scope.latestRecipes = latestRecipes.data
+      },
       resolve: {
-        topRecipes: function (Recipe) {
-          return Recipe.getTop();
+        topRecipes: function (RecipeService) {
+          return RecipeService.getTopRecipes();
         },
-        latestRecipes: function (Recipe) {
-          return Recipe.getLatest();
+        latestRecipes: function (RecipeService) {
+          return RecipeService.getLatestRecipes();
         }
       }
     })
@@ -37,11 +41,12 @@ angular
       templateUrl: 'views/Search.template.html',
       controller: 'SearchResultsController as ctrl',
       resolve: {
-        recipes: function (Recipe) {
-          return Recipe.getAll();
+        recipes: function (RecipeService) {
+          return RecipeService.getAllRecipes();
         }
       }
     })
+
     // User Routes
     .state('user', {
       url: '/user',
@@ -65,14 +70,19 @@ angular
     })
     .state('user.recipes', {
       url: '/recipes',
-      templateUrl: 'views/user/Recipes.template.html',
-      controller: 'UserRecipesController as user',
+      // templateUrl: 'views/user/Recipes.template.html',
+      // controller: 'UserRecipesController as user',
+      template: '<user-recipes recipes="recipes"></user-recipes>',
+      controller: function($scope, recipes) {
+        $scope.recipes = recipes.data
+      },
       resolve: {
-        recipes: function (Recipe) {
-          return Recipe.getUserRecipes();
+        recipes: function (RecipeService) {
+          return RecipeService.getUserRecipes();
         }
       }
     })
+
     // Recipe Routes
     .state('recipes', {
       url: '/recipes',
@@ -81,11 +91,13 @@ angular
     })
     .state('recipes.list', {
       url: '',
-      templateUrl: 'views/recipes/Recipes.List.template.html',
-      controller: 'RecipesListController as RecipesListCtrl',
+      template: '<recipe-browser recipes="recipes"></recipe-browser>',
+      controller: function($scope, recipes) {
+        $scope.recipes = recipes.data
+      },
       resolve: {
-        recipes: function (Recipe) {
-          return Recipe.getAll();
+        recipes: function (RecipeService) {
+          return RecipeService.getAllRecipes();
         }
       }
     })
@@ -99,8 +111,8 @@ angular
       templateUrl: 'views/recipes/Recipe.Edit.template.html',
       controller: 'RecipeEditController as RecipeEditCtrl',
       resolve: {
-        recipe: function (Recipe, $stateParams) {
-          return Recipe.get($stateParams.id);
+        recipe: function (RecipeService, $stateParams) {
+          return RecipeService.getRecipe($stateParams.id);
         }
       }
     })
@@ -109,12 +121,13 @@ angular
       templateUrl: 'views/recipes/Recipe.Details.template.html',
       controller: 'RecipeDetailsController as recipe',
       resolve: {
-        recipe: function (Recipe, $stateParams) {
-          return Recipe.get($stateParams.id);
+        recipe: function (RecipeService, $stateParams) {
+          return RecipeService.getRecipe($stateParams.id);
         }
       }
     });
   }])
+
   // handle our broadcast messages
   .run(['$rootScope', '$location', function($rootScope, $location) {
     $rootScope.$on('devise:new-session', function() {
@@ -134,7 +147,8 @@ angular
       $("html, body").animate({ scrollTop: 0 }, 200);
     });
 
-    $rootScope.$on('$stateChangeError', function() {
+    $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error) {
       $location.path('/');
+      console.log(error);
     });
   }]);
