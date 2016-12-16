@@ -1,8 +1,12 @@
 var dishTypeSelect = {
+  require: {
+    recipeFilters: '^recipeFilters',
+    section: '^section'
+  },
   templateUrl: 'views/components/DishTypeSelect.template.html',
   controller: function () {
     var ctrl = this;
-    
+
     ctrl.dishTypes = [
       'Appitizers & Snacks',
       'Breads, Muffins, Scones & Pancakes',
