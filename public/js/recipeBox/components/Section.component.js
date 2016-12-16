@@ -1,12 +1,10 @@
 var section = {
   bindings: {
     heading: '@',
-    recipes: '<'
+    recipes: '<',
+    cardSize: '@'
   },
-  templateUrl: 'views/components/Section.template.html',
-  controller: function() {
-
-  }
+  templateUrl: 'views/components/Section.template.html'
 }
 
 angular.module('recipeBox')
