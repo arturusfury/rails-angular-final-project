@@ -2,7 +2,8 @@ var section = {
   bindings: {
     heading: '@',
     recipes: '<',
-    cardSize: '@'
+    cardSize: '@',
+    recipeFilters: '<'
   },
   templateUrl: 'views/components/Section.template.html'
 }
